@@ -2,6 +2,8 @@
 
 A Codex Skill for evidence-based initialization, training diagnosis, tuning, bounded experiments, stopping, and independent checkpoint selection.
 
+中文逐文件说明：[文件说明（中文版）](FILE_GUIDE_ZH.md)。
+
 ## Install
 
 ```bash
