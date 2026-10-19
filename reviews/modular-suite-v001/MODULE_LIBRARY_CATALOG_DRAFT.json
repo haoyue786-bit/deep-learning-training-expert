@@ -1,0 +1,257 @@
+{
+  "schema_version": "training_module_design_v001",
+  "status": "design_only",
+  "runtime_advertisement_allowed": false,
+  "scope": "Optional mechanisms selected by one continuing expert, not a mandatory algorithm stack or parameter search.",
+  "current_runtime_evidence": [
+    {
+      "path": "/mnt/nas_data1/cashew/fada_expert_runs/CIV_NGA_SEN_agentguide_target2019_min50_max200_prior25_jhyapi_luna_high_local_20261019_v001/countries/CIV/runtime/scripts/fada_expert_v4.py",
+      "sha256": "46ed0c1a2fc5518e3c3b36b864059add4dd63c6e2e2aa30a7b1f526a30a73060",
+      "role": "joint local class-domain conditioning and separate binary global discriminator"
+    },
+    {
+      "path": "/mnt/nas_data1/cashew/fada_expert_runs/CIV_NGA_SEN_agentguide_target2019_min50_max200_prior25_jhyapi_luna_high_local_20261019_v001/countries/CIV/runtime/scripts/train_expert_v4.py",
+      "sha256": "d5db648c65003a3b0188b1fc20376bb7125617d509241b765c881ed49106fecf",
+      "role": "actual loss composition, detach and custom experiment dispatch"
+    },
+    {
+      "path": "/mnt/nas_data1/cashew/fada_expert_runs/CIV_NGA_SEN_agentguide_target2019_min50_max200_prior25_jhyapi_luna_high_local_20261019_v001/countries/CIV/runtime/scripts/expert_policy_v4.py",
+      "sha256": "053086f2e2894974b3cf04e5a4e44984e508d0fcc6e2bec53271bd507aab64eb",
+      "role": "task-dependent controls and action/schema validation"
+    },
+    {
+      "path": "/mnt/nas_data1/cashew/fada_expert_runs/CIV_NGA_SEN_agentguide_target2019_min50_max200_prior25_jhyapi_luna_high_local_20261019_v001/countries/CIV/runtime/scripts/gradient_control_v1.py",
+      "sha256": "87c4436365f2b6b3d9dabba2782ece74b373f42103baeabd23318952ddb437d5",
+      "role": "existing optional source-adversarial projection"
+    },
+    {
+      "path": "/mnt/nas_data1/cashew/fada_expert_runs/CIV_NGA_SEN_agentguide_target2019_min50_max200_prior25_jhyapi_luna_high_local_20261019_v001/countries/CIV/runtime/scripts/supplementary_control_v4.py",
+      "sha256": "a36063b02de6f424e791e732babbf56e1de2dd3a830e26b7987b23353d02384c",
+      "role": "existing per-route supervision dose and exposure controls"
+    }
+  ],
+  "cashew_profile_example": {
+    "class_order": [
+      "crop_others",
+      "mixed_trees_grassland",
+      "cashew",
+      "built_up"
+    ],
+    "source_CE_weights": [
+      3,
+      3,
+      10,
+      3
+    ],
+    "ignore_index": 10,
+    "ordinary_decoder": "four_class_argmax_equals_2",
+    "target_final_evaluation_labels_for_online_control": false
+  },
+  "modules": [
+    {
+      "id": "M01",
+      "name": "adversarial_path_balance",
+      "implementation_status": "existing_branches_need_independent_controls",
+      "priority": "first_integration",
+      "controls": [
+        "model_local_scale",
+        "model_global_scale",
+        "optional_separate_local_global_D_optimization"
+      ],
+      "neutral": {
+        "model_local_scale": 1,
+        "model_global_scale": 1
+      },
+      "targets": [
+        "model_local_adversarial_loss",
+        "model_global_adversarial_loss"
+      ],
+      "caution": "A zero model-side scale does not itself disable opponent updates or forward/buffer effects."
+    },
+    {
+      "id": "M02",
+      "name": "class_related_alignment_priority",
+      "implementation_status": "new_design",
+      "priority": "first_integration",
+      "controls": [
+        "class_multipliers",
+        "pixel_priority_or_joint_channel_reweighting",
+        "normalization_policy"
+      ],
+      "neutral": {
+        "enabled": false,
+        "class_multipliers_policy": "all_ones_for_actual_task_class_count",
+        "cashew_example": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "targets": [
+        "local_D_source",
+        "local_D_target",
+        "model_local_adversarial_loss"
+      ],
+      "caution": "Pixel priority preserves within-pixel class proportions; channel reweighting changes the joint soft-label target. Wrong predicted classes can be amplified."
+    },
+    {
+      "id": "M03",
+      "name": "alignment_reliability",
+      "implementation_status": "new_design",
+      "priority": "first_integration",
+      "controls": [
+        "evidence_policy",
+        "soft_attenuation",
+        "affected_paths"
+      ],
+      "neutral": {
+        "enabled": false,
+        "effective_reliability": 1
+      },
+      "targets": [
+        "declared_local_D_and_model_paths"
+      ],
+      "caution": "Do not normalize away intended attenuation, equate high confidence with correctness, impose a universal probability gate, or turn a regional prior into truth."
+    },
+    {
+      "id": "M04",
+      "name": "confusable_class_pair_separation",
+      "implementation_status": "precise_loss_and_feature_adapter_not_yet_implemented",
+      "priority": "first_method_definition",
+      "controls": [
+        "class_pairs",
+        "feature_layer",
+        "legal_class_support",
+        "separation_method",
+        "strength",
+        "prototype_policy_if_used"
+      ],
+      "neutral": {
+        "enabled": false,
+        "strength": 0
+      },
+      "targets": [
+        "declared_trainable_model_features"
+      ],
+      "caution": "A distance on frozen raw inputs supplies no intended model gradient. Pseudo-label errors and multimodal class structure can invalidate a single-centroid remedy. No MCC or CCA-LSC implementation is claimed."
+    },
+    {
+      "id": "M05",
+      "name": "class_contribution_and_mass_correction",
+      "implementation_status": "new_design",
+      "priority": "later_when_supported",
+      "controls": [
+        "class_contribution_reduction",
+        "supported_prior_estimation",
+        "correction_strength"
+      ],
+      "neutral": {
+        "enabled": false
+      },
+      "targets": [
+        "declared_class_conditioning_or_reduction_stage"
+      ],
+      "caution": "Model mean responses do not identify true target priors. Do not force equal predicted class proportions or boost unsupported rare pseudo-classes."
+    },
+    {
+      "id": "M06",
+      "name": "shared_gradient_conflict_control",
+      "implementation_status": "existing_optional_source_guard_projection_needs_module_adapter",
+      "priority": "reuse",
+      "controls": [
+        "enabled",
+        "strength",
+        "declared_shared_parameter_support"
+      ],
+      "neutral": {
+        "strength": 0
+      },
+      "targets": [
+        "shared_model_adversarial_gradient_component"
+      ],
+      "caution": "Raw-gradient compatibility does not guarantee AdamW descent, source generalization or target quality. Two earlier mild-conflict cases showed no Cashew quality gain."
+    },
+    {
+      "id": "M07",
+      "name": "component_readiness_and_learning_policy",
+      "implementation_status": "partial_existing_probes_and_groups_dynamic_adapter_needed",
+      "priority": "later_when_needed",
+      "controls": [
+        "component_preparation",
+        "parameter_group_learning_policy",
+        "freezing",
+        "normalization_buffer_mode"
+      ],
+      "neutral": {
+        "policy": "preserve_exact_task_start_and_current_groups"
+      },
+      "targets": [
+        "actual_inherited_and_new_components",
+        "optimizer_groups",
+        "buffers_and_modes"
+      ],
+      "caution": "Frozen parameters can coexist with changing buffers. Prepared states are not adopted without exact state binding."
+    },
+    {
+      "id": "M08",
+      "name": "supervision_dose_and_exposure",
+      "implementation_status": "existing_human_and_auto_paths_independent_sign_controls_need_extension",
+      "priority": "reuse_then_extend",
+      "controls": [
+        "human_positive_dose",
+        "human_negative_dose",
+        "automatic_negative_dose",
+        "exposure_schedule",
+        "legal_selection_policy"
+      ],
+      "neutral": {
+        "policy": "preserve_pinned_task_supervision_routes_and_effective_sign_weights"
+      },
+      "targets": [
+        "separate_auxiliary_supervision_paths"
+      ],
+      "caution": "The current human outer weight also changes positive supervision through its ratio interface. An independent sign control must not silently change both. The current permissive automatic-negative policy remains distinct."
+    }
+  ],
+  "registry_contract": [
+    "Only implemented, version-bound and task-authorized entries appear as executable capabilities.",
+    "One registry supplies control semantics, callable implementation, packet descriptions, output schema and execution checks.",
+    "D/model paths, detach, loss reduction, state and optimizer ownership are explicit.",
+    "Disable/neutral behavior preserves the declared baseline, including legacy clipped soft-label mass.",
+    "The expert can select, adjust, disable and withdraw authorized modules without per-action human confirmation.",
+    "New methods may be developed in an authorized custom branch; formal integration is a separate version-bound capability.",
+    "Per-tile action selection does not require a parameter sweep or every module to be tried.",
+    "Cross-tile empirical knowledge retains compatible repetition, null/adverse cases and dependence within geography."
+  ],
+  "new_training": 0,
+  "new_scientific_model_calls": 0,
+  "installed_skill_changed": false,
+  "knowledge_evidence": [
+    {
+      "path": "/mnt/nas_data1/cashew/experiments/Expert_training_skill_refactor_20261015_v001/candidate/modular_suite_v001/skills/training-adjustment/references/adversarial-objectives-and-timescales.md",
+      "sha256": "bb02cdef90c68734cf70cc7fd096220b81cfee371c0352befdd147aa56efc747"
+    },
+    {
+      "path": "/mnt/nas_data1/cashew/experiments/Expert_training_skill_refactor_20261015_v001/candidate/modular_suite_v001/skills/training-diagnosis/references/multiple-losses-and-gradient-conflict.md",
+      "sha256": "67b4099dba71fb23ee8a739269d5cfaa61b1a93161be24742a709b54ca8b3ad2"
+    },
+    {
+      "path": "/mnt/nas_data1/cashew/experiments/Expert_training_skill_refactor_20261015_v001/candidate/modular_suite_v001/skills/training-adjustment/references/class-bias-and-pseudo-label-correction.md",
+      "sha256": "f70b6566f43f53b98357f48cd2e563285e251de720c558c12eb06e0020f7cedb"
+    },
+    {
+      "path": "/mnt/nas_data1/cashew/experiments/Expert_training_skill_refactor_20261015_v001/candidate/modular_suite_v001/skills/training-initialization/references/normalization-freezing-and-domain-mixtures.md",
+      "sha256": "78005ac5aef43aa57a8e568feffdb12de6045937b6037fec0c218da1fb43b7c1"
+    },
+    {
+      "path": "/mnt/nas_data1/cashew/experiments/Expert_training_skill_refactor_20261015_v001/candidate/modular_suite_v001/skills/training-experiment/references/mechanism-directed-training-procedures.md",
+      "sha256": "99faec8bb29d16f75d58144f97dbc12954c98734b298c9a5eeb48dd8fa3611db"
+    },
+    {
+      "path": "/mnt/nas_data1/cashew/experiments/Expert_training_skill_refactor_20261015_v001/candidate/modular_suite_v001/skills/deep-learning-training-expert/task_profiles/cashew_fada/historical-intervention-cases.md",
+      "sha256": "33a5ebd5826b7a0863cc3806b255c3cc7ba75182f039e7d51fa4463e19dd6c47"
+    }
+  ],
+  "updated_UTC": "2026-10-19T10:45:14.697024+00:00"
+}
