@@ -36,6 +36,8 @@ Relate each consequential choice to the current task and a plausible alternative
 
 Use the next response to revise the explanation where needed. Reversing a scalar, restoring a full checkpoint and continuing the current state preserve different progress. Count discarded updates, preparation, diagnostic branches, failures and replay. Do not keep repeating an easy proxy intervention after its semantic rationale fails.
 
+Before promoting a project-specific empirical action-to-response rule, require repetition across several distinct tiles under comparable conditions. Keep a single-tile result as a case, count years/seeds/branches within their tile, and retain contradictions. A repeated area or gradient effect is not a repeated accuracy benefit; use `training-experience-update` when revising this knowledge.
+
 STOP and SELECT answer separate questions. Useful learning can continue after a short plateau; remaining budget alone does not justify running to the cap. A stopped checkpoint is not automatically the best deployment artifact. Use permitted selection evidence and compare the strongest alternative without opening sealed final data.
 
 ## Keep delivery economical and faithful

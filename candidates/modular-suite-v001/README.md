@@ -24,6 +24,8 @@ The references cover component readiness and initialization; SGD/Adam/AdamW stat
 
 The Cashew profile separately preserves the source checkpoint/class objective, audited paths, AEF semantics, sample/prior roles, corrected-year identity, weak negatives, regional reasoning and actual historical counterexamples. Its local paths and execution settings belong to that project and the specified cohorts. Another task supplies its own profile and permissions.
 
+Its historical experience now separates multi-tile repetition from single-tile illustrations: an archive audit retained 1,479 recorded single-control comparisons over 239 global tile IDs, with exact-context and variable-pool strata, contrary responses and an existing eight-tile quality panel. Counts describe searched historical evidence, not prospective efficacy. Read the compact historical reference for a decision; open its numerical index only to verify a claim.
+
 Sources are cited in the relevant references. `PROFESSIONAL_KNOWLEDGE_SOURCE_MAP.json` retains hashes and interpretation scope for the archived originals and project evidence; local research paths in it identify provenance, not files supplied in this public repository. Original papers, private data, weights and account credentials are not bundled.
 
 ## Use and delivery

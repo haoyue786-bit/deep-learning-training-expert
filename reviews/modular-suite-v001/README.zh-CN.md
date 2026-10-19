@@ -46,16 +46,16 @@ CCA-LSC、SENTRY、严格label-shift后验修正各自改变不同环节。资�
 
 ## 保留了哪些真实Cashew经验
 
-四份原始历史comparison重新读核，摘要与原存档一致：
+原先四份个案仅覆盖两个tile，现已扩查2,096份comparison，筛出1,479份可用于单tile、单动作汇总的原始对照，涉及239个不同tile。同一tile的年份／seed／分支不增加独立tile数量。详细条件、反例及来源见[跨tile经验审阅](MULTITILE_EXPERIENCE_REVIEW_ZH.md)。
 
 |历史处理|记录中的响应|可保留的经验|
 |---|---|---|
-|lambda从0.004降到0.001|加权梯度比下降，但cashew预测扩张比对照更多|lambda不能当单调面积控制旋钮|
-|主LR从5e-6降到2e-6|地图变化减少，source F1小幅提高，梯度比反而升高|实际运动、梯度比和质量是不同量|
-|D每步更新2次改1次|出现独立的压力和地图变化响应|D频次与D LR不是同一干预|
-|温度1.8改2.2|短时变化极小|保留近空效应，不强行总结方向|
+|E5降低lambda，记录条件一致的43个tile|43个梯度比都降，腰果占比34降9升|重复机械响应不等于重复精度收益|
+|E25降低主LR，记录条件一致的4个tile|4个地图变化都更多，与此前单tile更稳定的响应不同|收窄旧经验，不把LR方向当稳定性保证|
+|启用历史弱负样本，条件相近的4个tile／更广23个tile|窄组4/4占比下降；广组15降8升，且均有实际负样本曝光|同时保留条件与反例，不把旧权重直接复制到当前自动负样本|
+|原192实验的D1对D2实际动作子集，8个空间tile|E10目标F1按tile汇总为4正3平1负，tile内也有相反响应|已有真实质量证据，但不支持统一D1规则|
 
-这些是旧数据和短时对照的机制证据，不是当前修订标签下的目标精度收益，也不是本候选的新实验。完整条件及原始路径见[历史案例](../../candidates/modular-suite-v001/skills/deep-learning-training-expert/task_profiles/cashew_fada/historical-intervention-cases.md)。
+短分支主要提供机械／地图响应；原192面板另提供其原始标签版本下的目标点位F1。两者分别报告，均非本候选新训练结果。单tile四例保留为个案，未单独晋级经验；温度和衰减的证据仍不足。完整条件及原始路径见[历史案例](../../candidates/modular-suite-v001/skills/deep-learning-training-expert/task_profiles/cashew_fada/historical-intervention-cases.md)。
 
 ## Cashew知识和通用知识怎样分开
 

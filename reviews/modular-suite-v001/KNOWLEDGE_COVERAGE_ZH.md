@@ -42,7 +42,7 @@
 |具体干预方法|保留并展开九类旧干预：lambda、模型LR、D的LR／频次、温度、置信cap、两种衰减、固定特征D拟合；逐项说明适用现象、比较、测量、响应解释和无效情况|training-experiment/references/mechanism-directed-training-procedures.md|
 |经验迁移与修正|TNP的响应相关迁移、Reflexion反馈局限、ExpeL经验与案例、A-Mem原事实和解释分离；按机制匹配，正／负／空效应分别提炼和撤回|training-experience-update/references/transferable-experience-and-revision.md|
 |Cashew特征与动作联系|继承误差、新D准备、有效正样本曝光、混交林／湿地、区域prior与原始AEF距离怎样改变初始化／调整方向，独立低权重负样本的累计贡献|deep-learning-training-expert/task_profiles/cashew_fada/tile-evidence-to-training-choices.md|
-|真实旧案例|四份原始comparison重新核对，保留lower-lambda但更扩张、低LR更稳定但ratio升高、D频次独立作用、温度近空效应；明确旧数据和目标无标签范围|deep-learning-training-expert/task_profiles/cashew_fada/historical-intervention-cases.md|
+|真实历史经验|扩查2,096份comparison，1,479份可汇总单tile对照、239个不同tile；条件分层、同tile重复归并、保留相反响应，收窄单例LR经验；原192目标F1动作子集另报，不把机械效果当质量收益|deep-learning-training-expert/task_profiles/cashew_fada/historical-intervention-cases.md；MULTITILE_EXPERIENCE_REVIEW_ZH.md|
 |知识利用入口|按实际症状找到机制资料；区分数学、作者代码、论文经验、本地推论和项目合同；把资料条件落实到动作与后续响应，而非只引用标题|deep-learning-training-expert/references/knowledge-use-and-navigation.md|
 
 另外扩充既有两项资料：多损失中加入不确定性加权的似然、分类近似、动态权重与日程交互；对抗知识中加入谱归一化的参数化、近似误差、卷积算子边界及D频次交互。没有将新算法自动安装到训练器。

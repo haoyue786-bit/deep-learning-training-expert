@@ -418,7 +418,7 @@
     },
     {
       "reference": "skills/training-experience-update/references/transferable-experience-and-revision.md",
-      "sha256": "7de2bf9bd63211a8aaa020caa662bcf9533121a0c77d35c93f0e487557cc2e64",
+      "sha256": "70405bd313521583cd6b1fa5296eef9ba428bcb6d36da9ff12708158c4ce9bcf",
       "source_snapshots": [
         {
           "path": "research/acquired/S010/paper.text.txt",
@@ -455,7 +455,7 @@
         "ExpeL Sections4-5 and reviewed extraction/retrieval pool paths",
         "A-Mem Sections3-4, original content vs generated interpretation"
       ],
-      "scope": "Conditional training-experience procedure is synthesis, not an implemented TNP, new memory service or proof of Cashew transfer."
+      "scope": "Conditional training-experience procedure is synthesis, not an implemented TNP, new memory service or proof of Cashew transfer. User-requested project empirical promotion now requires multi-tile repetition with contrary cases; not a universal significance cutoff."
     },
     {
       "reference": "skills/deep-learning-training-expert/task_profiles/cashew_fada/tile-evidence-to-training-choices.md",
@@ -501,7 +501,7 @@
         },
         {
           "path": "candidate/modular_suite_v001/skills/training-experience-update/references/transferable-experience-and-revision.md",
-          "sha256": "7de2bf9bd63211a8aaa020caa662bcf9533121a0c77d35c93f0e487557cc2e64"
+          "sha256": "70405bd313521583cd6b1fa5296eef9ba428bcb6d36da9ff12708158c4ce9bcf"
         }
       ],
       "source_locations": [
@@ -511,7 +511,7 @@
     },
     {
       "reference": "skills/deep-learning-training-expert/task_profiles/cashew_fada/historical-intervention-cases.md",
-      "sha256": "d82d272f199642b2ba7ee1ac2efc69a13d90831f1c120ddebfbdcdae2b45da4c",
+      "sha256": "33a5ebd5826b7a0863cc3806b255c3cc7ba75182f039e7d51fa4463e19dd6c47",
       "source_snapshots": [
         {
           "path": "/mnt/nas_data1/cashew/fada_expert_runs/planet_class2_over_1pct_tile_only_two_phase_20260910/2019/Tile2019_00000000000000000003/experiments/epoch_005/94f2460b0a0e/comparison.json",
@@ -536,12 +536,30 @@
         {
           "path": "/home/ubuntu/.codex_jhy/skills/cashew-fada-training-expert/references/historical-lessons.md",
           "sha256": "c21d4e74b8378baef8cdbe261c865ba6057e09fd3504b22e882144e3642f21b4"
+        },
+        {
+          "path": "research/historical_multitile_review_20261019_v001/analysis/comparisons.jsonl",
+          "sha256": "4a8b443e6b0a1bbf074b539ae72dfbd53f1f11ca44205802848e2b286980a217"
+        },
+        {
+          "path": "research/historical_multitile_review_20261019_v001/main192_action_response.json",
+          "sha256": "966c52e0322192a70dd80a3d1407922dc442fb19d4a21f2c8079690080c89c41"
+        },
+        {
+          "path": "research/historical_multitile_review_20261019_v001/search_paths.txt",
+          "sha256": "38ad86bfa12e6c4c690647a931a0cec099ff1f459eddf6c3f709f53b80283f09"
+        },
+        {
+          "path": "tools/audit_multitile_history_v001.py",
+          "sha256": "ef035e0c796b1785238d6ea43c4089e89ae4336e1b7fe38119339aef3a44c479"
         }
       ],
       "source_locations": [
-        "Four original config/steps/gradient/source-F1/spatial records; original hashes match retained archive"
+        "Four original config/steps/gradient/source-F1/spatial records; original hashes match retained archive",
+        "Expanded comparison ledger: source population, actual control changes, completed steps, source/target metrics and global tile identity.",
+        "Original frozen 192-run controls and pre-existing E10 quality comparisons; no new label evaluation."
       ],
-      "scope": "Read-only reconstruction and arithmetic; no rerun, full historical matching, current-label target-quality win or later adoption inferred."
+      "scope": "Exploratory multi-tile historical reconstruction with exact-context and variable-pool strata; retained contradictions and original single-tile illustrations. No target-accuracy inference from source/area/gradient metrics; no retrospective rewrite of frozen decisions."
     },
     {
       "reference": "skills/training-adjustment/references/class-bias-and-pseudo-label-correction.md",
@@ -676,8 +694,30 @@
         "OriginalCIV cashew.kmz; v2 country prior manifest preservingCIVv3; latest exact CIV8/9/10 exclusions"
       ],
       "scope": "Project provenance and permission-scoped roles. Corrected point-level target classes remain outside the decision Skill. No relabeling, evaluation, training or production changes."
+    },
+    {
+      "reference": "skills/deep-learning-training-expert/task_profiles/cashew_fada/historical-multitile-evidence.json",
+      "sha256": "a4867dbe70e67a80b20067e0e86d77b79be1e352e7260e5742afa7ede52f47db",
+      "source_snapshots": [
+        {
+          "path": "research/historical_multitile_review_20261019_v001/analysis/comparisons.jsonl",
+          "sha256": "4a8b443e6b0a1bbf074b539ae72dfbd53f1f11ca44205802848e2b286980a217"
+        },
+        {
+          "path": "research/historical_multitile_review_20261019_v001/analysis/audit_summary.json",
+          "sha256": "f00118100e207beb2e29ee0193ee53148a6cbe09f42fedb024ec29d726ee646b"
+        },
+        {
+          "path": "research/historical_multitile_review_20261019_v001/main192_action_response.json",
+          "sha256": "966c52e0322192a70dd80a3d1407922dc442fb19d4a21f2c8079690080c89c41"
+        }
+      ],
+      "source_locations": [
+        "Record-bound control/treatment metrics and original comparison/request hashes; 219 cited original comparisons."
+      ],
+      "scope": "Derived exploratory numerical index; all metrics preserve populations and horizons. No raw labels, checkpoints, new training or model calls. Read on demand."
     }
   ],
   "no_new_training_or_scientific_model_calls": true,
-  "updated_utc": "2026-10-19T08:14:27.139045+00:00"
+  "updated_utc": "2026-10-19T10:02:03.627399+00:00"
 }

@@ -1,14 +1,15 @@
 {
   "status": "completed knowledge-construction candidate; not installed or newly efficacy-validated",
   "files": {
-    "skills/deep-learning-training-expert/SKILL.md": "e71d03c32271332ecf5aa93071e1230eae4c62ee474092b0dfc7697ae0aab9e8",
+    "skills/deep-learning-training-expert/SKILL.md": "798a2029c5fd36751ab1569566b287f62bcf2efe409954edb8914dc50db26b50",
     "skills/deep-learning-training-expert/references/composition.md": "3d11292c56f13f5e504861a743b218c7fd929fde28f5f58c53ecea08aded77a3",
     "skills/deep-learning-training-expert/references/knowledge-use-and-navigation.md": "82298c182852ad534a0706330a53db3b0178ebac4df2364961aa795f6ba047c2",
     "skills/deep-learning-training-expert/scripts/suite_packet.py": "c5975abdbb5ecc4119b14c7d4042a6a75a16824e0941e280cac2fc097344b8bd",
     "skills/deep-learning-training-expert/task_profiles/cashew_fada/component-loss-paths.md": "6c001e6e72450ed517a7483ac72efb657aaf85170b3932ed64363d45a2503d83",
     "skills/deep-learning-training-expert/task_profiles/cashew_fada/data-labels-and-evidence-roles.md": "ee0cae1cb028144d1d0a454b3dc6a536c9d9ed44628eb11216518659ced36687",
     "skills/deep-learning-training-expert/task_profiles/cashew_fada/evidence_registry.py": "2297d0c78f4cb02b895f199aca47dbf8b7ac0f805b8b7f89fdd6a9dfc2f40944",
-    "skills/deep-learning-training-expert/task_profiles/cashew_fada/historical-intervention-cases.md": "d82d272f199642b2ba7ee1ac2efc69a13d90831f1c120ddebfbdcdae2b45da4c",
+    "skills/deep-learning-training-expert/task_profiles/cashew_fada/historical-intervention-cases.md": "33a5ebd5826b7a0863cc3806b255c3cc7ba75182f039e7d51fa4463e19dd6c47",
+    "skills/deep-learning-training-expert/task_profiles/cashew_fada/historical-multitile-evidence.json": "a4867dbe70e67a80b20067e0e86d77b79be1e352e7260e5742afa7ede52f47db",
     "skills/deep-learning-training-expert/task_profiles/cashew_fada/initialization-probe-semantics.md": "4ef19c43e4b63a0685424969d7e9dd948ed7674ac227a0acf7b2920907e7be38",
     "skills/deep-learning-training-expert/task_profiles/cashew_fada/packet_contract.py": "8885e1ce242f3e08bba93b779bc9b74ed9d1c431c4545d3642810c17bb40db22",
     "skills/deep-learning-training-expert/task_profiles/cashew_fada/profile.md": "e64f4a4e31d1ff74a1d68046ea1782c49990ed876ac6808ebc48f615b6d604e5",
@@ -41,9 +42,9 @@
     "skills/training-diagnosis/references/remote-sensing-shift-and-context.md": "db137f2c903b88f76fd65110a9ff3c5d8e8394844bc4449bb8872f147264565b",
     "skills/training-diagnosis/references/symptoms-and-differential-diagnosis.md": "72722bbc34eb96a13b8768c457bbb4b2426744b94489d2f8c06e6139c9ac3ec8",
     "skills/training-diagnosis/scripts/score_diagnostics.py": "09d3a25eda967d37466b0c7e6cd50820ec45fad477721ca62a2f2e1cc35633ef",
-    "skills/training-experience-update/SKILL.md": "31c6ab0981d21f439fd0ca19485181ce5242a4e06a3068a47d4da3b0f9cfad82",
+    "skills/training-experience-update/SKILL.md": "d026dafc09c2edf6073dcf4e3d76a9aba1e264695848d88bcc25560a33b983cc",
     "skills/training-experience-update/references/conditional-experience.md": "900a9b92013f5860ab0798b5e14d23f01d6e0da77315ce3b7d8178fcee58cc93",
-    "skills/training-experience-update/references/transferable-experience-and-revision.md": "7de2bf9bd63211a8aaa020caa662bcf9533121a0c77d35c93f0e487557cc2e64",
+    "skills/training-experience-update/references/transferable-experience-and-revision.md": "70405bd313521583cd6b1fa5296eef9ba428bcb6d36da9ff12708158c4ce9bcf",
     "skills/training-experiment/SKILL.md": "7e81e7cb44d13179519c62f2c1839e9a276bc62409a08cb90ea295fde4f3922a",
     "skills/training-experiment/references/diagnosis-and-experiments.md": "e65f22b6a464ed12199420b30668fa527c4fa0ca429acc553c363f9ba12d5535",
     "skills/training-experiment/references/mechanism-directed-training-procedures.md": "99faec8bb29d16f75d58144f97dbc12954c98734b298c9a5eeb48dd8fa3611db",
@@ -67,6 +68,6 @@
     "skills/training-stop/references/stopping-and-selection.md": "690942f9b22b86269e9d2b46928dbf918b5adf40b6bc7c27665bd5fc4e4458ef",
     "skills/training-stop/references/training-sufficiency-and-recovery.md": "522e282ea518af27d77b53169a17398e2a3d2a2dfda83a38434b7d2713a4a63a"
   },
-  "updated_utc": "2026-10-19T08:18:01.727972+00:00",
-  "readme_sha256": "5ec684d8a0cc78eccd237703118ce2e7d2054727ce1b3ec5f9de697f36308c4e"
+  "updated_utc": "2026-10-19T10:02:03.686900+00:00",
+  "readme_sha256": "699cb6adf975157cd4f3607faf4f1acc74bb9076aedda1209ba75a4d13fa357b"
 }

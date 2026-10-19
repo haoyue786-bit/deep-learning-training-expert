@@ -4,8 +4,8 @@
 
 |审阅／登记文件|用途|
 |---|---|
-|README.zh-CN.md|解释实际新增专业知识、使用方式与边界。|
-|../../candidates/modular-suite-v001/README.md|英文候选入口，说明九项能力、知识范围、实际投递与版本身份。|
+|PROFESSIONAL_KNOWLEDGE_REVIEW_ZH.md|解释实际新增专业知识、使用方式与边界。|
+|CANDIDATE_README.md|英文候选入口，说明九项能力、知识范围、实际投递与版本身份。|
 |KNOWLEDGE_COVERAGE_ZH.md|按主题说明具体内容、来源和剩余工作。|
 |PROFESSIONAL_KNOWLEDGE_SOURCE_MAP.json|绑定知识文件与原文／固定代码／真实案例的摘要及推论范围。|
 |BUILD_MANIFEST.json|记录英文Skill文件摘要，核对打包身份；不是效果证明。|
@@ -23,7 +23,8 @@
 |[task_profiles/cashew_fada/component-loss-paths.md](../../candidates/modular-suite-v001/skills/deep-learning-training-expert/task_profiles/cashew_fada/component-loss-paths.md)|记录实际模型中哪些组件参与分类或对抗梯度，避免按名字猜测。|
 |[task_profiles/cashew_fada/data-labels-and-evidence-roles.md](../../candidates/modular-suite-v001/skills/deep-learning-training-expert/task_profiles/cashew_fada/data-labels-and-evidence-roles.md)|登记真实样本／修订／ID／prior路径及用途，区分各cohort和后续组排除。|
 |[task_profiles/cashew_fada/evidence_registry.py](../../candidates/modular-suite-v001/skills/deep-learning-training-expert/task_profiles/cashew_fada/evidence_registry.py)|将Cashew不同证据总体分开登记核对，不从无标签代理计算目标精度。|
-|[task_profiles/cashew_fada/historical-intervention-cases.md](../../candidates/modular-suite-v001/skills/deep-learning-training-expert/task_profiles/cashew_fada/historical-intervention-cases.md)|保留四个原始历史案例的真实响应、反例、限制和文件摘要。|
+|[task_profiles/cashew_fada/historical-intervention-cases.md](../../candidates/modular-suite-v001/skills/deep-learning-training-expert/task_profiles/cashew_fada/historical-intervention-cases.md)|跨tile真实响应、相反案例和适用条件；四个单tile旧例保留为个案。|
+|[task_profiles/cashew_fada/historical-multitile-evidence.json](../../candidates/modular-suite-v001/skills/deep-learning-training-expert/task_profiles/cashew_fada/historical-multitile-evidence.json)|核数时使用：跨tile汇总、219份原始comparison身份和原192动作子集；不逐轮全量加载。|
 |[task_profiles/cashew_fada/initialization-probe-semantics.md](../../candidates/modular-suite-v001/skills/deep-learning-training-expert/task_profiles/cashew_fada/initialization-probe-semantics.md)|解释已有初始化探针的计步、拟合集与验证集、准备与采用语义。|
 |[task_profiles/cashew_fada/packet_contract.py](../../candidates/modular-suite-v001/skills/deep-learning-training-expert/task_profiles/cashew_fada/packet_contract.py)|解读当前Cashew输入控制、探针算术和选模schema；不选择科学动作。|
 |[task_profiles/cashew_fada/profile.md](../../candidates/modular-suite-v001/skills/deep-learning-training-expert/task_profiles/cashew_fada/profile.md)|Cashew领域入口：类别、源权重、实际组件、监督、prior与执行约定。|
