@@ -1,0 +1,683 @@
+{
+  "stage": "professional knowledge construction and task-directed use; no new scientific calls or training",
+  "references": [
+    {
+      "reference": "skills/training-initialization/references/functional-starts-and-transfer.md",
+      "sha256": "a73852e33b78e0ab5b069bb5eb1c08b11ce1d3037586a431d9f3e9eed9e7edba",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S004/entry.text.txt",
+          "sha256": "7eea6d29ef995f81d6168d771d6b7f6fedb6a400a161550a845c5ddc1158f2ec"
+        },
+        {
+          "path": "research/acquired/S003/entry.text.txt",
+          "sha256": "58aa25c061ed14d4e7389af10df971dbf94520b97de31a465e27182493eebc03"
+        },
+        {
+          "path": "research/acquired/S041/reviewed_optimizer_py.text.txt",
+          "sha256": "ba404f479e46841980523cc3a2768abbb3c16df270f0b0e2f672b65c27a05d7e"
+        },
+        {
+          "path": "research/acquired/S043/reviewed_configs__daformer__gta2cs_uda_warm_fdthings_rcs_croppl_a999_daformer_mitb5_s0_py.text.txt",
+          "sha256": "4e7d1ae6288bc37fd1f011e8a293d020388d7a325a64fe3da2ede56057779949"
+        }
+      ],
+      "source_locations": [
+        "S004 Weight Initialization, local lines178–236",
+        "S003 end-to-end skeleton / init well",
+        "Swin build_optimizer and grouping branches",
+        "DAFormer optimizer.paramwise_cfg"
+      ],
+      "scope": "Fan/component synthesis plus direct fixed-normalizer and finite-batch weighted-CE derivations, including E[n*w/S] and a single-example counterexample. No Cashew bias reset recommended."
+    },
+    {
+      "reference": "skills/training-initialization/references/normalization-freezing-and-domain-mixtures.md",
+      "sha256": "78005ac5aef43aa57a8e568feffdb12de6045937b6037fec0c218da1fb43b7c1",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S001/README_main.text.txt",
+          "sha256": "9ee275082cce3b7b1b49d1bfc7b1d6c0e2b4e6a415b6c67a73a72e2eedcd6187"
+        },
+        {
+          "path": "research/acquired/S041/reviewed_optimizer_py.text.txt",
+          "sha256": "ba404f479e46841980523cc3a2768abbb3c16df270f0b0e2f672b65c27a05d7e"
+        }
+      ],
+      "source_locations": [
+        "S001 Batch normalization implementation details, lines1549 onward",
+        "Swin parameter exclusion is not buffer/mode policy"
+      ],
+      "scope": "Mode/buffer/domain contrasts are conditional mechanism reasoning; external PyTorch2.14 semantics reviewed, not historical runtime proof"
+    },
+    {
+      "reference": "skills/training-adjustment/references/optimizer-state-and-control-interactions.md",
+      "sha256": "e5005f3b061c198edc82a7e56de00c87bc536f8e3fab5979007378f86ec9b6e9",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S005/entry.text.txt",
+          "sha256": "c19cda5db2b43471b3131e8c0c747523fa41f91db2783e591a8e7af2d7e92abf"
+        },
+        {
+          "path": "research/acquired/S001/README_main.text.txt",
+          "sha256": "9ee275082cce3b7b1b49d1bfc7b1d6c0e2b4e6a415b6c67a73a72e2eedcd6187"
+        },
+        {
+          "path": "research/acquired/S041/reviewed_optimizer_py.text.txt",
+          "sha256": "ba404f479e46841980523cc3a2768abbb3c16df270f0b0e2f672b65c27a05d7e"
+        }
+      ],
+      "source_locations": [
+        "S005 Adam/update monitoring",
+        "S001 optimizer equations lines2028–2088",
+        "Swin set_weight_decay"
+      ],
+      "scope": "Decay product and loss-scaling implications derived under stated forms; exact implementation and version matter"
+    },
+    {
+      "reference": "skills/training-adjustment/references/schedules-batches-and-numerical-stability.md",
+      "sha256": "0ff9744a019f8c53cde1ee3813a06973b1cc1af36fb2ea15bc58d57c9f65de75",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S001/README_main.text.txt",
+          "sha256": "9ee275082cce3b7b1b49d1bfc7b1d6c0e2b4e6a415b6c67a73a72e2eedcd6187"
+        },
+        {
+          "path": "research/acquired/S007/paper.text.txt",
+          "sha256": "9ba0fb9647a5865ff3b1ee59d60b44d74c693d2fbb32b80d5bd82412e7786688"
+        },
+        {
+          "path": "research/acquired/S041/reviewed_main_py.text.txt",
+          "sha256": "42515ea96c1fd0a741543368c8f30fb427ec5c2eaa412e4c10b05e9a153bde46"
+        }
+      ],
+      "source_locations": [
+        "S001 batch sections, instability/warmup/clipping lines1800–1985",
+        "Smith sections3–5",
+        "Swin main and accumulation/schedule paths"
+      ],
+      "scope": "125-microbatch example illustrative, not a measured Cashew training result"
+    },
+    {
+      "reference": "skills/training-diagnosis/references/symptoms-and-differential-diagnosis.md",
+      "sha256": "72722bbc34eb96a13b8768c457bbb4b2426744b94489d2f8c06e6139c9ac3ec8",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S003/entry.text.txt",
+          "sha256": "58aa25c061ed14d4e7389af10df971dbf94520b97de31a465e27182493eebc03"
+        },
+        {
+          "path": "research/acquired/S005/entry.text.txt",
+          "sha256": "c19cda5db2b43471b3131e8c0c747523fa41f91db2783e591a8e7af2d7e92abf"
+        },
+        {
+          "path": "research/acquired/S006/debug.text.txt",
+          "sha256": "cd25cff2c5c706d18e5c38da36a07af2b7c693309af321813450d1707e6d81d1"
+        },
+        {
+          "path": "research/acquired/S006/evaluate.text.txt",
+          "sha256": "5fa3a4eb4646ef661df5140649ca6176df20e72351b44f51032c266402a6cdb9"
+        },
+        {
+          "path": "research/acquired/S006/improve.text.txt",
+          "sha256": "5f1946da97c8c8fd99fdb469904652267618f31cbc1c6003b8b9186567b5ace9"
+        },
+        {
+          "path": "research/acquired/S044/paper.text.txt",
+          "sha256": "e559980fffa622383dae1494acd5791e17edb704b297c531d485c146aa72254d"
+        }
+      ],
+      "source_locations": [
+        "Recipe skeleton/overfit/regularize; CS231n diagnostics",
+        "FSDL Debug/Evaluate/Improve",
+        "DAFormer rare-class timing and inherited-feature analysis"
+      ],
+      "scope": "conditional professional knowledge; worked examples not newly executed; no training or model evaluation"
+    },
+    {
+      "reference": "skills/training-adjustment/references/regularization-sampling-and-loss-design.md",
+      "sha256": "4f42ad496219391b4ac1299cb7cc32d0d6048b3c6992a20b267e3ccc16f13731",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S004/entry.text.txt",
+          "sha256": "7eea6d29ef995f81d6168d771d6b7f6fedb6a400a161550a845c5ddc1158f2ec"
+        },
+        {
+          "path": "research/acquired/S003/entry.text.txt",
+          "sha256": "58aa25c061ed14d4e7389af10df971dbf94520b97de31a465e27182493eebc03"
+        },
+        {
+          "path": "research/acquired/S043/reviewed_mmseg__datasets__uda_dataset_py.text.txt",
+          "sha256": "88cd41786e04dacbe2672e0ab8df092da36d82f8a8d2c88a037f33479b6273bc"
+        }
+      ],
+      "source_locations": [
+        "CS231n regularization; Recipe regularize",
+        "DAFormer get_rcs_class_probs/get_rare_class_sample",
+        "PyTorch2.14 CE documentation, separate external release-specific source"
+      ],
+      "scope": "Sampling, weighting and reduction mechanisms; finite random batch normalization can change the constant optimum. Arithmetic examples not executed training."
+    },
+    {
+      "reference": "skills/training-adjustment/references/pseudo-label-confidence-and-feedback.md",
+      "sha256": "902c5ae6ae09760522a73f48be7cddfc60fd6f9d23762343c9468b9c24fb2fd6",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S033/author_paper.raw.txt",
+          "sha256": "5c61f94e4c795b939f636b6bcb07ffc5b48631a694c1b56026ddec868b868076"
+        },
+        {
+          "path": "research/acquired/S033/reviewed_adapt__solvers__adapt_py.text.txt",
+          "sha256": "abdb7ef14087e7241dd9d481e085cc3f559bcfbe4081ef6e6f674f92580b043c"
+        },
+        {
+          "path": "research/acquired/S043/reviewed_mmseg__models__uda__dacs_py.text.txt",
+          "sha256": "ad7ef6edb860b0c5e498d38065de5e2e7b27b0cb8dc02178746df3d4fa55cf8d"
+        }
+      ],
+      "source_locations": [
+        "SENTRY committee and selective entropy; solver solve",
+        "DAFormer _update_ema, pseudo-label and broadcast weight construction",
+        "Weak-negative loop is conditional synthesis, not an implementation claim about those papers"
+      ],
+      "scope": "conditional professional knowledge; worked examples not newly executed; no training or model evaluation"
+    },
+    {
+      "reference": "skills/training-fact-reconstruction/references/metrics-populations-and-error-slices.md",
+      "sha256": "5d4f2747e2c6dd1efc4889026b00028872657352cd988f6bc865d33447f60824",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S006/evaluate.text.txt",
+          "sha256": "5fa3a4eb4646ef661df5140649ca6176df20e72351b44f51032c266402a6cdb9"
+        },
+        {
+          "path": "research/acquired/S005/entry.text.txt",
+          "sha256": "c19cda5db2b43471b3131e8c0c747523fa41f91db2783e591a8e7af2d7e92abf"
+        },
+        {
+          "path": "research/acquired/S003/entry.text.txt",
+          "sha256": "58aa25c061ed14d4e7389af10df971dbf94520b97de31a465e27182493eebc03"
+        },
+        {
+          "path": "research/acquired/S007/paper.text.txt",
+          "sha256": "9ba0fb9647a5865ff3b1ee59d60b44d74c693d2fbb32b80d5bd82412e7786688"
+        }
+      ],
+      "source_locations": [
+        "FSDL distribution-aware evaluation",
+        "CS231n curve and update diagnostics; Recipe prediction dynamics",
+        "Smith sections4.2/5.2; confusion formulas and monotonic-score examples derived"
+      ],
+      "scope": "conditional professional knowledge; worked examples not newly executed; no training or model evaluation"
+    },
+    {
+      "reference": "skills/training-adjustment/references/adversarial-objectives-and-timescales.md",
+      "sha256": "bb02cdef90c68734cf70cc7fd096220b81cfee371c0352befdd147aa56efc747",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S030/paper.text.txt",
+          "sha256": "75c6bccd17c021959a4bafdb88650f4b0e2e3bddea05ef47d5557532a3ebea13"
+        },
+        {
+          "path": "research/acquired/S027/reviewed_train_adv_py.text.txt",
+          "sha256": "b80c8264f24180726688e865a1f4f4a426338de91c6041afd5ac3f30cb2868e0"
+        },
+        {
+          "path": "research/acquired/S029/reviewed_pytorch__loss_py.text.txt",
+          "sha256": "7f119f3a3be0cf15cde3fd32e368b4edd0f4d3409a77dd8118fb0595d643fb19"
+        },
+        {
+          "path": "research/acquired/S032/paper.text.txt",
+          "sha256": "45eb2864739a02c1a3cd6b7b752295150472b37eb81ee0f97f1c32c4b9c4f0d2"
+        }
+      ],
+      "source_locations": [
+        "TTUR task-dependent rates and A4/A5 outcomes",
+        "FADA source/target soft-label, detach and optimizer paths",
+        "CDAN feature outer product and entropy paths",
+        "S032 Sections2-4 and AppendicesA,C,E,F: spectral normalization, approximation, cadence interaction and relaxed bounds; author code not inspected"
+      ],
+      "scope": "Logit derivatives and response example explicitly derived; public FADA code not assumed identical to supplied project"
+    },
+    {
+      "reference": "skills/training-diagnosis/references/domain-shift-and-negative-transfer.md",
+      "sha256": "4bab67fd0f90abb3e6b31f3f24c8a07bddf833629c47cbc1ac1bbe65f086e665",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S034/author_paper.text.txt",
+          "sha256": "30b97d58d334b81c91a72cbcf85d17bb1bc0635f6bd172af82c6567286eb0e24"
+        },
+        {
+          "path": "research/acquired/S029/paper.text.txt",
+          "sha256": "e09ebd1f91bacd45d8e0e61c67a2e66666337366bdab3b4d23ffd70d8c5e33f0"
+        },
+        {
+          "path": "research/acquired/S027/author_paper.text.txt",
+          "sha256": "ae4738353382ab6f255ccb13ad5617a83b995636287423da7715da22d1a7bf5c"
+        }
+      ],
+      "source_locations": [
+        "GLS mixture/importance identities and source-versus-target error limits",
+        "CDAN conditional input and proxy joint",
+        "FADA class-conditioned output"
+      ],
+      "scope": "Mixture examples illustrative; CASUAL source supported by original reading record, no current code implementation claim"
+    },
+    {
+      "reference": "skills/training-diagnosis/references/multiple-losses-and-gradient-conflict.md",
+      "sha256": "67b4099dba71fb23ee8a739269d5cfaa61b1a93161be24742a709b54ca8b3ad2",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S051/paper.text.txt",
+          "sha256": "10c60394159b511deab7fadb46766809497ee53e4354877d218e8b4606de80d8"
+        },
+        {
+          "path": "research/acquired/S052/paper.text.txt",
+          "sha256": "d2be975e2d89fdcd3bc84e362acb45f4ca1e54e59d31f94137c1cd5bcde948d6"
+        },
+        {
+          "path": "research/acquired/S052/reviewed_PCGrad_tf_py.text.txt",
+          "sha256": "1bd41ed5b6ed0cb745f2b2d7892336acb318323f057c29f077be4c6ce6a4d179"
+        },
+        {
+          "path": "research/acquired/S005/entry.text.txt",
+          "sha256": "c19cda5db2b43471b3131e8c0c747523fa41f91db2783e591a8e7af2d7e92abf"
+        },
+        {
+          "path": "research/acquired/S053/paper.text.txt",
+          "sha256": "b3d2f3c03aedbbd561c753842e93c6e870fc2807cfd3aa96db03faa5fb35418a"
+        }
+      ],
+      "source_locations": [
+        "GradNorm section3 and Algorithm1; majority-class stagnation failure",
+        "PCGrad section2/Algorithm1, theory scope and zero-direction boundary",
+        "CS231n gradient versus actual update",
+        "S053 Section3.2 classification approximation and AppendixB effective weighting/schedule; Gaussian/CE stationary relations are direct algebra"
+      ],
+      "scope": "One-coordinate counterexample algebraic; no algorithm installed or executed"
+    },
+    {
+      "reference": "skills/training-initialization/references/transformer-and-segmentation-transfer.md",
+      "sha256": "68267f01aa8604b9858dd0e095754e6898e31d3ccd8dc0a1984a824caef162b2",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S041/author_swin_paper.text.txt",
+          "sha256": "b7ce10968b36e78b6eec7800c772b440da0252559e1c59538740226dad625c68"
+        },
+        {
+          "path": "research/acquired/S041/reviewed_models__swin_transformer_py.text.txt",
+          "sha256": "779c9ad487e2c577eff12a60c7a2f92267e2bb55c68f7bb32c8edad5ad5bd1e1"
+        },
+        {
+          "path": "research/acquired/S041/reviewed_optimizer_py.text.txt",
+          "sha256": "ba404f479e46841980523cc3a2768abbb3c16df270f0b0e2f672b65c27a05d7e"
+        },
+        {
+          "path": "research/acquired/S044/paper.text.txt",
+          "sha256": "e559980fffa622383dae1494acd5791e17edb704b297c531d485c146aa72254d"
+        },
+        {
+          "path": "research/acquired/S044/supplement.text.txt",
+          "sha256": "0d1524f57fa77fd4e110a4fd15ee74fd9f11e3c34eda2790e7e2e7bd68b5d55e"
+        },
+        {
+          "path": "research/acquired/S043/reviewed_configs__daformer__gta2cs_uda_warm_fdthings_rcs_croppl_a999_daformer_mitb5_s0_py.text.txt",
+          "sha256": "4e7d1ae6288bc37fd1f011e8a293d020388d7a325a64fe3da2ede56057779949"
+        },
+        {
+          "path": "research/acquired/S045/author_paper.text.txt",
+          "sha256": "aaea26e7c013ee93d6019138ae799e03f59590617c94fdbf4b393e4e6622c654"
+        }
+      ],
+      "source_locations": [
+        "Swin window/merging/geometry and ordinary vs SimMIM parameter grouping",
+        "DAFormer Sections3.2-3.3,4.2-4.5 and reviewed config",
+        "MIC source/target masking, size/ratio and teacher studies"
+      ],
+      "scope": "Conditional model-family synthesis; published rates remain attached to their setting, examples are not executed Cashew outcomes."
+    },
+    {
+      "reference": "skills/training-stop/references/training-sufficiency-and-recovery.md",
+      "sha256": "522e282ea518af27d77b53169a17398e2a3d2a2dfda83a38434b7d2713a4a63a",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S001/README_main.text.txt",
+          "sha256": "9ee275082cce3b7b1b49d1bfc7b1d6c0e2b4e6a415b6c67a73a72e2eedcd6187"
+        },
+        {
+          "path": "research/acquired/S016/paper.text.txt",
+          "sha256": "bb39f63e095ab495371a9282c74978c4375bbccde12fb7f26ad7a0b09bc315d7"
+        },
+        {
+          "path": "research/acquired/S017/paper.text.txt",
+          "sha256": "ed8a161e053114b5c124e674d21571756941b0aa4484d16b87694a7f5c9ece19"
+        },
+        {
+          "path": "research/acquired/S050/reviewed_timm__utils__checkpoint_saver_py.text.txt",
+          "sha256": "a60d80e4cd1a05e72b2a97be0544863f919dca882345b1f63c8bf8458e9d8fda"
+        }
+      ],
+      "source_locations": [
+        "S001 training steps, short-horizon transfer, evaluation/checkpoints",
+        "Freeze-thaw temporal prior and pause/resume allocation",
+        "Domhan predictive termination assumptions",
+        "timm save/recovery"
+      ],
+      "scope": "EMA timescale is direct mathematics; phase/recovery procedures are conditional synthesis, not universal patience or measured gains."
+    },
+    {
+      "reference": "skills/training-checkpoint-selection/references/checkpoint-ranking-calibration-and-deployment.md",
+      "sha256": "93859953ba781c9815ef8bd93acb8e8d64520fbd811f636752bc88cd01a57eab",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S001/README_main.text.txt",
+          "sha256": "9ee275082cce3b7b1b49d1bfc7b1d6c0e2b4e6a415b6c67a73a72e2eedcd6187"
+        },
+        {
+          "path": "research/acquired/S039/abstention_paper.text.txt",
+          "sha256": "f7d15579cb7b8dc8ba6d685814434f2cce7b925cb2eceed3d731ac1687c200bb"
+        },
+        {
+          "path": "research/acquired/S039/calibration_paper.text.txt",
+          "sha256": "b76356447466866f8f8c890b6b064d3391568e58174507f658c0e18e34f1799c"
+        },
+        {
+          "path": "research/acquired/S039/paper_identity_audit.json",
+          "sha256": "08dd10bfed073fb8e4ee563c230c5f0907959f586294d3ce2915bbfe5597b67b"
+        },
+        {
+          "path": "research/acquired/S050/reviewed_timm__utils__checkpoint_saver_py.text.txt",
+          "sha256": "a60d80e4cd1a05e72b2a97be0544863f919dca882345b1f63c8bf8458e9d8fda"
+        }
+      ],
+      "source_locations": [
+        "S001 evaluation/selection",
+        "MLLS actual title at legacy abstention_paper filename, Sections2-4",
+        "Abstention actual title at legacy calibration_paper filename",
+        "timm raw/EMA/state identities"
+      ],
+      "scope": "Binary monotonic and multiclass rank examples are direct mathematics. No historical Nigeria cause established; calibration/shift/abstention keep assumptions."
+    },
+    {
+      "reference": "skills/training-experiment/references/mechanism-directed-training-procedures.md",
+      "sha256": "99faec8bb29d16f75d58144f97dbc12954c98734b298c9a5eeb48dd8fa3611db",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S001/README_main.text.txt",
+          "sha256": "9ee275082cce3b7b1b49d1bfc7b1d6c0e2b4e6a415b6c67a73a72e2eedcd6187"
+        },
+        {
+          "path": "research/acquired/S078/experiment-library.md",
+          "sha256": "f02e48707b04a79bd7c34e3258333da1db40e5726100890e29d2b0da4971f71b"
+        }
+      ],
+      "source_locations": [
+        "S001 scientific/nuisance/fixed parameters and affordable informative comparisons",
+        "S078 nine recipes, evidence statuses and version-specific capabilities"
+      ],
+      "scope": "Retained methods expanded with suite mechanisms; old budgets not adopted as general limits. No experiments executed."
+    },
+    {
+      "reference": "skills/training-experience-update/references/transferable-experience-and-revision.md",
+      "sha256": "7de2bf9bd63211a8aaa020caa662bcf9533121a0c77d35c93f0e487557cc2e64",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S010/paper.text.txt",
+          "sha256": "f665a268689f8905bb08a210969dd5cb09555c863e96e00a95276a8916187740"
+        },
+        {
+          "path": "research/acquired/S066/paper.text.txt",
+          "sha256": "0e3467206f0eaaac031123dafb257c6123c4690917e69a749c8556f3c862b7ea"
+        },
+        {
+          "path": "research/acquired/S068/author_paper.text.txt",
+          "sha256": "b21dfe52981b2aea7490bf9dfccdc0dfd0af6718b72c29ba7ea40aefa9ed58fd"
+        },
+        {
+          "path": "research/acquired/S068/reviewed_agent__expel_py.text.txt",
+          "sha256": "7db4e1be3c16dfca589eb2e194cfb4604be224dab32a04f7f03c4529b1dfcf74"
+        },
+        {
+          "path": "research/acquired/S068/reviewed_eval_py.text.txt",
+          "sha256": "c6aa51d72d09e011666ea66baf2f5538eb71dda0dabfdc18d6278220cc3c5449"
+        },
+        {
+          "path": "research/acquired/S068/reviewed_insight_extraction_py.text.txt",
+          "sha256": "3f6851932d6031ac43353e6428412069d6df53c3ecb08fcfb681c0dd8de10f3e"
+        },
+        {
+          "path": "research/acquired/S069/arxiv_candidate.text.txt",
+          "sha256": "3e483cb4732b2b2e28e294a03431f4b033ff1af76af42aa8b45587aab0a8e5a1"
+        }
+      ],
+      "source_locations": [
+        "TNP configuration/outcome encoding and dataset-aware attention",
+        "Reflexion evaluator, limitations and adverse outcomes",
+        "ExpeL Sections4-5 and reviewed extraction/retrieval pool paths",
+        "A-Mem Sections3-4, original content vs generated interpretation"
+      ],
+      "scope": "Conditional training-experience procedure is synthesis, not an implemented TNP, new memory service or proof of Cashew transfer."
+    },
+    {
+      "reference": "skills/deep-learning-training-expert/task_profiles/cashew_fada/tile-evidence-to-training-choices.md",
+      "sha256": "5510c4219a0a67dbe236c0c19bbf518c6b8bf203e66c4f2d077863df91908e35",
+      "source_snapshots": [
+        {
+          "path": "candidate/modular_suite_v001/skills/deep-learning-training-expert/task_profiles/cashew_fada/profile.md",
+          "sha256": "e64f4a4e31d1ff74a1d68046ea1782c49990ed876ac6808ebc48f615b6d604e5"
+        },
+        {
+          "path": "candidate/modular_suite_v001/skills/deep-learning-training-expert/task_profiles/cashew_fada/component-loss-paths.md",
+          "sha256": "6c001e6e72450ed517a7483ac72efb657aaf85170b3932ed64363d45a2503d83"
+        },
+        {
+          "path": "candidate/modular_suite_v001/skills/deep-learning-training-expert/task_profiles/cashew_fada/woody-wetland-confusion.md",
+          "sha256": "3b41f9868b29e278f6a06dab21867c5529ce5b547176c2a4037fffe67538fd16"
+        }
+      ],
+      "source_locations": [
+        "Audited component/loss paths, approved project context and user-authorized soft negatives"
+      ],
+      "scope": "Project evidence-to-action synthesis, not an estimated mapping from tile features to optimal controls. Source weights and human/weak-label roles retained."
+    },
+    {
+      "reference": "skills/deep-learning-training-expert/references/knowledge-use-and-navigation.md",
+      "sha256": "82298c182852ad534a0706330a53db3b0178ebac4df2364961aa795f6ba047c2",
+      "source_snapshots": [
+        {
+          "path": "candidate/modular_suite_v001/skills/training-initialization/references/transformer-and-segmentation-transfer.md",
+          "sha256": "68267f01aa8604b9858dd0e095754e6898e31d3ccd8dc0a1984a824caef162b2"
+        },
+        {
+          "path": "candidate/modular_suite_v001/skills/training-stop/references/training-sufficiency-and-recovery.md",
+          "sha256": "522e282ea518af27d77b53169a17398e2a3d2a2dfda83a38434b7d2713a4a63a"
+        },
+        {
+          "path": "candidate/modular_suite_v001/skills/training-checkpoint-selection/references/checkpoint-ranking-calibration-and-deployment.md",
+          "sha256": "93859953ba781c9815ef8bd93acb8e8d64520fbd811f636752bc88cd01a57eab"
+        },
+        {
+          "path": "candidate/modular_suite_v001/skills/training-experiment/references/mechanism-directed-training-procedures.md",
+          "sha256": "99faec8bb29d16f75d58144f97dbc12954c98734b298c9a5eeb48dd8fa3611db"
+        },
+        {
+          "path": "candidate/modular_suite_v001/skills/training-experience-update/references/transferable-experience-and-revision.md",
+          "sha256": "7de2bf9bd63211a8aaa020caa662bcf9533121a0c77d35c93f0e487557cc2e64"
+        }
+      ],
+      "source_locations": [
+        "Symptom/mechanism navigation and application; primary sources retained at owning references"
+      ],
+      "scope": "Integration instructions. Delivery alone proves neither comprehension nor efficacy."
+    },
+    {
+      "reference": "skills/deep-learning-training-expert/task_profiles/cashew_fada/historical-intervention-cases.md",
+      "sha256": "d82d272f199642b2ba7ee1ac2efc69a13d90831f1c120ddebfbdcdae2b45da4c",
+      "source_snapshots": [
+        {
+          "path": "/mnt/nas_data1/cashew/fada_expert_runs/planet_class2_over_1pct_tile_only_two_phase_20260910/2019/Tile2019_00000000000000000003/experiments/epoch_005/94f2460b0a0e/comparison.json",
+          "sha256": "2a6dfc8875b056ba56394b1467468c62611f420982ee1e5330a04ed7a591d84c"
+        },
+        {
+          "path": "/mnt/nas_data1/cashew/fada_expert_runs/planet_class2_over_1pct_tile_only_two_phase_20260910/2019/Tile2019_00000000000000000003/experiments/epoch_015/17bce79a1257/comparison.json",
+          "sha256": "b5fcd3d5024f153abb3a866ea150a45aba4f6a6fa8f876877308f1864e46d436"
+        },
+        {
+          "path": "/mnt/nas_data1/cashew/fada_expert_runs/planet_class2_over_1pct_tile_only_two_phase_20260910/2019/Tile2019_00000000000000000003/experiments/epoch_020/adc3d34ebbff/comparison.json",
+          "sha256": "330b4cd8f9f6a5f9e3bd84dd32158c055ad7f282dda053b31056a674ba579d32"
+        },
+        {
+          "path": "/mnt/nas_data1/cashew/fada_expert_runs/planet_class2_over_1pct_tile_only_two_phase_20260910/2019/Tile2019_00000000000000000014/experiments/epoch_060/b04e4dc34271/comparison.json",
+          "sha256": "20e81865874b317544d5b0170d99139b1ae58bfca7f22ed4c1d1d01d46b93fff"
+        },
+        {
+          "path": "/home/ubuntu/.codex_jhy/skills/cashew-fada-training-expert/references/history-evidence.json",
+          "sha256": "51f887bd654efb80de1552e6cf7a8e2124a0a88ea1b68f0b525f531314f24d12"
+        },
+        {
+          "path": "/home/ubuntu/.codex_jhy/skills/cashew-fada-training-expert/references/historical-lessons.md",
+          "sha256": "c21d4e74b8378baef8cdbe261c865ba6057e09fd3504b22e882144e3642f21b4"
+        }
+      ],
+      "source_locations": [
+        "Four original config/steps/gradient/source-F1/spatial records; original hashes match retained archive"
+      ],
+      "scope": "Read-only reconstruction and arithmetic; no rerun, full historical matching, current-label target-quality win or later adoption inferred."
+    },
+    {
+      "reference": "skills/training-adjustment/references/class-bias-and-pseudo-label-correction.md",
+      "sha256": "f70b6566f43f53b98357f48cd2e563285e251de720c558c12eb06e0020f7cedb",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S038/paper.text.txt",
+          "sha256": "93db32b63caf9c69f9746958b4183d6e61bbae31afa0522fc8610a6334635a7b"
+        },
+        {
+          "path": "research/acquired/S038/reviewed_main_DebiasPL_py.text.txt",
+          "sha256": "de789b29b6f9114aad09398f76ed10789b8ad645a6fc36b7b781cef7672f3343"
+        },
+        {
+          "path": "research/acquired/S036/paper.text.txt",
+          "sha256": "a928c1b4d665f12e36f4f55d137d739d686c3dc2701e226cab510e4f70d18d43"
+        },
+        {
+          "path": "research/acquired/S037/reviewed_CCA-LSC_py.text.txt",
+          "sha256": "98b15845d6a7507b0d25257e0f55f1621777ccc4326ed351b6763eb748b98d01"
+        },
+        {
+          "path": "research/acquired/S037/reviewed_datasets__officehome_py.text.txt",
+          "sha256": "5f2f278c1f1f8deae23c9c6fc616a4a1493bb6708ce0cb26eaa5f6f892356d29"
+        },
+        {
+          "path": "research/acquired/S037/reviewed_datasets__domainnet_py.text.txt",
+          "sha256": "0f0da20d8ca3b45c2c68aebd96b0cbd954767bd3199086148e074d53d6f3a04b"
+        }
+      ],
+      "source_locations": [
+        "DebiasPL Sections3-4, assignment/margin and qhat/resume path",
+        "CCA-LSC method and implementation distribution_estimation, retained threshold, source ratio and phase reconstruction"
+      ],
+      "scope": "Conditional mechanisms and direct sign/bound examples; current snapshots differ from papers, not adopted strict-unlabeled implementations or new training results."
+    },
+    {
+      "reference": "skills/training-fact-reconstruction/references/training-state-and-trajectory-identity.md",
+      "sha256": "97a1d5b2a6797fd30a585d91343f74a615edd83718a4d63ee9bfb9580bb90297",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S062/entry.text.txt",
+          "sha256": "60c506c02e71c6e5c6fbb6d8c5234fd869cadcf7b4f136199b5dd4c61ba5762b"
+        },
+        {
+          "path": "research/acquired/S008/canonical_2_14.text.txt",
+          "sha256": "8e46f52c901780ac1b2e70a5756016d62788a611c32bde8070cbfdf553b6e226"
+        },
+        {
+          "path": "research/acquired/S050/reviewed_timm__utils__checkpoint_saver_py.text.txt",
+          "sha256": "a60d80e4cd1a05e72b2a97be0544863f919dca882345b1f63c8bf8458e9d8fda"
+        },
+        {
+          "path": "research/acquired/S059/paper.text.txt",
+          "sha256": "dd51cee5a76ffe56590b6cecea92616f0db0ee3e426ed2bfc6d51f647a1d631d"
+        }
+      ],
+      "source_locations": [
+        "PyTorch general/multiple checkpoints, reference aliasing and warm starts",
+        "Archived2.14 reproducibility scope and independent RNG/data worker state",
+        "timm checkpoint branch/state handling",
+        "PBT lineage and final settings versus inherited trajectory"
+      ],
+      "scope": "State interpretation and worker/Agent division are synthesis. Archived docs do not identify the installed runtime; no framework checkpoints loaded or GPU execution performed."
+    },
+    {
+      "reference": "skills/training-diagnosis/references/remote-sensing-shift-and-context.md",
+      "sha256": "db137f2c903b88f76fd65110a9ff3c5d8e8394844bc4449bb8872f147264565b",
+      "source_snapshots": [
+        {
+          "path": "research/acquired/S040/user_supplied_full.text.txt",
+          "sha256": "8525604814c4dfbaac1543a59756a11e55e5795eda89d9570313ed0a47e5a21c"
+        },
+        {
+          "path": "/mnt/nas_data1/cashew/reference/1-s2.0-S1051200424001763-main.pdf",
+          "sha256": "0ef9a9453ccb4c8641f36b88824de07d943abac7547a2940bb204aea22f46aa5"
+        },
+        {
+          "path": "research/acquired/S046/publisher_cdn_v2.text.txt",
+          "sha256": "243d4fc5a87d02c695d31acb5be231093d5b8ad4ee1cfc1e88c0a41760ee4846"
+        },
+        {
+          "path": "research/acquired/S046/reviewed_entropy_rank__entropy_py.text.txt",
+          "sha256": "803450ce83ff0858c49e7fb2cc9542c666e1f6b4934e6e8b02a3baad9d197bca"
+        },
+        {
+          "path": "research/acquired/S046/reviewed_ADVENT__advent__domain_adaptation__eval_UDA_py.text.txt",
+          "sha256": "eb73b5c1d88f381b898da56a201a45d0d0fca9574dd548bae004dc0bdbaf86f5"
+        }
+      ],
+      "source_locations": [
+        "DSP2024 Sections3-4 Fourier class masks, two-D semantics and counterexample ablation",
+        "Agricultural Swin physical resolution/crops, COM/COR, entropy implementation and conditional metric aggregation"
+      ],
+      "scope": "Cross-task conditional synthesis, not a demonstrated AEF intervention. S047 explicitly user-waived and supplies no claims."
+    },
+    {
+      "reference": "skills/deep-learning-training-expert/task_profiles/cashew_fada/data-labels-and-evidence-roles.md",
+      "sha256": "ee0cae1cb028144d1d0a454b3dc6a536c9d9ed44628eb11216518659ced36687",
+      "source_snapshots": [
+        {
+          "path": "/mnt/nas_data1/cashew/country_shp/data/sample_change_records/README.md",
+          "sha256": "88a7b2c56411c2599053dd2590e57eb10ffcc004137307e3fae540e17709339a"
+        },
+        {
+          "path": "/mnt/nas_data1/cashew/country_shp/data/sample_change_records/20261015_2019_2025_point_corrections_v002/change_record.json",
+          "sha256": "b4ebf682ed853652a0d048fb1b77bda8428eb4e393b0cfb2cf68d0aa034d4184"
+        },
+        {
+          "path": "/mnt/nas_data1/cashew/country_shp/data/sample_change_records/20261015_2019_2025_point_corrections_v002/independent_verification.json",
+          "sha256": "eec97199a362011f7db2f469387be8e3549d547b7ef6b30a49bc066625b76c94"
+        },
+        {
+          "path": "/mnt/nas_data1/cashew/human_sample_banks/current_bank.json",
+          "sha256": "2d87b315562d03fc069a53ee46f57a7500767d4d820517b3fcfffcd590268966"
+        },
+        {
+          "path": "/mnt/nas_data1/cashew/country_shp/data/supplyment_sample/cashew.kmz",
+          "sha256": "d07f791f6f2ab4d316636c326bff5336a832c04b40c1e583269c163282d8a397"
+        },
+        {
+          "path": "/mnt/nas_data1/cashew/experiments/WestAfrica_regional_cashew_prior_20261014_v002/manifest.json",
+          "sha256": "ddc4c78a90cce240368c192ed083f383b1c4d633fe0394b62e3d57e21388ee02"
+        },
+        {
+          "path": "/mnt/nas_data1/cashew/fada_expert_runs/training_scope_policy.json",
+          "sha256": "d4fe72afe57fe6369ebb360364ef5118c2ff15e1e7ee6e6540b667e0b6f17102"
+        }
+      ],
+      "source_locations": [
+        "User/project asset roles, correction lineage and human-cohort exclusions",
+        "OriginalCIV cashew.kmz; v2 country prior manifest preservingCIVv3; latest exact CIV8/9/10 exclusions"
+      ],
+      "scope": "Project provenance and permission-scoped roles. Corrected point-level target classes remain outside the decision Skill. No relabeling, evaluation, training or production changes."
+    }
+  ],
+  "no_new_training_or_scientific_model_calls": true,
+  "updated_utc": "2026-10-19T08:14:27.139045+00:00"
+}

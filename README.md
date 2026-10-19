@@ -24,7 +24,7 @@ There is no mandatory probe menu, fixed optimal parameter set, universal stoppin
 
 v028 contains the exact 18 files activated locally. `MANIFEST.json` records each SHA-256. Python helpers were parsed and the original package was hash-verified before upload. This repository is the instruction package, not the full training executor.
 
-Research included fact-understanding tests, 16 initialization runs, 192 frozen Cashew training runs and a bounded continuation/selection case. The 192-run study averaged +0.3987 F1 percentage points relative to fixed training, but an interval accounting for related observations included zero. The later bounded case lost to its fixed baseline on final evaluation. Stable superiority, reliable natural STOP and general-purpose accuracy gains are not established. Public-task comparisons remain ongoing.
+Research included fact-understanding tests, 16 initialization runs, 192 frozen Cashew training runs and a bounded continuation/selection case. The 192-run study averaged +0.3987 F1 percentage points relative to fixed training, but an interval accounting for related observations included zero. The later bounded case lost to its fixed baseline on final evaluation. Stable superiority, reliable natural STOP and general-purpose accuracy gains are not established. Public-task comparisons are currently held while professional knowledge construction is completed.
 
 No datasets, checkpoints, raw private logs or credentials are included. The interactive explanation is https://training-skill-in-motion.bravebow12.chatgpt.site .
 
@@ -38,3 +38,7 @@ for name, expected in manifest['files_sha256'].items():
     assert hashlib.sha256(Path(name).read_bytes()).hexdigest() == expected, name
 print('Verified', manifest['file_count'], 'Skill files')
 ```
+
+## Modular professional knowledge candidate
+
+The [English modular candidate](candidates/modular-suite-v001/README.md) contains the expanded professional references and nine cooperating Skill entries. Its [Chinese human review](reviews/modular-suite-v001/README.zh-CN.md) explains the actual mechanisms, concrete cases and use of knowledge. This nested review package does not replace the v028 files installed by the command above.

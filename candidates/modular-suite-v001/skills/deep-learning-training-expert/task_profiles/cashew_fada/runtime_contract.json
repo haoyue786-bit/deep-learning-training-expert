@@ -1,0 +1,77 @@
+{
+  "profile": "cashew_fada",
+  "version": "candidate_20261017_v013_contract_clarity",
+  "role": "Scientific decision provider; supplied packet and owning executor determine executable authority",
+  "decision_modes": [
+    "initialization",
+    "training_review",
+    "experiment_review",
+    "checkpoint_selection"
+  ],
+  "contract_precedence": "Explicit user authorization and actual pinned task packet, with conflicts made explicit",
+  "output": "Exact schema attached to the current turn; no extra fields or invented action enums",
+  "state_preparation": {
+    "scientifically_considered": true,
+    "executable_by_installing_this_skill": false,
+    "requirement": "Worker advertises operation, complete state identity, data/step budget and adoption semantics",
+    "existing_scalar_only_packet_behavior": "Choose legal controls; unsupported preparation may be explained as a proposal in existing reasoning fields"
+  },
+  "ordinary_class_order": {
+    "0": "crop_others",
+    "1": "mixed_trees_grassland",
+    "2": "cashew",
+    "3": "built_up"
+  },
+  "source_objective": {
+    "loss": "weighted_four_class_cross_entropy",
+    "class_weights": [
+      3,
+      3,
+      10,
+      3
+    ],
+    "ignore_index": 10,
+    "may_change": false
+  },
+  "fresh_source": "canonical Benin2019 E173; task supplies exact artifact hash",
+  "model_route": {
+    "account": "/home/ubuntu/.codex_jhy",
+    "proxy": "http://127.0.0.1:7890",
+    "jhyapi": false
+  },
+  "scope_limits": [
+    "No new target-accuracy evidence from behavior testing",
+    "No universal scalar/prior/gradient thresholds",
+    "No automatic production migration",
+    "No inherited permission to open TEST outcomes"
+  ],
+  "recovery": "Use current packet, schema and semantic consumer; preserve rejected answers and original cost. Historical budgets are records, not active execution limits.",
+  "historical_first_behavior_test": {
+    "GPU": false,
+    "training": false,
+    "formal_mutation": false,
+    "real_decisions_maximum": 8,
+    "actual_turns_including_repairs_maximum": 12,
+    "total_tokens_maximum": 400000,
+    "active_execution_contract": false
+  },
+  "current_objective": {
+    "primary": "Task recognition quality, with FP/FN reported",
+    "cost_saving_required": false,
+    "endpoint": "Supplied prospective stage contract; never retroactively change a completed experiment"
+  },
+  "local_research_limits": {
+    "physical_GPUs": [
+      0,
+      1,
+      2,
+      3,
+      6
+    ],
+    "prefer": 6,
+    "max_tasks_per_GPU": 4,
+    "max_machine_tasks": 24,
+    "worker_owns_leases_and_actual_occupancy_checks": true
+  },
+  "selection": "When SELECT_CHECKPOINT is required, return an actual eligible integer epoch; unknown quality permits a provisional choice, not a null artifact. Owning caller specializes schema before dispatch."
+}
