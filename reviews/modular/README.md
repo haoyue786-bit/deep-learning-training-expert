@@ -5,7 +5,7 @@
 - [专业知识与实际使用说明](../modular-suite-v001/README.zh-CN.md)：新版补充了哪些知识，以及这些知识如何帮助 Agent 做训练判断。
 - [逐文件中文说明](../modular-suite-v001/FILE_GUIDE_ZH.md)：每个文件的简短用途。
 - [跨 tile 历史经验审阅](../modular-suite-v001/MULTITILE_EXPERIENCE_REVIEW_ZH.md)：相同动作在多个 tile 的实际响应、反例和总结边界。
-- [可调用训练方法库设计](../modular-suite-v001/INTERVENTION_MODULE_LIBRARY_DESIGN_ZH.md)：独立模块、选择依据和调用权限的设计稿，尚未新增可执行训练能力。
+- [可调用训练方法库设计](../../DESIGN.md)：独立方法模块，以及历史／人工／自动负样本的接入设计；尚未新增可执行训练能力。
 - [知识覆盖清单](../modular-suite-v001/KNOWLEDGE_COVERAGE_ZH.md)：按主题核对完整性。
 - [完整英文候选 Skill](../../candidates/modular-suite-v001/README.md)：九个模块及其详细专业资料。
 

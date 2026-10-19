@@ -28,6 +28,26 @@
       "path": "/mnt/nas_data1/cashew/fada_expert_runs/CIV_NGA_SEN_agentguide_target2019_min50_max200_prior25_jhyapi_luna_high_local_20261019_v001/countries/CIV/runtime/scripts/supplementary_control_v4.py",
       "sha256": "a36063b02de6f424e791e732babbf56e1de2dd3a830e26b7987b23353d02384c",
       "role": "existing per-route supervision dose and exposure controls"
+    },
+    {
+      "path": "/mnt/nas_data1/cashew/fada_expert_runs/CIV_NGA_SEN_agentguide_target2019_min50_max200_prior25_jhyapi_luna_high_local_20261019_v001/countries/CIV/runtime/scripts/human_polygon_v1.py",
+      "sha256": "0e2d8d6200d630b99cc9839323c533af2b0f7a7e0202f2ad4bff2d5817fbbf23",
+      "role": "current human supervision adapter, sign-ratio coupling and held-out/training roles"
+    },
+    {
+      "path": "/mnt/nas_data1/cashew/fada_expert_runs/CIV_NGA_SEN_agentguide_target2019_min50_max200_prior25_jhyapi_luna_high_local_20261019_v001/countries/CIV/runtime/scripts/masked_cashew_polygon_loss.py",
+      "sha256": "797024b3e1719ac375c41a27de210a7f26cf86ce51aa0fe571de5334122e82a0",
+      "role": "actual separate-sign binary supervision means and validity masks"
+    },
+    {
+      "path": "/mnt/nas_data1/cashew/fada_expert_runs/CIV_NGA_SEN_agentguide_target2019_min50_max200_prior25_jhyapi_luna_high_local_20261019_v001/countries/CIV/runtime/scripts/automatic_negative_production_v4.py",
+      "sha256": "afaa5a75c3d16312d7f8e81d0714c9e3d7b5d4b7c6deb5b90ac1d5e5b8a2b42e",
+      "role": "actual permissive automatic selection, finite generation and task constraints"
+    },
+    {
+      "path": "/mnt/nas_data1/cashew/fada_expert_runs/CIV_NGA_SEN_agentguide_target2019_min50_max200_prior25_jhyapi_luna_high_local_20261019_v001/countries/CIV/runtime/scripts/automatic_negative_pool_uncapped_v3.py",
+      "sha256": "36c1aed37e96b06d349ea5e8e6ce2baed25a5783e5f2394018ad501dbb53d4f8",
+      "role": "actual uncapped patch exposure, memory microbatches and auxiliary loss reduction"
     }
   ],
   "cashew_profile_example": {
@@ -196,14 +216,17 @@
     {
       "id": "M08",
       "name": "supervision_dose_and_exposure",
-      "implementation_status": "existing_human_and_auto_paths_independent_sign_controls_need_extension",
+      "implementation_status": "existing_routes_need_pluggable_adapters_and_independent_sign_controls",
       "priority": "reuse_then_extend",
       "controls": [
+        "per_plugin_enable_disable_and_quarantine",
+        "historical_weak_negative_dose",
         "human_positive_dose",
         "human_negative_dose",
         "automatic_negative_dose",
         "exposure_schedule",
-        "legal_selection_policy"
+        "legal_selection_policy",
+        "pool_refresh_and_expiry_within_advertised_task_capabilities"
       ],
       "neutral": {
         "policy": "preserve_pinned_task_supervision_routes_and_effective_sign_weights"
@@ -211,7 +234,109 @@
       "targets": [
         "separate_auxiliary_supervision_paths"
       ],
-      "caution": "The current human outer weight also changes positive supervision through its ratio interface. An independent sign control must not silently change both. The current permissive automatic-negative policy remains distinct."
+      "plugins": [
+        {
+          "id": "historical_weak_negative",
+          "callable": false,
+          "status": "adapter_design_only",
+          "evidence_role": "versioned_historical_weak_annotation_not_human_truth",
+          "controls": [
+            "enabled",
+            "authorized_subset",
+            "negative_weight",
+            "exposure_schedule",
+            "quarantine"
+          ],
+          "migration": "Preserve the actual originating loss, reduction and selection method. Do not enable a forbidden legacy pool in a current-human-only task."
+        },
+        {
+          "id": "human_negative",
+          "callable": false,
+          "status": "independent_sign_adapter_design_only",
+          "evidence_role": "current_task_authorized_human_noncashew_annotation",
+          "label_semantics": "not_cashew_without_assigning_a_specific_other_class",
+          "controls": [
+            "enabled",
+            "authorized_subset",
+            "negative_weight",
+            "exposure_schedule",
+            "quarantine"
+          ],
+          "migration": "Do not automatically rewrite human labels using model confidence, feature distance or prior. Preserve annotation revisions."
+        },
+        {
+          "id": "automatic_negative",
+          "callable": false,
+          "status": "existing_mechanism_needs_version_bound_plugin_adapter",
+          "evidence_role": "revisable_agent_pseudo_negative_hypothesis",
+          "label_semantics": "not_cashew_without_assigning_a_specific_other_class",
+          "controls": [
+            "enabled",
+            "advertised_selection_policy",
+            "selected_count",
+            "independent_low_weight",
+            "advertised_refresh_and_expiry",
+            "quarantine"
+          ],
+          "selection": "Legal training patches; source Cashew AEF relation, rising Cashew probability and approved regional prior as soft evidence. No universal high-p2 gate, non-Cashew prototype requirement, geographic quota or preset patch-count cap.",
+          "legacy_behavior": "Production v4 preserves its one occurrence per selected patch across 128 normal optimizer updates, age and pixel-dose limits, task dose bounds and existing selection constraints. These are version-specific, not universal module defaults. Do not advertise mutable horizon or new loss controls before the task executor supports them."
+        },
+        {
+          "id": "human_positive",
+          "callable": false,
+          "status": "independent_sign_adapter_design_only",
+          "evidence_role": "current_task_authorized_human_cashew_annotation",
+          "controls": [
+            "enabled",
+            "authorized_subset",
+            "positive_weight",
+            "exposure_schedule"
+          ],
+          "migration": "Positive supervision must remain independent when negatives are adjusted or disabled. Legacy mapping at each time t is w_Hneg(t)=w_neg(t), w_Hpos(t)=w_neg(t)*positive_scale, with the same batches, masks, sign means, auxiliary BN behavior and schedule."
+        }
+      ],
+      "plugin_contract": {
+        "status": "proposed_not_executable",
+        "identity": [
+          "plugin_and_code_version",
+          "pool_manifest_hash",
+          "originating_method",
+          "annotation_version",
+          "year_and_geometry",
+          "legal_data_role"
+        ],
+        "lifecycle": [
+          "prepare_legal_candidates",
+          "select_or_abstain",
+          "schedule_exposure",
+          "compute_declared_supervision",
+          "report_actual_response",
+          "save_and_restore_state"
+        ],
+        "loss_contract": "Declare masks, differentiable paths, reduction and effective independent sign weights; absent support produces zero contribution and an absent-support report, not successful learning.",
+        "overlap_policy": "Do not add duplicate pixel losses across negative sources by default. Keep overlap ownership explicit. Current authorized human labels take precedence over automatic hypotheses; unresolved human conflicts remain recorded and inactive pending correction.",
+        "protected_data": "Preserve task-specific held-out locations, evaluation geometry and human-marked protection. Final evaluation labels are not selection inputs; annotations from different years are not automatically interchangeable.",
+        "state": [
+          "selected_ids_and_masks",
+          "selection_checkpoint_identity",
+          "pool_generation_and_expiry",
+          "weight_schedule",
+          "exposure_cursor_and_counts",
+          "rng_state",
+          "quarantine_state"
+        ],
+        "disable_semantics": "Stops future contribution; does not undo past parameter updates. Undo requires restoring the complete bound training state. Resume does not renew a consumed pool budget.",
+        "response_evidence": [
+          "actual_exposure_and_gradient_contribution_when_available",
+          "source_validation",
+          "authorized_heldout_negative_false_positives",
+          "authorized_positive_retention",
+          "spatial_anomaly_context"
+        ],
+        "quality_boundary": "Training-fit changes and reduced mapped area are not target generalization evidence. Missing holdout support remains unknown.",
+        "cost": "Reuse loaders, cached feature evidence and compatible forwards; one continuing expert chooses relevant plugins without a separate Agent or parameter grid per plugin."
+      },
+      "caution": "Three negative origins stay distinct and human positives have independent controls. The current human ratio interface cannot provide arbitrary positive-only supervision; adapter design is not implementation. Source CE weights remain unchanged; prior and automatic labels remain soft evidence and hypotheses."
     }
   ],
   "registry_contract": [
@@ -253,5 +378,6 @@
       "sha256": "33a5ebd5826b7a0863cc3806b255c3cc7ba75182f039e7d51fa4463e19dd6c47"
     }
   ],
-  "updated_UTC": "2026-10-19T10:45:14.697024+00:00"
+  "updated_UTC": "2026-10-19T11:01:30.095795+00:00",
+  "design_revision": "2026-10-19_independent_negative_plugins"
 }
