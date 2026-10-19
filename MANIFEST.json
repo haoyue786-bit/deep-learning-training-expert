@@ -1,0 +1,27 @@
+{
+  "skill": "deep-learning-training-expert",
+  "version": "v028",
+  "file_count": 18,
+  "files_sha256": {
+    "SKILL.md": "80dc838789ff49d4ef286af3fffca18ad9c55fdac4aa2eb590bcf329f668875a",
+    "references/initialization.md": "ac2dc7ed3ac3e65c3da507e0e71a9f21656ee9ae24426bc44c75e8c023f9b804",
+    "references/diagnosis-and-experiments.md": "e65f22b6a464ed12199420b30668fa527c4fa0ca429acc553c363f9ba12d5535",
+    "references/stopping-and-selection.md": "690942f9b22b86269e9d2b46928dbf918b5adf40b6bc7c27665bd5fc4e4458ef",
+    "references/factual-reconstruction.md": "70ac3ca1c508c1a99e5e12fdd07e0cb628446bfc17fc9d029b33ee7eb9825dcb",
+    "task_profiles/cashew_fada/profile.md": "19971047e9d2e5de00779355ee04f83ee3350e2ea9098105781c09046d78ec76",
+    "task_profiles/cashew_fada/runtime_contract.json": "463e4c633fcb0cc6760518aeb0dc6385bc9189c69052c393d7055c9081dfc557",
+    "task_profiles/cashew_fada/packet_contract.py": "8885e1ce242f3e08bba93b779bc9b74ed9d1c431c4545d3642810c17bb40db22",
+    "task_profiles/cashew_fada/evidence_registry.py": "2297d0c78f4cb02b895f199aca47dbf8b7ac0f805b8b7f89fdd6a9dfc2f40944",
+    "task_profiles/cashew_fada/woody-wetland-confusion.md": "3b41f9868b29e278f6a06dab21867c5529ce5b547176c2a4037fffe67538fd16",
+    "task_profiles/cashew_fada/initialization-probe-semantics.md": "4ef19c43e4b63a0685424969d7e9dd948ed7674ac227a0acf7b2920907e7be38",
+    "task_profiles/cashew_fada/component-loss-paths.md": "6c001e6e72450ed517a7483ac72efb657aaf85170b3932ed64363d45a2503d83",
+    "scripts/completion_receipt.py": "532dac7f11c86108f7f8c07bb2e225cb8cb8ad45ac27e71ad6380751f361f14b",
+    "scripts/fact_stage.py": "46c49b36c897a3559e5a2edbcb232e351fb143fa4dc92c6c4a2e917314392171",
+    "scripts/evidence_claims.py": "99844cc21caa3f27fe42ece8a72a12efd283266066e41708f9db45836e60cf79",
+    "scripts/observation_claims.py": "ce19bfa19adf35c6a926586c8069f7d9fb26c830fa3c78d4fe88e56322c3ddb5",
+    "scripts/source_claims.py": "c4a42f665343995ba4dac8158e62fe664bcce31e6556f3363bc805e2a0cdb3e3",
+    "scripts/score_diagnostics.py": "09d3a25eda967d37466b0c7e6cd50820ec45fad477721ca62a2f2e1cc35633ef"
+  },
+  "instruction_package_only": true,
+  "automatic_training_runtime_migration": false
+}
