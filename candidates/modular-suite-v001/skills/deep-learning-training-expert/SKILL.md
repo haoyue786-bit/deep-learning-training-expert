@@ -5,69 +5,36 @@ description: Manage real deep-learning training through task-specific initializa
 
 # Deep Learning Training Expert
 
-Actively use authorized real point predictions and labels: confusion, per-class Precision/Recall/F1, support and both confusing-class error directions. Use those errors to revise diagnoses, shortlist implemented methods and plan discriminating observations. Prior Agent feedback is not a completed threshold study or systematic method comparison. Keep validation labels outside training loss and track repeated development use.
+Improve the deployed model using current evidence and executable controls. Use one scientific owner; initialization, diagnosis, adjustment, stopping and selection are capabilities, not eight mandatory reviews or extra calls. Defaults are [gpt-6.1-sol / medium](scientific_defaults.json), telemetry each epoch, evaluation/checkpoint every five and decisions every ten. Explicit job contracts and user review boundaries take precedence.
 
-For executable small tests read [Algorithm Trial Bench](references/algorithm-trial-bench.md): one config/CLI, a capability registry and journaled epoch bridge. For host integration or failures read [execution and recovery](references/execution-and-recovery.md). [scientific_defaults.json](scientific_defaults.json) is the centralized default model/reasoning/cadence configuration. New jobs record per-epoch telemetry, evaluate/save every five epochs and decide/refresh automatic pools every ten. Frozen jobs keep explicit versioned contracts.
+## Read the current brief, not the whole archive
 
-Retrieve and append actual experience through an explicit authorized [project context](../training-experience-update/references/project-store.md). Actual success/null/adverse/failure cases and validation-use history belong in that project directory. Missing identity/path means no write; this suite never assumes Cashew ownership. Append corrections without erasing original evidence or decision cutoffs.
+Use the host's [expert brief and curves](references/expert-review.md): task/component state, current controls, current metrics, the whole observed trajectory, actual intervention markers, unresolved questions and relevant knowledge excerpts. The brief must stand alone after a fresh model session. Do not depend on remembered numbers or resend complete manuals. A graph path is not an image attachment; exact values and metric definitions accompany the curve.
 
-Improve the useful model for the actual deployment objective. Quality, time and total cost are separate outcomes. Read the supplied task, evidence permissions and execution contract. Keep scientific choice distinct from worker execution, adoption and publication.
+Focus on the question that changes the next decision:
 
-## Use professional knowledge to make the judgment
+- Target quality: fixed-decoder precision/recall/F1, FP/FN and class support; changed labels or evaluation populations break comparability.
+- Learning and retention: train losses with their actual definitions, source/class performance and the learning-rate schedule. Source quality is not target quality.
+- Gradients and updates: classification/local/global adversarial norms, weighted contributions and directions when measured. Sampled gradients, actual optimizer displacement and clipping are distinct. Missing measurements are unknown, not zero.
+- Spatial behavior: prediction area/fraction, prior support and their spatial agreement on stated masks. Inspect relevant auxiliary exposure and discriminator behavior.
+- Response to previous actions: what actually changed, when, what followed and the strongest plausible alternative. A curve or scalar correlation alone does not establish a cause.
 
-Read [knowledge use and problem navigation](references/knowledge-use-and-navigation.md) when an unfamiliar run or consequential anomaly needs more than routine continuation. It maps observed problems to detailed mechanisms and shows how to turn those mechanisms into a task-specific choice. Use the relevant reference body, whether read locally or supplied by the host; citing a title or selecting a module is not applying its knowledge.
+For Cashew, inspect the approved prior before initialization: local support, regional evidence, confidence/unknowns and score scale. Form a provisional view of whether substantial cashew is plausible. High-support regions can legitimately have substantial predictions; a weak regional prior is neither calibrated crop coverage nor a quota. Same-mask comparison matters. Read the [project profile](task_profiles/cashew_fada/profile.md) for facts absent from the host's verified card; use [data roles](task_profiles/cashew_fada/data-labels-and-evidence-roles.md) when provenance is uncertain.
 
-Relate the observations to the mechanism's prerequisites, actual implementation and plausible alternatives. Choose the action that addresses the supported mechanism under available controls; describe a useful expected response and revise the explanation when the response disagrees. Published numeric recipes are contextual evidence. A recommendation should differ when the component state, data support, objective path or schedule differs, rather than merely because the tile name changed.
+## Decide and explain consequential changes
 
-Error-count suggestions are optional leads, not causal diagnoses or an action whitelist. The same false-positive count can arise from label defects, excessive adaptation, class mixture shift or calibration. Prefer a supported ordinary action or KEEP when sufficient; introduce a new loss or research method only when its mechanism addresses an unresolved consequential problem. The worker checks execution bounds and evidence identities, not whether your hypothesis matches a canned FP/FN rule.
+KEEP or reference initialization is valid. Unexplained differences are not personalization. Prefer delta-only output: the worker copies unchanged values from verified controls. Each proposed change identifies current evidence, mechanism, direction/magnitude, expected response, alternative and reversal condition. If support is missing, retain the value or propose a separately authorized discriminating trial. Do not disclaim a change in prose and still return it in controls.
 
-## Use the relevant professional capability
+Review responses at a useful horizon. Do not repeatedly tune a proxy whose semantic hypothesis failed. Restoring a full state differs from reversing one control. STOP judges further benefit; SELECT chooses an existing eligible checkpoint. Neither defaults to the latest or a favorable small-panel fluctuation.
 
-This entry ships with eight professional Skills as one suite. Read [composition and delivery](references/composition.md) to locate their boundaries. Activate only the capabilities needed by the current question, retaining the current trajectory and decision history. Separate Skill files do not require separate Agents, extra model calls or a fixed sequence.
+## Expand knowledge only when needed
 
-- Recover unfamiliar or conflicting records with `training-fact-reconstruction`.
-- Choose a fresh complete start with `training-initialization`.
-- Explain anomalies or a failed response with `training-diagnosis`.
-- Choose a supported direct change or KEEP with `training-adjustment`.
-- Request and interpret a discriminating contrast with `training-experiment` when its result could change the decision.
-- Judge another training interval with `training-stop`.
-- Choose an existing eligible artifact with `training-checkpoint-selection`.
-- Revise conditional lessons from actual outcomes with `training-experience-update`.
+Use the relevant professional Skill or one specific reference section: `training-initialization`, `training-diagnosis`, `training-adjustment`, `training-experiment`, `training-stop`, `training-checkpoint-selection`; use `training-fact-reconstruction` for conflicting records. The [knowledge map](references/knowledge-use-and-navigation.md) and [detailed guidance](references/scientific-judgment.md) are on-demand resources, not default prompt bodies. Missing consequential measurements should be requested, not invented. General recipes require matching prerequisites.
 
-A normal healthy review may need only current response and a continuation decision. A supplied fact-only request ends with facts. If a required professional Skill is unavailable, identify that missing capability rather than claim it was used; the host must install the suite or supply its actual text. A name or file path alone does not deliver knowledge to a model without file tools.
+Retrieve a few conditional lessons through the authorized [project store](../training-experience-update/references/project-store.md). Preserve contrary outcomes, development-use counts and costs. Years/seeds of one tile are not independent replication. Use `training-experience-update` after real outcomes; project records do not belong inside the generic Skill.
 
-Before submitting controls, compare the proposed vector with the actual current/reference vector. Explain every changed value using identifiable current evidence, the active mechanism, why change now, why that direction/magnitude, the expected response, an alternative and a reversal condition. Retained values need no repetitive change record. If the explanation concludes that support is missing, keep the original value; put a useful unresolved hypothesis in a separately authorized experiment proposal. A caveat does not justify executing the change it disclaims. Reconcile the numeric output with the reasoning before submission. The host's [control-change check](references/execution-and-recovery.md#control-change-evidence) verifies deltas and evidence binding, not the truth of the mechanism.
+## Execution boundaries
 
-## Use training labels and validation feedback for their declared roles
+Use authorized validation feedback for decisions, never its labels in loss; keep sealed tests outside tuning. Preserve support, state/data/decoder identities and timing. For Cashew, supplementary human samples are training data; do not manufacture a human holdout. Small-panel or fitted-threshold results are development evidence.
 
-Use authorized validation feedback to guide initialization where a measured starting-state comparison exists, adjustment, experiments, STOP and SELECT. Validation is development evidence; it is not forbidden merely because it is labeled target data. Read the supplied class F1, precision/recall, FP/FN, support and checkpoint identity together. Feedback permission does not automatically put validation labels into the training loss or authorize new evaluations. Keep final test evidence outside tuning, and report repeatedly inspected or threshold-fitted validation scores as development results.
-
-For Cashew, the current project policy uses supplementary human samples for training without carving out a human-label evaluation/test panel. Use the separately designated validation set for Agent feedback; follow the [project data-role policy](task_profiles/cashew_fada/data-labels-and-evidence-roles.md) for preparation and historical-run boundaries.
-
-## Maintain the scientific thread
-
-Identify the inherited and new components, legal supervision, metric population and state that produced each observation. Do not substitute a nearby class, summary or epoch for the requested fact. Distinguish proposed controls, actually executed updates, adopted states and later responses. A compact summary cannot overwrite an original conflict.
-
-Relate each consequential choice to the current task and a plausible alternative. A justified reference or KEEP is valid; different numbers alone are not personalization. An informative experiment is optional, not a mandatory tax on every adjustment. A proxy moving as expected does not establish task improvement.
-
-Use the next response to revise the explanation where needed. Reversing a scalar, restoring a full checkpoint and continuing the current state preserve different progress. Count discarded updates, preparation, diagnostic branches, failures and replay. Do not keep repeating an easy proxy intervention after its semantic rationale fails.
-
-Before promoting a project-specific empirical action-to-response rule, require repetition across several distinct tiles under comparable conditions. Keep a single-tile result as a case, count years/seeds/branches within their tile, and retain contradictions. A repeated area or gradient effect is not a repeated accuracy benefit; use `training-experience-update` when revising this knowledge.
-
-Retrieve distilled conditional lessons before raw archives. Each useful lesson connects a situation, actual intervention, measured response, competing explanation and applicability limit. Merge repeated observations without summing overlapping strata; retain a contrary case. Open raw artifacts only to resolve a live uncertainty. Archive size and familiar module tags do not establish relevance.
-
-STOP and SELECT answer separate questions. Useful learning can continue after a short plateau; remaining budget alone does not justify running to the cap. A stopped checkpoint is not automatically the best deployment artifact. Use permitted selection evidence and compare the strongest alternative without opening sealed final data.
-
-## Keep delivery economical and faithful
-
-Use the smallest relevant fact packet and knowledge references, retaining source locations and consequential history. Routine calculations and identity checks belong in deterministic helpers. Avoid repeated complete logs, eight-module reviews and extra reviewer calls that do not change a decision. Request the next useful observation window; do not require a model turn per epoch.
-
-When context is compacted or transported, preserve the task/version identities, actual adopted controls and state, relevant interventions and responses, unresolved alternatives and evidence cutoff. Record the change of context rather than claiming an unchanged native thread. Exact duplicate input can reuse a verified completed receipt; changed evidence requires reconsideration.
-
-## Execution and output
-
-Use the caller's exact schema, legal action/control combinations and supplied opaque artifact IDs. Resolve action-dependent fields before submission; an available field is not legal for every action. A completed uncertain turn requires reconciliation before retrying. Keep original rejected answers and their costs; do not manually rewrite them into success.
-
-The worker owns queue admission, mutation, recovery and publication. Advertised capabilities bound what can execute. Unsupported preparation or architectural changes remain proposals. No scientific recommendation expands data access or operational permission.
-
-For supplied Cashew FADA tasks, read [the project profile](task_profiles/cashew_fada/profile.md) and the current packet. Its class order, samples, weak prior, component paths and resource limits are project-specific. Replace the profile for another task rather than inheriting Cashew assumptions. Report unknown target quality honestly.
+The worker owns execution and recovery. [Control-change checks](references/execution-and-recovery.md#control-change-evidence) bind values to evidence but do not prove scientific validity. Respect per-decision human approval when requested. Preserve rejected answers and costs; reconcile uncertain calls before retrying. Unsupported methods remain proposals. Read [trial execution](references/algorithm-trial-bench.md) or [recovery](references/execution-and-recovery.md) only when invoking or integrating those operations.

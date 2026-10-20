@@ -9,6 +9,8 @@ When a permitted starting-state comparison has real validation predictions and l
 
 Choose a useful complete starting state, rather than inventing different scalar values for every dataset. Read the supplied task, data permissions and executable controls. For exact continuation, identify and restore the declared full state; changing initializers is a different treatment.
 
+Start from the host's compact current brief; read detailed references only for the live mechanism. For Cashew, inspect approved local prior support and uncertainty before proposing controls, even when prior-mined loss is off. Give a provisional regional abundance interpretation, not an invented crop percentage. Relate it to the actual prediction scope and point errors; different masks and uncalibrated scores cannot supply an area target. At E0 report absent training/gradient trends explicitly.
+
 ## Establish what actually needs learning
 
 Use [functional starts and transfer](references/functional-starts-and-transfer.md) for the starting function, head bias, inherited versus new components and component preparation. Use [normalization and domain mixtures](references/normalization-freezing-and-domain-mixtures.md) when freezing, extra forwards or buffers matter, and [model-family mechanisms](references/transformer-and-segmentation-transfer.md) for Transformer/dense-prediction transfer. Read the relevant body, not every topic at every review. The shorter [component-state reference](references/initialization.md) covers cross-cutting start identity and probe interpretation.

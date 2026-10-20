@@ -1,0 +1,70 @@
+# Detailed scientific judgment and project boundaries
+
+Read only when the compact review leaves a consequential mechanism or policy unclear.
+
+Actively use authorized real point predictions and labels: confusion, per-class Precision/Recall/F1, support and both confusing-class error directions. Use those errors to revise diagnoses, shortlist implemented methods and plan discriminating observations. Prior Agent feedback is not a completed threshold study or systematic method comparison. Keep validation labels outside training loss and track repeated development use.
+
+For executable small tests read [Algorithm Trial Bench](../references/algorithm-trial-bench.md): one config/CLI, a capability registry and journaled epoch bridge. For host integration or failures read [execution and recovery](../references/execution-and-recovery.md). [scientific_defaults.json](../scientific_defaults.json) is the centralized default model/reasoning/cadence configuration. New jobs record per-epoch telemetry, evaluate/save every five epochs and decide/refresh automatic pools every ten. Frozen jobs keep explicit versioned contracts.
+
+Retrieve and append actual experience through an explicit authorized [project context](../../training-experience-update/references/project-store.md). Actual success/null/adverse/failure cases and validation-use history belong in that project directory. Missing identity/path means no write; this suite never assumes Cashew ownership. Append corrections without erasing original evidence or decision cutoffs.
+
+Improve the useful model for the actual deployment objective. Quality, time and total cost are separate outcomes. Read the supplied task, evidence permissions and execution contract. Keep scientific choice distinct from worker execution, adoption and publication.
+
+## Use professional knowledge to make the judgment
+
+Read [knowledge use and problem navigation](../references/knowledge-use-and-navigation.md) when an unfamiliar run or consequential anomaly needs more than routine continuation. It maps observed problems to detailed mechanisms and shows how to turn those mechanisms into a task-specific choice. Use the relevant reference body, whether read locally or supplied by the host; citing a title or selecting a module is not applying its knowledge.
+
+Relate the observations to the mechanism's prerequisites, actual implementation and plausible alternatives. Choose the action that addresses the supported mechanism under available controls; describe a useful expected response and revise the explanation when the response disagrees. Published numeric recipes are contextual evidence. A recommendation should differ when the component state, data support, objective path or schedule differs, rather than merely because the tile name changed.
+
+Error-count suggestions are optional leads, not causal diagnoses or an action whitelist. The same false-positive count can arise from label defects, excessive adaptation, class mixture shift or calibration. Prefer a supported ordinary action or KEEP when sufficient; introduce a new loss or research method only when its mechanism addresses an unresolved consequential problem. The worker checks execution bounds and evidence identities, not whether your hypothesis matches a canned FP/FN rule.
+
+## Use the relevant professional capability
+
+This entry ships with eight professional Skills as one suite. Read [composition and delivery](../references/composition.md) to locate their boundaries. Activate only the capabilities needed by the current question, retaining the current trajectory and decision history. Separate Skill files do not require separate Agents, extra model calls or a fixed sequence.
+
+- Recover unfamiliar or conflicting records with `training-fact-reconstruction`.
+- Choose a fresh complete start with `training-initialization`.
+- Explain anomalies or a failed response with `training-diagnosis`.
+- Choose a supported direct change or KEEP with `training-adjustment`.
+- Request and interpret a discriminating contrast with `training-experiment` when its result could change the decision.
+- Judge another training interval with `training-stop`.
+- Choose an existing eligible artifact with `training-checkpoint-selection`.
+- Revise conditional lessons from actual outcomes with `training-experience-update`.
+
+A normal healthy review may need only current response and a continuation decision. A supplied fact-only request ends with facts. If a required professional Skill is unavailable, identify that missing capability rather than claim it was used; the host must install the suite or supply its actual text. A name or file path alone does not deliver knowledge to a model without file tools.
+
+Before submitting controls, compare the proposed vector with the actual current/reference vector. Explain every changed value using identifiable current evidence, the active mechanism, why change now, why that direction/magnitude, the expected response, an alternative and a reversal condition. Retained values need no repetitive change record. If the explanation concludes that support is missing, keep the original value; put a useful unresolved hypothesis in a separately authorized experiment proposal. A caveat does not justify executing the change it disclaims. Reconcile the numeric output with the reasoning before submission. The host's [control-change check](../references/execution-and-recovery.md#control-change-evidence) verifies deltas and evidence binding, not the truth of the mechanism.
+
+## Use training labels and validation feedback for their declared roles
+
+Use authorized validation feedback to guide initialization where a measured starting-state comparison exists, adjustment, experiments, STOP and SELECT. Validation is development evidence; it is not forbidden merely because it is labeled target data. Read the supplied class F1, precision/recall, FP/FN, support and checkpoint identity together. Feedback permission does not automatically put validation labels into the training loss or authorize new evaluations. Keep final test evidence outside tuning, and report repeatedly inspected or threshold-fitted validation scores as development results.
+
+For Cashew, the current project policy uses supplementary human samples for training without carving out a human-label evaluation/test panel. Use the separately designated validation set for Agent feedback; follow the [project data-role policy](../task_profiles/cashew_fada/data-labels-and-evidence-roles.md) for preparation and historical-run boundaries.
+
+## Maintain the scientific thread
+
+Identify the inherited and new components, legal supervision, metric population and state that produced each observation. Do not substitute a nearby class, summary or epoch for the requested fact. Distinguish proposed controls, actually executed updates, adopted states and later responses. A compact summary cannot overwrite an original conflict.
+
+Relate each consequential choice to the current task and a plausible alternative. A justified reference or KEEP is valid; different numbers alone are not personalization. An informative experiment is optional, not a mandatory tax on every adjustment. A proxy moving as expected does not establish task improvement.
+
+Use the next response to revise the explanation where needed. Reversing a scalar, restoring a full checkpoint and continuing the current state preserve different progress. Count discarded updates, preparation, diagnostic branches, failures and replay. Do not keep repeating an easy proxy intervention after its semantic rationale fails.
+
+Before promoting a project-specific empirical action-to-response rule, require repetition across several distinct tiles under comparable conditions. Keep a single-tile result as a case, count years/seeds/branches within their tile, and retain contradictions. A repeated area or gradient effect is not a repeated accuracy benefit; use `training-experience-update` when revising this knowledge.
+
+Retrieve distilled conditional lessons before raw archives. Each useful lesson connects a situation, actual intervention, measured response, competing explanation and applicability limit. Merge repeated observations without summing overlapping strata; retain a contrary case. Open raw artifacts only to resolve a live uncertainty. Archive size and familiar module tags do not establish relevance.
+
+STOP and SELECT answer separate questions. Useful learning can continue after a short plateau; remaining budget alone does not justify running to the cap. A stopped checkpoint is not automatically the best deployment artifact. Use permitted selection evidence and compare the strongest alternative without opening sealed final data.
+
+## Keep delivery economical and faithful
+
+Use the smallest relevant fact packet and knowledge references, retaining source locations and consequential history. Routine calculations and identity checks belong in deterministic helpers. Avoid repeated complete logs, eight-module reviews and extra reviewer calls that do not change a decision. Request the next useful observation window; do not require a model turn per epoch.
+
+When context is compacted or transported, preserve the task/version identities, actual adopted controls and state, relevant interventions and responses, unresolved alternatives and evidence cutoff. Record the change of context rather than claiming an unchanged native thread. Exact duplicate input can reuse a verified completed receipt; changed evidence requires reconsideration.
+
+## Execution and output
+
+Use the caller's exact schema, legal action/control combinations and supplied opaque artifact IDs. Resolve action-dependent fields before submission; an available field is not legal for every action. A completed uncertain turn requires reconciliation before retrying. Keep original rejected answers and their costs; do not manually rewrite them into success.
+
+The worker owns queue admission, mutation, recovery and publication. Advertised capabilities bound what can execute. Unsupported preparation or architectural changes remain proposals. No scientific recommendation expands data access or operational permission.
+
+For supplied Cashew FADA tasks, read [the project profile](../task_profiles/cashew_fada/profile.md) and the current packet. Its class order, samples, weak prior, component paths and resource limits are project-specific. Replace the profile for another task rather than inheriting Cashew assumptions. Report unknown target quality honestly.

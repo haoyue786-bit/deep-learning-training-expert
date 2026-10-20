@@ -728,6 +728,16 @@
       "previous_reference": "skills/deep-learning-training-expert/task_profiles/cashew_fada/historical-multitile-evidence.json",
       "storage": "explicit authorized project experience directory; not bundled",
       "reference_kind": "external_project_artifact"
+    },
+    {
+      "reference": "skills/deep-learning-training-expert/references/expert-review.md",
+      "sha256": "48f373d7c3364c5de5a4a9bc98f8a5e5aa5b80d0d818ab3a406c3938361f30cb",
+      "source_snapshots": [],
+      "source_locations": [
+        "https://developers.google.com/machine-learning/guides/deep-learning-tuning-playbook/scientific",
+        "https://developers.google.com/machine-learning/guides/deep-learning-tuning-playbook/additional-guidance"
+      ],
+      "scope": "Host-owned curve/history and concise review delivery; user-requested gradients and prior-first Cashew context. Operational implementation, not a claim that shorter prompts improve scientific quality."
     }
   ],
   "no_new_training_or_scientific_model_calls": true,

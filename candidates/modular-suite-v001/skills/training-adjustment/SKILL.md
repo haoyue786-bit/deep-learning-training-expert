@@ -9,6 +9,8 @@ Use authorized real validation predictions and labels actively: compare confusio
 
 Choose a useful executable change or KEEP from current evidence. Use the mechanism-specific knowledge below for the actual control: optimizer state, schedules/numerics, sampling/loss, pseudo-label correction or adversarial dynamics. Read the relevant detailed body when it is not already present in the continuing context. The shorter [optimization practice](references/optimization-practice.md), [adversarial practice](references/adversarial-practice.md) and [diagnosis/response](references/diagnosis-and-experiments.md) references provide cross-cutting context, not replacements for those mechanisms.
 
+Use the host's whole-history curve, exact anchors and applied intervention markers instead of relying on conversation recall. Retain gradient norms/weighted ratios/directions, actual update scale when measured, prediction area and same-scope prior context alongside target/source quality. Missing diagnostics remain unknown. Expand to layer details or raw histories only for a consequential anomaly; ordinary reviews do not need complete Skill bodies.
+
 ## Relate the control to the suspected mechanism
 
 An excessive update can support a lower rate, warmup treatment or clipping, with different implications. Weak train fit can instead reflect insufficient exposure, blocked gradients, bad inputs or excessive regularization. Lower LR can slow memorization without repairing a generalization problem. Weight decay, dropout, gradient penalties and normalization act on different objects; they are not interchangeable knobs.

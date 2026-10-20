@@ -3,6 +3,14 @@
   "model": "gpt-6.1-sol",
   "reasoning_effort": "medium",
   "one_scientific_owner": true,
+  "review_input": {
+    "mode": "expert_review_v1",
+    "maximum_brief_characters": 16000,
+    "maximum_knowledge_sections": 2,
+    "history_owner": "host artifacts, not assumed conversational memory",
+    "curve_delivery": "actual verified image attachment when supported, otherwise explicit text-only",
+    "output_controls": "evidence-bound deltas; host copies unchanged values"
+  },
   "extra_model_call_per_module": false,
   "credential_and_transport_source": "explicit caller/project configuration",
   "review_cadence": {

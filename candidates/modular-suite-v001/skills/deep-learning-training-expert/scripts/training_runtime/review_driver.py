@@ -205,6 +205,15 @@ class ReviewDriver:
                         current_context=dynamic,
                         control_change_contract='Return the complete controls vector and change_basis for every actual delta. Each basis binds control/before/after, support_status, existing evidence_ids, mechanism, why_now, why_this_magnitude, expected_response, alternative and reversal_condition. Unsupported ideas remain proposals, not control mutations. KEEP uses unchanged controls and an empty change_basis.',
                         automatic_negative_contract='Optional explicit plan in this same decision; current catalog identity/support must be supplied by the host before deciding.')
+            if 'expert_brief' in dynamic:
+                brief=dynamic['expert_brief']
+                if (not isinstance(brief,dict) or brief.get('format')!='expert_review_v1'
+                        or brief.get('epoch')!=epoch or not brief.get('history')
+                        or brief.get('controls')!=dynamic.get('control_baseline')):
+                    raise ValueError('Compact brief must bind this epoch, history and actual baseline')
+                packet={k:packet[k] for k in ('model','reasoning_effort','control_change_contract')}
+                packet.update(expert_brief=brief,run_identity=self.run_identity,
+                    delivery='Host must send an actual verified curve attachment or declare text-only; no assumed conversational memory')
             if len(json.dumps(packet,allow_nan=False))>24000:raise ValueError('Supply compact facts/knowledge; full logs stay in artifacts')
             decision=self._stage(journal,'decide',lambda:self.hooks.decide(packet))
             result=dict(status='received',events=events,decision=decision,epoch=epoch,
