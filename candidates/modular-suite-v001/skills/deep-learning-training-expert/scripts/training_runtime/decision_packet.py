@@ -37,6 +37,7 @@ def build(feedback: dict, *, available_variants: list[str], previous_response=No
                   decision_contract={
                       "owner": "one continuing scientific expert",
                       "required_reasoning": "Use measured confusion, Precision/Recall/F1 and both pair-error directions to revise the diagnosis and justify KEEP or one bounded trial.",
+                      "control_changes": "Audit actual old/new values. Each change needs current evidence, an applicable mechanism, magnitude rationale, expected response, alternative and reversal condition. Unsupported hypotheses remain separate proposals; a caveat cannot authorize a contradictory numeric change.",
                       "prohibited": ["validation-label backpropagation", "threshold search", "unlimited candidate or parameter search", "production adoption without host authorization"],
                       "next_action": "Choose KEEP, inspect data/implementation, adjust an existing host control, or propose one useful trial. Error-count leads do not diagnose the cause or restrict the choice."
                   }, extra_model_calls=0)

@@ -31,6 +31,8 @@ For example, a genuinely new head failing to use useful fixed features can suppo
 
 Use the caller's actual output format and legal controls, including unchanged values where requested. Identify the complete starting artifact and proposed group/schedule settings, their task-specific rationale, expected early response and relevant uncertainty. Unsupported preparation remains a proposal. Completion means an actionable supported starting choice, not proof of optimality; the executor owns admission and adoption.
 
+Check the returned parameter vector against the stated reference before submission. A changed initial value needs current evidence plus an applicable mechanism, direction/magnitude rationale, expected response and rejection condition. It need not have already won a same-tile trial, but a generic possibility alone is insufficient. If your own reasoning says the change lacks support, retain that reference value and separate any useful diagnostic proposal. Do not leave an unexplained numerical change inside an otherwise conservative initialization.
+
 ## Read the relevant professional knowledge
 
 - New head, inherited predictor, output bias or residual outlet: [functional starts and transfer](references/functional-starts-and-transfer.md). Includes fan scaling, prior-aware bias, sampled/weighted class distributions, component preparation and concrete failure distinctions.

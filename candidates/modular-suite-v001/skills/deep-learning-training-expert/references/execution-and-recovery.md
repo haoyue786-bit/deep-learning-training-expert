@@ -96,3 +96,45 @@ Keep the test's identity, original response, applied controls and recovered
 state evidence. A narrow supervised rollout can follow successful integration;
 superiority over fixed training or human experts requires separate fair outcome
 evaluation and is not inferred from schema or unit tests.
+## Control-change evidence
+
+Before scientific dispatch, the host supplies `review_context.control_baseline`
+(a complete flat map of current or initial-reference controls) and
+`review_context.control_evidence` (host-issued IDs mapped to compact observations,
+knowledge or experience, with the actual state/source identities). Production
+mode requires both; callback prototypes opt in by supplying `control_baseline`.
+The native host remains responsible for input hashes and observation timing.
+
+Normalize the answer into `controls` and `change_basis`. `controls` is the complete
+proposed vector, even for KEEP or STOP. `change_basis` has exactly one entry per
+actual changed control, containing `control`, `before`, `after`, `support_status`,
+`evidence_ids`, `mechanism`, `why_now`, `why_this_magnitude`, `expected_response`,
+`alternative` and `reversal_condition`. KEEP uses an empty list. A reason can
+reference both current observations and applicable professional knowledge; it
+need not claim a previous same-tile treatment win.
+
+Prefer a declared delta-only model response: the model returns `change_basis`,
+and the host uses `resolve_control_changes` to copy retained values from the
+verified baseline and construct `controls`. This avoids asking the model to
+retype unchanged numbers and reduces output. Strictly reject an unexpected full
+vector in that response schema. This adapter must not discard a contradictory
+vector from an earlier rejected answer and relabel the remainder a success.
+
+`training_runtime.control_changes.validate_control_changes` rejects missing or
+extra deltas, stale values, unknown evidence IDs, generic recipes without current
+observations, and support explicitly marked unresolved. It runs before the
+native validator and any apply operation, including replacement answers.
+Standalone hosts can call the same helper without adopting the epoch driver.
+All changed controls must be included in the normalized host vector; adding a
+new loss, architecture or pool plan still requires its native validation.
+
+This is evidence binding, not an automated scientist. Filled prose or
+`support_status="supported"` cannot establish a true mechanism. The native
+scientific review must still reject contradictions and irrelevant evidence.
+In particular, “this change lacks evidence” cannot accompany an executable
+changed value. Keep the value or propose a separately authorized bounded trial.
+Do not manually rewrite a rejected model answer into success: retain the original
+and its costs, identify the defect, and obtain a bounded corrected answer or
+an explicitly recorded human override. Never resample an already valid answer
+just to obtain preferred controls. User-required approval remains a separate
+condition before execution.

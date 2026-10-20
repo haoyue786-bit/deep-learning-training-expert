@@ -9,6 +9,7 @@ from pathlib import Path
 
 from .cadence import Cadence, numerical_anomalies
 from .decision_packet import defaults
+from .control_changes import validate_control_changes
 from .trial_bench import dump
 
 
@@ -68,6 +69,18 @@ class ReviewDriver:
     def _path(self,epoch,suffix):return self.output/f'epoch_{epoch:04d}_{suffix}.json'
 
     def _save(self,journal):dump(self._path(journal['epoch'],'journal'),journal)
+
+    def _validate(self, decision, journal):
+        if not isinstance(decision,dict) or not isinstance(decision.get('continue_training'),bool):
+            raise ValueError('Explicit continue_training required')
+        dynamic=journal['stages'].get('context',{}).get('result',{})
+        if self.binding['production'] or 'control_baseline' in dynamic:
+            if not isinstance(dynamic.get('control_baseline'),dict) or not isinstance(dynamic.get('control_evidence'),dict):
+                raise ValueError('Host must supply current control_baseline and control_evidence before deciding')
+            validate_control_changes(before=dynamic['control_baseline'],after=decision.get('controls'),
+                change_basis=decision.get('change_basis'),evidence_catalog=dynamic['control_evidence'])
+        validator=getattr(self.hooks,'validate_decision',None)
+        if validator and validator(decision) is False:raise ValueError('Native validator rejected the answer')
 
     def _stage(self,journal,name,function):
         stages=journal['stages'];record=stages.get(name)
@@ -155,9 +168,7 @@ class ReviewDriver:
             validator=getattr(self.hooks,'validate_decision',None)
             if not validator:raise ValueError('Native host validator required for a replacement')
             def validate(value):
-                if not isinstance(value,dict) or not isinstance(value.get('continue_training'),bool):
-                    raise ValueError('Explicit continue_training required')
-                if validator(value) is False:raise ValueError('Native validator rejected the answer')
+                self._validate(value,journal)
             try:validate(old['result'])
             except (ValueError,PermissionError):pass
             else:raise ValueError('A valid completed scientific decision cannot be resampled here')
@@ -184,11 +195,15 @@ class ReviewDriver:
             context_hook=getattr(self.hooks,'review_context',None)
             dynamic=self._stage(journal,'context',lambda:context_hook(epoch,evaluation)) if context_hook else {}
             if not isinstance(dynamic,dict):raise ValueError('Host review context must be an object')
+            if self.binding['production'] and (not isinstance(dynamic.get('control_baseline'),dict)
+                    or not isinstance(dynamic.get('control_evidence'),dict)):
+                raise ValueError('Production context requires current control_baseline and host-issued control_evidence')
             packet=dict(epoch=epoch,evaluation=evaluation,current_metrics=journal['metrics'],
                         cadence=self.cadence.policy(),recent_observations=observations[-2:],
                         run_identity=self.run_identity,evidence_cutoff_epoch=epoch,
                         scientific_context=self.context,model=settings['model'],reasoning_effort=settings['reasoning_effort'],
                         current_context=dynamic,
+                        control_change_contract='Return the complete controls vector and change_basis for every actual delta. Each basis binds control/before/after, support_status, existing evidence_ids, mechanism, why_now, why_this_magnitude, expected_response, alternative and reversal_condition. Unsupported ideas remain proposals, not control mutations. KEEP uses unchanged controls and an empty change_basis.',
                         automatic_negative_contract='Optional explicit plan in this same decision; current catalog identity/support must be supplied by the host before deciding.')
             if len(json.dumps(packet,allow_nan=False))>24000:raise ValueError('Supply compact facts/knowledge; full logs stay in artifacts')
             decision=self._stage(journal,'decide',lambda:self.hooks.decide(packet))
@@ -196,10 +211,7 @@ class ReviewDriver:
                         model=settings['model'],reasoning_effort=settings['reasoning_effort'])
             receipt=self._path(epoch,'decision');dump(receipt,result)
             try:
-                if not isinstance(decision,dict) or not isinstance(decision.get('continue_training'),bool):
-                    raise ValueError('Explicit continue_training decision required; host translates its native schema')
-                validator=getattr(self.hooks,'validate_decision',None)
-                if validator and validator(decision) is False:raise ValueError('Native validator rejected the answer')
+                self._validate(decision,journal)
                 self._stage(journal,'apply',lambda:self.hooks.apply_decision(decision))
                 if events['automatic_refresh'] and decision['continue_training']:
                     generation=self.cadence.generation(epoch,steps_per_epoch=self.steps_per_epoch,maximum_epoch=self.maximum_epoch)

@@ -23,6 +23,8 @@ Use permitted validation feedback as direct development evidence when available.
 
 State why this task's state favors the choice over a plausible alternative. Choose a numerical value as a supported bounded step or reference, not a discovered optimum unless actually measured. Do not make parameters different merely to appear personalized. No parameter grid or extra branch is required for an otherwise supported direct adjustment.
 
+Audit actual parameter differences before returning the decision. For each change, bind the old/new values to current evidence and explain the active mechanism, direction/magnitude, expected response and reversal condition. Acknowledging missing support while still returning a changed value is contradictory: retain it or propose a bounded discriminating experiment separately. Prior knowledge can support a hypothesis when its prerequisites match; do not demand a previously observed win for every new scientifically reasoned intervention.
+
 Give an observation horizon appropriate to the expected response and actual schedule. Preserve the previous effective intervention through intervening KEEP decisions. Inspect quality, relevant class errors and numerical/source safety separately. If the expected response fails, reconsider cause and timing; do not keep turning the same knob because it moves a proxy predictably.
 
 Reversing a control, rolling back a complete state and continuing with a repaired setting preserve different progress and optimizer histories. Compare plausible recovery with restoration and count replayed or discarded work. A short adverse response does not prove irreversibility. Required safety exits remain binding.
