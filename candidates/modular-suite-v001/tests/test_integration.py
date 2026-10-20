@@ -136,7 +136,7 @@ class AutomaticTests(unittest.TestCase):
                 adapter.after_epoch(config,{'automatic_negative':pool.summary()})
                 if age==3:
                     # Losing in-memory config uses committed exposure, not a renewed pool.
-                    resumed={};restored=adapter.refresh(plan(),generation,checkpoint='unused',review={},config=resumed)
+                    resumed={};restored=adapter.refresh(plan(),generation,checkpoint='unused',review={},config=resumed,resume_state_verified=True)
                     self.assertEqual(restored['cursor'],28);config=resumed
             self.assertEqual(sorted(seen),list(range(11)));self.assertEqual(len(seen),len(set(seen)))
             self.assertEqual(controller.hidden_calls,0);self.assertEqual(controller.refresh_count,1)
@@ -174,6 +174,18 @@ class TinyAdapter:
     def source_safety(self):return {'f1':.5}
 
 
+def run_test_trial(bench,adapter,**kwargs):
+    bench.prepare(adapter)
+    from project_experience import file_evidence
+    plan=dict(hypothesis='Fixture mechanism may change the response',alternative='Insufficient exposure',
+              why_this_action='Controlled fixture exercises allowed execution',expected_response='Measured feedback',
+              reversal_condition='Source or target regression',initial_state_sha256=bench._digest(adapter.snapshot()),
+              dataset=adapter.dataset,variant=kwargs['module_id']+':'+kwargs['variant'],
+              controls=kwargs.get('controls',{}),strength=kwargs.get('strength',.01),steps_per_arm=bench.steps,
+              evidence=[file_evidence(bench.root/'initial_feedback.json')])
+    return bench.run_pair(adapter,scientific_plan=plan,**kwargs)
+
+
 class BenchTests(unittest.TestCase):
     def run_fixture(self,root,fail=None):
         context=dict(project_id='fixture',project_root=str(root),experience_dir=str(root/'experience'),
@@ -187,7 +199,7 @@ class BenchTests(unittest.TestCase):
             bench.prepare(adapter)
             # Cached metrics also reconcile a previously committed reservation without a second label use.
             bench.prepare(adapter)
-            result=bench.run_pair(adapter,module_id='M04',variant='source_pair_margin')
+            result=run_test_trial(bench,adapter,module_id='M04',variant='source_pair_margin')
             self.assertEqual(result['outcome'],'null');self.assertEqual(result['update_cost']['completed_steps'],4)
             self.assertEqual(adapter.starts,[original,original]);self.assertEqual(state_digest(adapter.snapshot()),original)
             self.assertEqual(store.retrieve()[0]['outcome'],'null')
@@ -197,7 +209,7 @@ class BenchTests(unittest.TestCase):
         for failure in ['update','nonfinite']:
             with tempfile.TemporaryDirectory() as d:
                 store,bench,adapter=self.run_fixture(Path(d),failure);original=state_digest(adapter.snapshot())
-                with self.assertRaises(RuntimeError):bench.run_pair(adapter,module_id='M04',variant='source_pair_margin')
+                with self.assertRaises(RuntimeError):run_test_trial(bench,adapter,module_id='M04',variant='source_pair_margin')
                 result=json.loads((bench.root/'trials/trial_01/result.json').read_text())
                 self.assertEqual(state_digest(adapter.snapshot()),original);self.assertEqual(result['outcome'],'failed')
                 self.assertEqual(result['update_cost']['attempted_steps'],1)
@@ -207,10 +219,10 @@ class BenchTests(unittest.TestCase):
     def test_shortlist_and_trial_cap_are_enforced(self):
         with tempfile.TemporaryDirectory() as d:
             store,bench,adapter=self.run_fixture(Path(d))
-            with self.assertRaises(PermissionError):bench.run_pair(adapter,module_id='M03',variant='pair_ambiguity_reliability')
-            bench.run_pair(adapter,module_id='M04',variant='source_pair_margin')
-            bench.run_pair(adapter,module_id='M02',variant='class_pixel_priority',controls={'multipliers':[1,1,1.5,1]})
-            with self.assertRaises(PermissionError):bench.run_pair(adapter,module_id='M04',variant='source_pair_margin')
+            with self.assertRaises(PermissionError):run_test_trial(bench,adapter,module_id='M03',variant='pair_ambiguity_reliability')
+            run_test_trial(bench,adapter,module_id='M04',variant='source_pair_margin')
+            run_test_trial(bench,adapter,module_id='M02',variant='class_pixel_priority',controls={'multipliers':[1,1,1.5,1]})
+            with self.assertRaises(PermissionError):run_test_trial(bench,adapter,module_id='M04',variant='source_pair_margin')
 
 
 if __name__=='__main__':unittest.main()

@@ -91,14 +91,18 @@ class AutomaticCadenceAdapter:
     def __init__(self,existing_controller,existing_uncapped_pool):
         self.controller=existing_controller;self.Pool=pool_class(existing_uncapped_pool)
 
-    def refresh(self,plan,generation,*,checkpoint,review,config):
+    def refresh(self,plan,generation,*,checkpoint,review,config,resume_state_verified=False):
         epoch=generation['generation_epoch'];previous=config.get('_automatic_negative_state',{})
         persisted=self.controller.out/'state.json'
         if persisted.exists():
             disk=json.loads(persisted.read_text())
             if disk.get('generation_epoch')==epoch:
-                if previous.get('generation_epoch')==epoch and previous.get('cursor',0)>disk.get('cursor',0):
-                    raise ValueError('Checkpoint exposure is newer than committed pool state; reconcile before resuming')
+                if previous.get('generation_epoch')==epoch and (
+                        previous.get('cursor',0)!=disk.get('cursor',0)
+                        or any(previous.get(k)!=disk.get(k) for k in ('manifest','manifest_sha256'))):
+                    raise ValueError('Checkpoint and pool exposure differ; reconcile complete training state before resuming')
+                if previous.get('generation_epoch')!=epoch and disk.get('cursor',0) and not resume_state_verified:
+                    raise ValueError('Consumed pool without matching checkpoint state requires explicit host resume verification')
                 previous=disk;config['_automatic_negative_state']=disk
         if previous.get('generation_epoch')==epoch and previous.get('manifest'):
             p=Path(previous['manifest'])

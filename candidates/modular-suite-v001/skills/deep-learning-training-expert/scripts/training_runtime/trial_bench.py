@@ -116,8 +116,12 @@ class TrialBench:
             screen = screen_candidates(feedback)
             experience=[]
             tags=[c['module_id'] for c in screen['candidates']]
-            relevant=[case for case in self.store.retrieve(tags=tags,limit=6)
-                      if set(tags)&set(case.get('tags',[]))]
+            context=dict(getattr(adapter,'experience_context',{}))
+            context.update(self.config.get('experience_query', {}))
+            relevant=self.store.retrieve(tags=tags,context=context,limit=3,
+                                         cutoff=self.config.get('evidence_cutoff'),
+                                         excluded_case_ids=self.config.get('excluded_case_ids', []),
+                                         excluded_units=self.config.get('excluded_units', []))
             for case in relevant[:3]:
                 dataset=case.get('conditions',{}).get('dataset',{})
                 result=case.get('result',{})
@@ -125,6 +129,8 @@ class TrialBench:
                     applicability=dict(dataset_id=dataset.get('dataset_id'),label_version=dataset.get('label_version'),
                                        evaluation_role=case['evaluation_role']),
                     measured_comparison=result.get('comparison'),hypotheses=case['hypotheses'][:2],
+                    lesson=result.get('lesson'),counterexamples=result.get('counterexamples',[])[:2],
+                    matching=case.get('retrieval_match'),
                     evidence=case['evidence'][:2],transfer_claim='Conditional context only; inspect evidence for task matching'))
             packet = decision_packet(feedback, available_variants=adapter.available_variants,experience_summaries=experience)
             dump(self.root/"candidate_screen.json", screen)
@@ -147,7 +153,8 @@ class TrialBench:
             evaluation_role='development',tags=['baseline_diagnosis']))
         return packet
 
-    def run_pair(self, adapter, *, module_id: str, variant: str, controls=None, strength=0.01) -> dict:
+    def run_pair(self, adapter, *, module_id: str, variant: str, controls=None, strength=0.01,
+                 scientific_plan=None) -> dict:
         from .cadence import numerical_anomalies
         if not isinstance(strength, (float, int)) or isinstance(strength, bool) or not 0 <= strength <= 1:
             raise ValueError("A bounded separate mechanism coefficient is required")
@@ -158,13 +165,28 @@ class TrialBench:
         resolve(module_id,variant,controls=controls,data_role=cap.input_roles[0],
                 authorized_variants=adapter.available_variants)
         if not (self.root/"initial_feedback.json").exists(): self.prepare(adapter)
-        screen = json.loads((self.root/"candidate_screen.json").read_text())
-        if name not in {f"{c['module_id']}:{c['variant']}" for c in screen["candidates"]}:
-            raise PermissionError("Trial must follow the measured-error shortlist; revise the scientific plan explicitly")
         original = copy.deepcopy(adapter.snapshot()); identity = self._digest(original)
         expected = json.loads((self.root/"initial_identity.json").read_text())
         if expected["state_sha256"] != identity or expected["dataset"] != adapter.dataset:
             raise ValueError("Trial start/data differ from the diagnosed baseline")
+        # Error-count suggestions never authorize or restrict a scientific choice.
+        # One plan is required for every variant, including suggested variants.
+        plan=copy.deepcopy(scientific_plan)
+        required=('hypothesis','alternative','why_this_action','expected_response','reversal_condition')
+        if not isinstance(plan,dict) or any(not isinstance(plan.get(k),str) or not plan[k].strip() for k in required):
+            raise ValueError('Supply a scientific plan with hypothesis, alternative, action rationale and response/reversal conditions')
+        if plan.get('initial_state_sha256')!=identity or plan.get('dataset')!=adapter.dataset:
+            raise ValueError('Scientific plan must bind the diagnosed state and development dataset')
+        if plan.get('variant')!=name or plan.get('controls',{})!=(controls or {}) or plan.get('strength')!=strength:
+            raise ValueError('Scientific plan does not match the requested treatment')
+        if plan.get('steps_per_arm')!=self.steps:
+            raise ValueError('Scientific plan must declare the actual response horizon')
+        from project_experience import file_evidence
+        if not isinstance(plan.get('evidence'),list) or not plan['evidence']:
+            raise ValueError('Scientific plan needs actual evidence pointers')
+        for item in plan['evidence']:
+            if file_evidence(item['path'])['sha256']!=item['sha256']:
+                raise ValueError('Scientific plan evidence changed')
         with (self.root/'.trial_admission.lock').open('a') as lock:
             fcntl.flock(lock,fcntl.LOCK_EX)
             existing=list((self.root/'trials').glob('trial_*'))
@@ -174,6 +196,7 @@ class TrialBench:
             root=self.root/'trials'/trial_id;root.mkdir(parents=True,exist_ok=False)
         module = dict(module_id=module_id, variant=variant, controls=controls or {}, strength=strength)
         protocol = dict(project_id=self.store.project_id, trial_id=trial_id, module=module, steps=self.steps,
+                        scientific_plan=plan,
                         initial_state_sha256=identity, dataset=adapter.dataset,
                         endpoint="after the declared number of matched optimizer updates; never best-of-checkpoints",
                         validation_labels_in_loss=False, threshold_search=False, production_adoption=False,
@@ -249,7 +272,7 @@ class TrialBench:
                                action=module, result={k:v for k,v in result.items() if k != "results"}, outcome=result["outcome"],
                                evidence=[file_evidence(result_path), file_evidence(root/"protocol.json")],
                                conditions=dict(dataset=adapter.dataset, source_start=identity, matched_updates=self.steps),
-                               hypotheses=["A small-panel response may fail on another spatial location or later training interval."],
+                               hypotheses=[plan['hypothesis'],plan['alternative']],
                                cost=dict(attempted_steps=attempted,completed_steps=completed,
                                          seconds=result["total_seconds"],model_calls=0),
                                evaluation_role="development", tags=[module_id, variant, "paired_trial"]))

@@ -7,7 +7,7 @@ description: Manage real deep-learning training through task-specific initializa
 
 Actively use authorized real point predictions and labels: confusion, per-class Precision/Recall/F1, support and both confusing-class error directions. Use those errors to revise diagnoses, shortlist implemented methods and plan discriminating observations. Prior Agent feedback is not a completed threshold study or systematic method comparison. Keep validation labels outside training loss and track repeated development use.
 
-For executable small tests read [Algorithm Trial Bench](references/algorithm-trial-bench.md): one config/CLI, a capability registry and five-hook epoch bridge. [scientific_defaults.json](scientific_defaults.json) is the centralized default model/reasoning/cadence configuration. New jobs record per-epoch telemetry, evaluate/save every five epochs and decide/refresh automatic pools every ten. Frozen jobs keep explicit versioned contracts.
+For executable small tests read [Algorithm Trial Bench](references/algorithm-trial-bench.md): one config/CLI, a capability registry and journaled epoch bridge. For host integration or failures read [execution and recovery](references/execution-and-recovery.md). [scientific_defaults.json](scientific_defaults.json) is the centralized default model/reasoning/cadence configuration. New jobs record per-epoch telemetry, evaluate/save every five epochs and decide/refresh automatic pools every ten. Frozen jobs keep explicit versioned contracts.
 
 Retrieve and append actual experience through an explicit authorized [project context](../training-experience-update/references/project-store.md). Actual success/null/adverse/failure cases and validation-use history belong in that project directory. Missing identity/path means no write; this suite never assumes Cashew ownership. Append corrections without erasing original evidence or decision cutoffs.
 
@@ -18,6 +18,8 @@ Improve the useful model for the actual deployment objective. Quality, time and 
 Read [knowledge use and problem navigation](references/knowledge-use-and-navigation.md) when an unfamiliar run or consequential anomaly needs more than routine continuation. It maps observed problems to detailed mechanisms and shows how to turn those mechanisms into a task-specific choice. Use the relevant reference body, whether read locally or supplied by the host; citing a title or selecting a module is not applying its knowledge.
 
 Relate the observations to the mechanism's prerequisites, actual implementation and plausible alternatives. Choose the action that addresses the supported mechanism under available controls; describe a useful expected response and revise the explanation when the response disagrees. Published numeric recipes are contextual evidence. A recommendation should differ when the component state, data support, objective path or schedule differs, rather than merely because the tile name changed.
+
+Error-count suggestions are optional leads, not causal diagnoses or an action whitelist. The same false-positive count can arise from label defects, excessive adaptation, class mixture shift or calibration. Prefer a supported ordinary action or KEEP when sufficient; introduce a new loss or research method only when its mechanism addresses an unresolved consequential problem. The worker checks execution bounds and evidence identities, not whether your hypothesis matches a canned FP/FN rule.
 
 ## Use the relevant professional capability
 
@@ -49,6 +51,8 @@ Relate each consequential choice to the current task and a plausible alternative
 Use the next response to revise the explanation where needed. Reversing a scalar, restoring a full checkpoint and continuing the current state preserve different progress. Count discarded updates, preparation, diagnostic branches, failures and replay. Do not keep repeating an easy proxy intervention after its semantic rationale fails.
 
 Before promoting a project-specific empirical action-to-response rule, require repetition across several distinct tiles under comparable conditions. Keep a single-tile result as a case, count years/seeds/branches within their tile, and retain contradictions. A repeated area or gradient effect is not a repeated accuracy benefit; use `training-experience-update` when revising this knowledge.
+
+Retrieve distilled conditional lessons before raw archives. Each useful lesson connects a situation, actual intervention, measured response, competing explanation and applicability limit. Merge repeated observations without summing overlapping strata; retain a contrary case. Open raw artifacts only to resolve a live uncertainty. Archive size and familiar module tags do not establish relevance.
 
 STOP and SELECT answer separate questions. Useful learning can continue after a short plateau; remaining budget alone does not justify running to the cap. A stopped checkpoint is not automatically the best deployment artifact. Use permitted selection evidence and compare the strongest alternative without opening sealed final data.
 

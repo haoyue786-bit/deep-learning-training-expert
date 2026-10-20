@@ -1,6 +1,6 @@
 {
   "profile": "cashew_fada",
-  "version": "modular_trial_interfaces_20261020_v001",
+  "version": "modular_expert_revision_20261020",
   "role": "Scientific decision provider; supplied packet and owning executor determine executable authority",
   "decision_modes": [
     "initialization",
@@ -44,7 +44,7 @@
     "No automatic production migration",
     "No inherited permission to open TEST outcomes"
   ],
-  "recovery": "Use current packet, schema and semantic consumer; preserve rejected answers and original cost. Historical budgets are records, not active execution limits.",
+  "recovery": "Journal stage identity, reconcile unknown effects, validate complete model/optimizer/schedule/RNG/pool state, and never silently advance a divergent cursor. See references/execution-and-recovery.md.",
   "historical_first_behavior_test": {
     "GPU": false,
     "training": false,
@@ -65,5 +65,6 @@
     "hardware_limits": "current explicit task contract; no inherited historical GPU lease",
     "worker_owns_leases_and_actual_occupancy_checks": true
   },
-  "selection": "When SELECT_CHECKPOINT is required, return an actual eligible integer epoch; unknown quality permits a provisional choice, not a null artifact. Owning caller specializes schema before dispatch."
+  "selection": "When SELECT_CHECKPOINT is required, return an actual eligible integer epoch; unknown quality permits a provisional choice, not a null artifact. Owning caller specializes schema before dispatch.",
+  "expert_action_selection": "Error-count leads are advisory; native host controls and KEEP remain available. Bounded trials require an evidence-bound scientific plan."
 }

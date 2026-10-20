@@ -9,6 +9,8 @@ This generic Skill manages rules; actual cases belong to their corresponding aut
 
 Improve future decisions by correcting the smallest unsupported claim. For case retrieval, cross-task reuse or a contradicted lesson, read [transferable experience and revision](references/transferable-experience-and-revision.md). Use its mechanism-based matching and positive/null/adverse lesson distinctions. It explains what TNP, Reflexion, ExpeL and A-Mem contribute and which conclusions they do not support. Use only actual permitted records and preserve prior decisions and their historical information cutoff.
 
+Distill actual training into a small maintained set of conditional lessons; do not paste the archive into the Skill or each model turn. Merge repeated mechanisms while preserving distinct starts, doses, horizons and contradictory strata. A lesson states what happened, what interpretation survives, when it can change a decision, what must not be inferred and where the evidence lives. The reviewed importer in [project-store.md](references/project-store.md) indexes these lessons; it does not generate scientific conclusions automatically. Update or withdraw a lesson when new comparable outcomes contradict it.
+
 The shorter [conditional experience](references/conditional-experience.md) provides an orientation, not a substitute for the detailed matching and revision methods.
 
 Distinguish a recorded observation, a matched intervention effect and a mechanistic inference. Record the task, component and data identities, permitted metric, visible state, executed change and exposure, response horizon, alternative explanations, costs and applicable conditions. This can be concise prose under the caller's existing format; no new memory service is required.

@@ -55,6 +55,9 @@ class CashewTrialAdapter:
         torch.set_num_threads(threads)
         self.job_file = Path(config["job_file"]).resolve(strict=True)
         self.job = json.loads(self.job_file.read_text())
+        self.experience_context={}
+        if self.job.get('source_profile'):
+            self.experience_context['source_profile']=self.job['source_profile']
         if self.job.get("target_year") not in (2019, 2025): raise ValueError("Explicit supported target year required")
         runtime = Path(self.job["runtime_provenance"]["root"]).resolve(strict=True)
         if any(name in sys.modules for name in ("architecture", "fada_expert_v4", "train_tile")):

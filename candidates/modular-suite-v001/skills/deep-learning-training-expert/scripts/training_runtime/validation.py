@@ -85,7 +85,7 @@ def evaluate_points(rows: Iterable[dict], *, class_names: list[str], dataset: di
 
 
 def screen_candidates(feedback: dict, *, maximum_candidates: int = 2) -> dict:
-    """Propose a tiny discriminating shortlist from measured errors, not a sweep.
+    """Offer optional error-based leads, never a causal diagnosis or action gate.
 
 The owning expert must assess the hypotheses and actual module availability.
 This is an evidence router, not an automatic claim of algorithm superiority.
@@ -117,10 +117,14 @@ This is an evidence router, not an automatic claim of algorithm superiority.
                       dict(module_id="M02", variant="class_pixel_priority",
                            hypothesis="A bounded focus-class alignment priority may change unequal class contribution.",
                            check="Record pseudo-class support and wrong-class amplification; do not infer target class proportions.")]
-    return dict(version="validation_grounded_candidate_screen_v1", diagnosis=diagnosis,
+    return dict(version="validation_grounded_candidate_screen_v2", diagnosis=diagnosis,
                 evidence_checkpoint=feedback["checkpoint"], evidence_dataset=feedback["dataset"],
                 measured_pair_errors={"confusing_as_focus": fp, "focus_as_confusing": fn},
                 focus_support=support, candidates=candidates[:maximum_candidates],
+                advisory_only=True,
+                alternatives=["KEEP with an informative observation horizon", "check labels/data/implementation",
+                              "adjust an existing supported control", "inspect schedule/source retention/calibration",
+                              "one mechanism-directed trial if it can change the decision"],
                 owner="same scientific expert; worker checks registry, permissions and budget",
                 quality_claim="Development hypotheses only; no causal attribution or efficacy inferred from routing.",
                 threshold_search_authorized=False)

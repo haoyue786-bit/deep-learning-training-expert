@@ -186,15 +186,62 @@ class ProjectStore:
             self._append("validation_usage.jsonl", result)
             return result
 
-    def retrieve(self, *, tags: list[str] = (), limit: int = 5) -> list[dict]:
-        """Return only this project's evidence; matching tags are clues, not causal transfer."""
+    def retrieve(self, *, tags: list[str] = (), limit: int = 5, context=None,
+                 cutoff=None, excluded_case_ids=(), excluded_units=()) -> list[dict]:
+        """Retrieve conditional lessons, expose mismatches, preserve a relevant counterexample.
+
+        context keys are caller-declared facts (mechanism, source_profile,
+        architecture, epoch, horizon_updates, data/label version, active paths).
+        A match is a retrieval clue, never proof of causal transfer.
+        cutoff is the knowledge availability time, not the historical run date.
+        """
         if not isinstance(limit, int) or not 0 < limit <= 100:
             raise ValueError("Bounded retrieval limit required")
         with self.locked():
             cases = self._read("experience.jsonl")
         if any(c.get("project_id") != self.project_id for c in cases):
             raise PermissionError("Project store contains foreign-project records")
-        return sorted(cases, key=lambda c: (len(set(tags)&set(c.get("tags", []))), c["recorded_at"]), reverse=True)[:limit]
+        def time(value):
+            dt=datetime.fromisoformat(value.replace('Z','+00:00'))
+            if dt.tzinfo is None:raise ValueError('Evidence cutoff requires a timezone')
+            return dt
+        boundary=time(cutoff) if cutoff else None
+        candidates=[]
+        for case in cases:
+            if case['case_id'] in excluded_case_ids:continue
+            if boundary and time(case['recorded_at'])>boundary:continue
+            conditions=case.get('conditions',{})
+            if set(excluded_units)&set(conditions.get('task_units',[])):continue
+            overlap=set(tags)&set(case.get('tags',[]))
+            mechanism=(context or {}).get('mechanism')
+            if mechanism:
+                recorded_mechanism=conditions.get('mechanism')
+                if recorded_mechanism is not None and recorded_mechanism!=mechanism:continue
+                if recorded_mechanism is None and mechanism not in case.get('tags',[]):continue
+            matched=[];different=[];unknown=[]
+            for key,value in (context or {}).items():
+                observed=conditions.get(key)
+                if observed is None:unknown.append(key)
+                elif observed==value or (isinstance(observed,list) and not isinstance(value,list) and value in observed):
+                    matched.append(key)
+                else:different.append(key)
+            # Never fill a scientific query with unrelated recent receipts.
+            if (tags or context) and not overlap and not matched:continue
+            item=dict(case)
+            item['retrieval_match']=dict(matched=matched,different=different,unknown=unknown,
+                                         matching_tags=sorted(overlap),transfer_validated=False)
+            key=(bool(matched),len(matched),-len(different),len(overlap),case['recorded_at'])
+            candidates.append((key,item))
+        candidates.sort(key=lambda pair:pair[0],reverse=True)
+        picked=[item for _,item in candidates[:limit]]
+        # Include a relevant contradiction; do not displace the best match at limit=1.
+        contrary=lambda c: c['outcome'] in ('adverse','null','failed') or bool(c.get('result',{}).get('counterexamples'))
+        if (tags or context) and limit>1 and picked and not any(contrary(c) for c in picked):
+            other=next((c for _,c in candidates[limit:] if contrary(c)
+                        and (c['retrieval_match']['matched'] or c['retrieval_match']['matching_tags'])
+                        and not c['retrieval_match']['different']),None)
+            if other:picked[-1]=other
+        return picked
 
 
 def main():
@@ -204,8 +251,14 @@ def main():
     record = sub.add_parser("record"); record.add_argument("--case", required=True, type=Path)
     retrieve = sub.add_parser("retrieve"); retrieve.add_argument("--tag", action="append", default=[])
     retrieve.add_argument("--limit", type=int, default=5)
+    retrieve.add_argument("--context", default="{}", help="JSON of relevant observed conditions")
+    retrieve.add_argument("--cutoff", help="Timezone-qualified knowledge availability cutoff")
+    retrieve.add_argument("--exclude-case", action="append", default=[])
+    retrieve.add_argument("--exclude-unit", action="append", default=[])
     args = parser.parse_args(); store = ProjectStore.from_file(args.project_context)
-    result = store.record(json.loads(args.case.read_text())) if args.action == "record" else store.retrieve(tags=args.tag, limit=args.limit)
+    result = store.record(json.loads(args.case.read_text())) if args.action == "record" else store.retrieve(
+        tags=args.tag, limit=args.limit, context=json.loads(args.context),cutoff=args.cutoff,
+        excluded_case_ids=args.exclude_case,excluded_units=args.exclude_unit)
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 

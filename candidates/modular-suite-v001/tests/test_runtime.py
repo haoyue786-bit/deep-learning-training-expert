@@ -156,7 +156,9 @@ class ValidationTests(unittest.TestCase):
         f = self.feedback(); packet = build(f, available_variants=['M03:pair_ambiguity_reliability', 'M04:source_pair_margin'])
         self.assertEqual(defaults()['model'], 'gpt-6.1-sol')
         self.assertEqual(packet['reasoning_effort'], 'medium'); self.assertEqual(packet['extra_model_calls'], 0)
-        self.assertEqual(len(packet['available_relevant_modules']), 2)
+        self.assertEqual(len(packet['available_relevant_modules']), 0)
+        self.assertEqual(len(packet['available_trial_variants']), 2)
+        self.assertTrue(packet['candidate_hypotheses']['advisory_only'])
         self.assertLess(len(json.dumps(packet)), 16000)
         self.assertNotIn('bodies', packet)
 

@@ -13,10 +13,13 @@ def defaults() -> dict:
 
 
 def build(feedback: dict, *, available_variants: list[str], previous_response=None,
-          experience_summaries=(), maximum_characters=16000) -> dict:
+          experience_summaries=(), maximum_characters=16000, selected_variants=()) -> dict:
     screen = screen_candidates(feedback)
-    selected = {f"{c['module_id']}:{c['variant']}" for c in screen['candidates']}
-    relevant_cards = [c for c in cards(available_variants=available_variants) if f"{c['module_id']}:{c['variant']}" in selected]
+    if len(selected_variants)>2: raise ValueError('Select at most two relevant cards, not the whole catalog')
+    if any(v not in available_variants for v in selected_variants):raise ValueError('Selected variant unavailable')
+    selected = set(selected_variants)
+    relevant_cards = [c for c in cards(available_variants=available_variants)
+                      if c['callable'] and f"{c['module_id']}:{c['variant']}" in selected]
     screen={k:v for k,v in screen.items() if k not in ('evidence_checkpoint','evidence_dataset')}
     screen['evidence_pointer']='feedback.dataset and feedback.checkpoint in this same packet'
     compact_feedback = {k: feedback[k] for k in ("dataset", "checkpoint", "evaluation_role", "decoder", "samples",
@@ -29,12 +32,13 @@ def build(feedback: dict, *, available_variants: list[str], previous_response=No
     result = dict(version="compact_scientific_decision_v1", model=settings["model"],
                   reasoning_effort=settings["reasoning_effort"], feedback=compact_feedback,
                   candidate_hypotheses=screen, available_relevant_modules=relevant_cards,
+                  available_trial_variants=list(available_variants),
                   previous_response=previous_response, project_experience=list(experience_summaries)[:3],
                   decision_contract={
                       "owner": "one continuing scientific expert",
                       "required_reasoning": "Use measured confusion, Precision/Recall/F1 and both pair-error directions to revise the diagnosis and justify KEEP or one bounded trial.",
                       "prohibited": ["validation-label backpropagation", "threshold search", "unlimited candidate or parameter search", "production adoption without host authorization"],
-                      "next_action": "Compare the current reference and at most one relevant authorized treatment; null/adverse results are valid."
+                      "next_action": "Choose KEEP, inspect data/implementation, adjust an existing host control, or propose one useful trial. Error-count leads do not diagnose the cause or restrict the choice."
                   }, extra_model_calls=0)
     # Refuse oversized facts rather than silently truncating consequential evidence.
     data = json.dumps(result, ensure_ascii=False, allow_nan=False)

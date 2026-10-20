@@ -87,3 +87,28 @@ Production dispatch remains the host's responsibility.
 M05 remains design-only. M06 and dynamic M07 require an advertised pinned host
 adapter. Installing the suite does not migrate live jobs, open sealed tests or
 register untested production interventions.
+
+## In-place expert/recovery revision, 2026-10-20
+
+The current revision adds an evidence-bound expert plan for any authorized
+trial variant; FP/FN leads no longer restrict the action. Compact packets expose
+ordinary alternatives and load research cards only when explicitly selected.
+The project experience helper indexes reviewed conditional lessons, matches
+actual conditions, exposes differences, excludes unavailable/held-out knowledge
+when supplied, and preserves relevant contradictions. The owning Cashew project
+has six distilled lessons; its private archive and numerical records are not
+bundled into the generic suite.
+
+The journaled bridge binds run/branch identity, excludes future/foreign
+observations, preserves received responses, and provides explicit stage recovery.
+Unknown remote effects never auto-retry. Production mode requires complete host
+hooks; actual state restoration remains the trainer's responsibility. Tests
+cover a known-unsubmitted timeout, a committed mutation with lost acknowledgement,
+invalid-answer replacement, bounded retries, and pool cursor mismatch in either
+direction. A live trainer/provider migration was not executed by this revision.
+
+Forty-seven deterministic CPU tests pass for the current revision. These are
+kernel/interface/fixture invariants, not a new scientific model benchmark or
+measured improvement in expert reasoning. The earlier seven-point/two-update
+real-data outcomes above remain unchanged; no new GPU training, independent
+accuracy evaluation, human-expert comparison or token-saving claim is added.

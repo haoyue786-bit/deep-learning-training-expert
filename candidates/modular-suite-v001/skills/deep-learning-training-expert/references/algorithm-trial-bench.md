@@ -31,7 +31,8 @@ one supported treatment, for example:
 
 ```sh
 python scripts/algorithm_trial_bench.py --config /absolute/project/trial.json \
-  --trial M04:source_pair_margin --controls '{"margin":0.3}' --strength 0.01
+  --trial M04:source_pair_margin --controls '{"margin":0.3}' --strength 0.01 \
+  --plan /absolute/project/reviewed_trial_plan.json
 ```
 
 This example is a bounded mechanism test, not a recommended production recipe.
@@ -64,12 +65,28 @@ complete model, optimizers, buffers, modes, RNG and pool state.
 
 ## Trial and validation contract
 
-Use actual predictions and versioned labels to change the diagnosis and choose
-at most two plausible candidates. The present router distinguishes focus false
-positives from missed focus examples; it is a hypothesis shortlist, not proof
-of a cause. More negative supervision is not automatically appropriate when
+Use actual predictions and versioned labels to change the diagnosis. Error
+counts provide advisory leads; the expert may choose any authorized implemented
+variant, or no trial. Every trial requires an evidence-bound scientific plan,
+including suggested variants. More negative supervision is not automatically appropriate when
 recall is the larger problem. Preserve class1 aggregate semantics; a mixed
 trees/grassland label is not proof that an error belongs to pure forest/wetland.
+
+The plan is a JSON object with `hypothesis`, `alternative`, `why_this_action`,
+`expected_response`, `reversal_condition`, the diagnosed `initial_state_sha256`
+and exact `dataset`, `variant` as `module:variant`, actual `controls`, `strength`,
+`steps_per_arm`, and hashed `evidence` file pointers. Read initial identity and
+feedback from the bench output; do not invent these values. `run_pair(...,
+scientific_plan=plan)` validates them before admitting work. A changed plan
+does not expand permissions, mutate the reference or reset the trial budget.
+Plan fields make the choice reviewable; schema validity does not prove a sound
+scientific explanation.
+
+The compact packet initially lists available variant names without loading all
+research cards. Select at most two relevant cards explicitly when needed.
+Ordinary host controls and KEEP remain legitimate alternatives. Contextual
+experience can be queried with `experience_query` in the config; historical
+replay additionally supplies `evidence_cutoff` and excluded case/unit identities.
 
 Before a paired update, declare the endpoint, controls, reference, exact full
 state and source/unlabelled images. Default two updates/arm, at most twenty;
@@ -111,9 +128,12 @@ resuming cannot renew or extend a spent generation. Legacy jobs without an
 explicit cadence migration retain their registered interval and 128-update
 pools. Reconcile divergent checkpoint/pool state before resuming.
 
-The bridge commits a received model decision before host mutation. A failed
-apply/refresh requires reconciliation of that receipt; do not issue another
-model call or replay an already observed epoch automatically. Wall budgets are
+The bridge journals stages and commits a received model decision before host
+mutation. Use its explicit `resume(epoch)` and host reconciliation hooks for a
+failed request/apply/refresh. Completed stages are not repeated; uncertain
+effects require host evidence. Read [execution and recovery](execution-and-recovery.md)
+for state binding, native schema validation and production integration limits.
+Wall budgets are
 checked between blocking host calls, not by asynchronously killing them.
 
 ## Economical delivery

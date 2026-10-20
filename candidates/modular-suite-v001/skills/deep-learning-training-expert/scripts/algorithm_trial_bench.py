@@ -15,9 +15,11 @@ def main():
     parser.add_argument('--trial',help='One measured-error-supported module:variant; omitted = feedback only')
     parser.add_argument('--controls',default='{}',help='One explicit JSON control object, never a parameter grid')
     parser.add_argument('--strength',type=float,default=.01)
+    parser.add_argument('--plan',type=Path,help='Evidence-bound scientific plan for the selected trial')
     parser.add_argument('--interface-smoke',action='store_true',help='Call all implemented kernels on real training data; zero optimizer/validation updates')
     args=parser.parse_args();config=json.loads(args.config.read_text())
     if args.interface_smoke and args.trial:parser.error('Choose one interface check or one paired trial')
+    if args.trial and not args.plan:parser.error('--trial requires --plan; error-count suggestions are advisory')
     skill=Path(__file__).resolve().parents[1];suite=skill.parent
     sys.path.insert(0,str(suite/'training-experience-update/scripts'))
     from project_experience import ProjectStore
@@ -36,7 +38,8 @@ def main():
         print(json.dumps(result,ensure_ascii=False,indent=2))
     elif args.trial:
         module_id,variant=args.trial.split(':',1)
-        result=bench.run_pair(adapter,module_id=module_id,variant=variant,controls=json.loads(args.controls),strength=args.strength)
+        result=bench.run_pair(adapter,module_id=module_id,variant=variant,controls=json.loads(args.controls),
+                              strength=args.strength,scientific_plan=json.loads(args.plan.read_text()))
         print(json.dumps({k:v for k,v in result.items() if k!='results'},ensure_ascii=False,indent=2))
     else:
         packet=bench.prepare(adapter)

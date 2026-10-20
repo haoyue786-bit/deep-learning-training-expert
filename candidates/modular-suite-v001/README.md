@@ -36,6 +36,14 @@ Deterministic helpers calculate or bind facts. They do not establish a method's 
 
 ## Status and evidence
 
+The current in-place revision makes error-count suggestions advisory, requires
+evidence-bound expert trial plans, retrieves distilled conditional lessons with
+known mismatches/counterexamples, and journals review stages for explicit host
+recovery. Ordinary controls and KEEP precede optional research methods.
+See [execution and recovery](skills/deep-learning-training-expert/references/execution-and-recovery.md).
+This is still a callable suite with tested integration contracts; it is not a
+claim that existing production trainers or scientific dispatch have migrated.
+
 The 2026-10-20 upgrade includes actual real-data CPU kernel, gradient, matched two-update trial and inherited automatic-controller checks. See [validation scope and results](tests/REAL_DATA_VALIDATION.md). The trials supply narrow development feedback, not independent evaluation or established method superiority. Historical v028 studies retain their original scope. No large GPU run or production checkpoint migration is part of this installation.
 
 ## Install, configure and call
@@ -59,7 +67,7 @@ Call `skills/deep-learning-training-expert/scripts/algorithm_trial_bench.py`
 with `--config /absolute/project/trial.json`. Omit `--trial` for fixed-decoder
 feedback only; use `--interface-smoke` to check all implemented kernels.
 Read the [complete calling contract](skills/deep-learning-training-expert/references/algorithm-trial-bench.md)
-for a bounded matched trial and the five-hook training bridge.
+for an evidence-bound `--plan`, a bounded matched trial and the journaled training bridge.
 
 New bridge defaults: epoch telemetry every 1, evaluation/checkpoint every 5,
 Agent decisions and automatic-negative refresh every 10. The same owner returns
