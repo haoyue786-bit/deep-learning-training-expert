@@ -25,6 +25,8 @@ When authorized validation feedback is available, use its quality trajectory and
 
 Ask whether another legal interval, an already justified adjustment or a cheap discriminating observation can change the useful result. Continuing need not require an extra branch. Stopping need not require every ideal measurement. Respect the task's hard limits without treating budget exhaustion as convergence.
 
+Include applicable but untried authorized remedies in this comparison. An auxiliary pool held at zero has not failed a treatment test. Missing first-use response alone cannot establish that no useful continuation exists. Use [first use of auxiliary supervision](../deep-learning-training-expert/references/auxiliary-first-use.md) when it targets an observed error; compare a bounded trial with stopping, using actual suitability, remaining budget and uncertainty. Do not force every remedy to be tried or override a hard stop limit.
+
 Do not impose a universal patience, minimum epoch or run-to-cap rule. Karpathy's recipe includes early stopping as a regularization option; FSDL teaching material gives it lower priority. These contextual recommendations do not settle an unfamiliar run. Compare the present learning evidence, schedule and task value.
 
 ## State the decision and its limits

@@ -8,6 +8,7 @@ from unittest.mock import patch
 
 from test_integration import Hooks, ReviewDriver
 from training_runtime.expert_review import build, model_inputs, normalize, compact_history, section
+from training_runtime.paired_errors import compare
 
 
 def fixture():
@@ -26,6 +27,28 @@ def fixture():
 
 
 class ExpertReviewTests(unittest.TestCase):
+    def test_class_suppression_is_not_correct_class_recovery(self):
+        before = [dict(point_id=1,class_id=1,predicted_class=2),
+                  dict(point_id=2,class_id=2,predicted_class=2)]
+        after = [dict(point_id=1,class_id=1,predicted_class=3),
+                 dict(point_id=2,class_id=2,predicted_class=1)]
+        result = compare(before,after,focus_class=2,classes=[0,1,2,3])
+        self.assertEqual(result["removed_focus_false_positives"],1)
+        self.assertEqual(result["removed_false_positives_correctly_reclassified"],0)
+        self.assertEqual(result["newly_missed_focus_positives"],1)
+        after[0]["class_id"] = 0
+        with self.assertRaisesRegex(ValueError,"Label change"):
+            compare(before,after,focus_class=2,classes=[0,1,2,3])
+
+    def test_compaction_keeps_exact_extrema_and_additional_diagnostics(self):
+        with tempfile.TemporaryDirectory() as temp:
+            data=fixture();data["diagnostics"]={"D_accuracy":.95,"pair_changes":[[1,2,3]]}
+            b=build(data,Path(temp)/"review")
+            table=b["trajectory_summary"];row=dict(zip(table["columns"],table["rows"]["f1"]))
+            self.assertEqual(row["min"],[20,.1])
+            self.assertEqual(b["diagnostics"],data["diagnostics"])
+            self.assertEqual(json.loads((Path(temp)/"review/history.json").read_text())["observations"],data["observations"])
+
     def test_entire_history_retained_and_extrema_and_interventions_anchored(self):
         data=fixture()
         _,specs,rows,events,_=normalize(data)

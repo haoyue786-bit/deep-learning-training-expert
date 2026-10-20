@@ -5,10 +5,18 @@ A Codex Skill for evidence-based initialization, training diagnosis, tuning, bou
 ## Install
 
 ```bash
-git clone https://github.com/haoyue786-bit/deep-learning-training-expert.git "${CODEX_HOME:-$HOME/.codex}/skills/deep-learning-training-expert"
+git clone https://github.com/haoyue786-bit/deep-learning-training-expert.git /path/to/training-expert-source
+cd /path/to/training-expert-source/candidates/modular-suite-v001
+python scripts/install_suite.py --skills-root /path/to/codex-home/skills \
+  --backup-dir /path/to/installation-backups/modular-suite
 ```
 
-Back up an existing installation first. Restart your Codex session, then invoke `$deep-learning-training-expert` with your task profile, training evidence, permitted actions and output schema.
+This installs all nine maintained sibling Skills. Keep the repository checkout
+outside the discovered Skill directory: its root v028 is historical. Archive
+obsolete Cashew routing/decision Skills outside discovery when replacing them,
+while preserving pinned old experiment snapshots. Invoke
+`$deep-learning-training-expert` with your task profile, training evidence,
+permitted actions and output schema.
 
 ## Core behavior
 
@@ -41,4 +49,10 @@ print('Verified', manifest['file_count'], 'Skill files')
 
 ## New modular suite
 
-The [new modular suite](candidates/modular-suite-v001/README.md) contains nine cooperating Skills, callable real-data trial interfaces, bounded validation feedback and project-owned experience. Its default scientific model is `gpt-6.1-sol` with `medium` reasoning; new reviews decide every ten epochs while retaining five-epoch evaluation/checkpoints. Use its explicit nine-Skill installer; the command above still installs legacy v028. See [actual test scope](candidates/modular-suite-v001/tests/REAL_DATA_VALIDATION.md) and [module design/status](DESIGN.md). The earlier [Chinese review](reviews/modular-suite-v001/README.zh-CN.md) is historical and retains its original construction-stage scope.
+The existing modular suite is updated in place on 2026-10-21 with a fixed
+execution envelope, separate free-form scientific record and first-use auxiliary
+supervision guidance. The [current status](candidates/modular-suite-v001/README.md#status-and-evidence)
+states the production integration boundary: automatic experiment requests and
+paired-continuation adoption are not connected by the scalar-control template.
+
+The [maintained modular suite](candidates/modular-suite-v001/README.md) contains nine cooperating Skills, callable real-data trial interfaces, bounded validation feedback and project-owned experience. Its default scientific model is `gpt-6.1-sol` with `medium` reasoning; new reviews decide every ten epochs while retaining five-epoch evaluation/checkpoints. The installation above selects this suite. See [actual test scope](candidates/modular-suite-v001/tests/REAL_DATA_VALIDATION.md) and [module design/status](DESIGN.md). The earlier [Chinese review](reviews/modular-suite-v001/README.zh-CN.md) is historical and retains its original construction-stage scope.

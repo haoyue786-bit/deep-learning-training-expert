@@ -14,8 +14,8 @@ def main():
     files={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest()
            for p in sorted(root.rglob('*')) if p.is_file() and p!=target
            and '__pycache__' not in p.parts and p.suffix!='.pyc' and '.tmp.' not in p.name}
-    payload=dict(status='callable trial suite; bounded real-data CPU validation; no production migration or superiority claim',
-                 version='modular_expert_revision_20261020',file_count=len(files),files=files,
+    payload=dict(status='fixed execution envelope and auxiliary-first-use guidance; paired production trials require host integration; no superiority claim',
+                 version='modular_expert_revision_20261021',file_count=len(files),files=files,
                  scientific_defaults='skills/deep-learning-training-expert/scientific_defaults.json',
                  empirical_records='explicit authorized owning project only; not bundled Skill memory',
                  validation='tests/REAL_DATA_VALIDATION.md',legacy_root_unchanged=True)

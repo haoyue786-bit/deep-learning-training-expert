@@ -36,13 +36,33 @@ Deterministic helpers calculate or bind facts. They do not establish a method's 
 
 ## Status and evidence
 
+The 2026-10-21 in-place revision adds a small executable response envelope and
+a separate free-form training record. The host owns measured facts, state
+identities and legal bounds; prose is not parsed into control edits. See
+[the execution template](skills/deep-learning-training-expert/references/execution-template.md).
+Initialization, adjustment and stopping guidance now distinguish an unknown
+first-use response from a missing prerequisite. An available auxiliary objective
+held at zero has not demonstrated that it is ineffective. A bounded first use
+can be justified without a previous same-run win; its observed response still
+determines whether it should be retained. See
+[auxiliary first use](skills/deep-learning-training-expert/references/auxiliary-first-use.md).
+
+Integration boundary: the supplied TrialBench and `training-experiment` support
+explicitly invoked bounded contrasts. The current production scalar-control
+envelope does not expose an experiment-request action or automatically run and
+adopt a paired continuation. These capabilities must be connected by the host;
+installing this revision alone does not add that route. Actual exposure or a
+valid response is not evidence of a target-accuracy improvement. Compare equal
+data, decoding and checkpoint-selection policies when assessing tuning gains.
+
 The current in-place revision makes error-count suggestions advisory, requires
 evidence-bound expert trial plans, retrieves distilled conditional lessons with
 known mismatches/counterexamples, and journals review stages for explicit host
 recovery. Ordinary controls and KEEP precede optional research methods.
 See [execution and recovery](skills/deep-learning-training-expert/references/execution-and-recovery.md).
-This is still a callable suite with tested integration contracts; it is not a
-claim that existing production trainers or scientific dispatch have migrated.
+This is a callable suite with tested integration contracts. Specific production
+hosts have adopted compact reviews and the small scalar-control envelope; this
+does not establish adoption of every research kernel or the paired-trial route.
 
 The 2026-10-20 upgrade includes actual real-data CPU kernel, gradient, matched two-update trial and inherited automatic-controller checks. See [validation scope and results](tests/REAL_DATA_VALIDATION.md). The trials supply narrow development feedback, not independent evaluation or established method superiority. Historical v028 studies retain their original scope. No large GPU run or production checkpoint migration is part of this installation.
 

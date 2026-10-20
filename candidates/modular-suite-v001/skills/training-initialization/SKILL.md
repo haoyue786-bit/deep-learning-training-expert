@@ -9,6 +9,8 @@ When a permitted starting-state comparison has real validation predictions and l
 
 Choose a useful complete starting state, rather than inventing different scalar values for every dataset. Read the supplied task, data permissions and executable controls. For exact continuation, identify and restore the declared full state; changing initializers is a different treatment.
 
+An inherited zero auxiliary weight is an inactive starting reference, not a requirement. If authorized labeled training support matches an existing error or expected domain shift, consider its usefulness at initialization. Choose a provisional magnitude from the implemented loss reduction, exposure and relevant experience; previous same-run activation evidence cannot exist yet. See [first use of auxiliary supervision](../deep-learning-training-expert/references/auxiliary-first-use.md). Keep it off when there is a concrete suitability or execution concern, rather than because its optimum is unknown.
+
 Start from the host's compact current brief; read detailed references only for the live mechanism. For Cashew, inspect approved local prior support and uncertainty before proposing controls, even when prior-mined loss is off. Give a provisional regional abundance interpretation, not an invented crop percentage. Relate it to the actual prediction scope and point errors; different masks and uncalibrated scores cannot supply an area target. At E0 report absent training/gradient trends explicitly.
 
 ## Establish what actually needs learning

@@ -98,6 +98,12 @@ superiority over fixed training or human experts requires separate fair outcome
 evaluation and is not inferred from schema or unit tests.
 ## Control-change evidence
 
+This section describes the legacy evidence-bound adapter and validation of its
+historical records. New integrations use [the fixed execution template](execution-template.md):
+keep scientific explanations in the free-form training record and let the host
+own facts and artifact identities. Do not add legacy `change_basis` or temporal
+claim fields to the new model response. Existing legacy receipts remain auditable.
+
 Before scientific dispatch, the host supplies `review_context.control_baseline`
 (a complete flat map of current or initial-reference controls) and
 `review_context.control_evidence` (host-issued IDs mapped to compact observations,
@@ -138,3 +144,32 @@ and its costs, identify the defect, and obtain a bounded corrected answer or
 an explicitly recorded human override. Never resample an already valid answer
 just to obtain preferred controls. User-required approval remains a separate
 condition before execution.
+
+## Scientific response delivery and bounded correction
+
+Send the same authoritative schema through both the structured-output parameter
+and visible model instructions. A provider route may not enforce the transport
+schema; validate the returned object locally. Preserve required skill inputs
+when adding curves or images. The input brief's format is not a response format.
+`training_runtime.response_contract` supplies visible schema instructions,
+path-specific schema errors, exact measured temporal tables, and information
+dependency semantics.
+
+An empty `follow_up_only` request list is harmless metadata; accept it without
+rewriting the original answer. A genuine HOLD or prerequisite remains blocked.
+Never manufacture missing scientific evidence or silently change facts, controls,
+selection, or the requested scientific action to satisfy validation.
+
+Before dispatch, expose every eligible checkpoint's verified identity, evaluation
+identity, data/label version, decoder and recoverability. The current review hash
+and a historical selected hash serve different roles. A candidate absent from a
+compact transport packet must not silently become ineligible.
+
+For a terminal malformed response, preserve its raw answer, usage and exact
+validation error, then allow a bounded corrective turn on the same measured
+state. For a terminal provider failure, record that terminal status before a
+bounded retry. An unknown or still-running request requires durable reconciliation;
+never start another call merely because a timeout elapsed. A scientifically valid
+decision is not retried to obtain preferred controls. A documented audit defect
+or newly fulfilled prerequisite can justify a separate review with its reason
+and all superseded evidence retained.

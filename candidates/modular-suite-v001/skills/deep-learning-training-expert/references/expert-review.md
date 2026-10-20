@@ -17,7 +17,7 @@ read the entire knowledge library at every review.
 3. Actual applied intervention markers, pending/rejected actions, recent response,
    baseline and historical extrema. Rejected proposals are never applied markers.
    Restored branches have separate identities.
-4. At most two specific knowledge sections and two compact conditional lessons.
+4. Start with a few specific knowledge sections and compact conditional lessons.
    Supply the body if the model cannot read it. Add further knowledge only when
    it changes a decision, not by sending all professional skills.
 
@@ -68,9 +68,40 @@ Input keys: `run_id`, `branch_id`, `data_identity`, `cutoff_epoch`, `task`,
   (`max`, `min`, `none`). Effective controls can be observed metrics.
 - Events bind the same identities, `epoch`, `status` (`applied`, `proposed`,
   `rejected`) and a short `summary`.
-- Knowledge contains up to two exact section excerpts, each with `source`,
+- Knowledge starts with relevant exact section excerpts, each with `source`,
   `sha256`, `heading`, `text`. The helper `section` extracts a verified heading.
-  Experience is up to two explicit short lessons, not raw archives.
+   Experience contains explicit short lessons, not raw archives. Match these
+   to the current mechanism; a fixed E0 lesson does not cover every later review.
+
+`diagnostics` carries compact class confusion/support, paired prediction
+transitions, opponent learning and active conditioning/feature evidence that
+matter to the current question. The host must preserve computed relevant
+evidence when compressing a packet; untransmitted values cannot support a
+tools-disabled decision. `paired_errors.compare` checks same-point identities
+and distinguishes reduced focus-class false positives from correct multiclass
+reclassification.
+
+Scope temporal claims explicitly. "Unchanged at E10 and E15" differs from
+"constant across all observed epochs": an intermediate E5 exception invalidates
+the latter even when E0 and E15 agree. For consequential numeric trend premises,
+`temporal_claims.validate` checks the metric, interval, complete measured epoch
+list and claimed relation against history. It distinguishes equal endpoints from
+constant observations and does not infer unmeasured epochs. The host still
+checks free prose for broader claims; schema validity is not semantic validity.
+
+Definition strings and summary column names are shared in the serialized brief;
+summary string aliases name another column of that row, preserving identical
+exact endpoints without repeating them. Sparse anchors complement those values.
+Full histories and unsmoothed plots remain intact. Budget-check the actual
+observed history before dispatch, including end-of-interval reviews. A packaging
+failure after checkpoint save is recoverable from that checkpoint, not a reason
+to repeat completed training.
+
+Use `knowledge_delivery` to state the selected topic, selection basis and actual
+available read/supplement mechanism. If the model cannot open files, the caller
+can fulfill a requested named section within the existing decision; record any
+additional request and cost. Never claim a path was read. Optional supplement
+requests need not delay a supported KEEP or ordinary direct adjustment.
 
 Missing metrics stay missing. Required anchors/events that exceed the packet
 budget cause an explicit refusal, not hidden truncation. Unknown fields in the

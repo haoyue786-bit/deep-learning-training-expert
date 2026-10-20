@@ -167,13 +167,11 @@ def plot_history(path, specs, rows, events, title):
     plt.close(fig)
 
 
-def build(data, output, maximum_characters=16000):
+def build(data, output, maximum_characters=20000):
     identity, specs, rows, events, excluded = normalize(data)
     summary, missing, anchors = compact_history(specs, rows, events)
     knowledge = data.get("knowledge", [])
     experience = data.get("experience", [])
-    if len(knowledge) > 2 or len(experience) > 2:
-        raise ValueError("Only relevant sections/lessons; no complete manual packet")
     for item in knowledge:
         if any(not item.get(k) for k in ("source", "sha256", "heading", "text")):
             raise ValueError("Knowledge needs delivered text and exact section/source identity")
@@ -182,8 +180,6 @@ def build(data, output, maximum_characters=16000):
         exact = section(item["source"], item["heading"], maximum_characters=2800)
         if exact != item:
             raise ValueError("Knowledge excerpt differs from its declared exact section")
-    if len(serialize(knowledge)) > 6500 or len(serialize(experience)) > 1800:
-        raise ValueError("Knowledge/experience exceeds the compact review budget")
     root = Path(output).resolve()
     if root.exists():
         raise ValueError("Use a new immutable review directory")
@@ -201,9 +197,61 @@ def build(data, output, maximum_characters=16000):
             excluded_future_rows=excluded,stage="E0 only; no trend" if len(rows)==1 else "observed trajectory",
             summary_is_not_causal_inference=True),
         image=dict(path=str(root/"training_curves.png"),sha256="pending",delivery="not_yet_attached"))
+    # Share repeated definitions and exact values instead of dropping observations.
+    # Full plot/history retain every epoch; summary extrema retain their exact epochs.
+    definitions = list(dict.fromkeys(s["definition"] for s in specs))
+    brief["definition_texts"] = definitions
+    brief["metric_definitions"] = dict(
+        columns=["key", "label", "unit", "definition_index", "direction"],
+        rows=[[s["key"], s["label"], s["unit"], definitions.index(s["definition"]), s["direction"]]
+              for s in specs])
+    supplied_points = set()
+    for metric, record in summary.items():
+        for key in ("first", "latest", "min", "max", "best_observed"):
+            if key in record:
+                supplied_points.add((record[key][0], metric))
+    for record in brief["trajectory_summary"].values():
+        seen = {}
+        for key in ("first", "latest", "min", "max", "best_observed"):
+            if key not in record:
+                continue
+            value = serialize(record[key])
+            if value in seen:
+                record[key] = seen[value]
+            else:
+                seen[value] = key
+    summary_columns = ["n", "first", "latest", "min", "max", "recent_endpoint_change",
+                       "missing_epochs", "best_observed"]
+    brief["trajectory_summary"] = dict(
+        columns=summary_columns,
+        rows={k: [r.get(c) for c in summary_columns] for k, r in summary.items()},
+        aliases="A string means the named column in this same row; endpoint pairs are [epoch,value].")
+    # Do not repeat current/end/extremum values in every anchor row.
+    # All anchor checkpoint identities remain; omitted metrics are available
+    # at their exact epoch in the summary or unmeasured in the full history.
+    event_epochs = {rows[0]["epoch"], rows[-1]["epoch"]}
+    for event in events:
+        if event["status"] == "applied":
+            before = [r["epoch"] for r in rows if r["epoch"] < event["epoch"]]
+            after = [r["epoch"] for r in rows if r["epoch"] >= event["epoch"]]
+            if before:
+                event_epochs.add(before[-1])
+            if after:
+                event_epochs.add(after[0])
+    brief["exact_anchors"] = [
+        dict(epoch=r["epoch"], checkpoint=r["checkpoint"],
+             additional_metrics={k: v for k, v in r["metrics"].items()
+                                 if v is not None and (r["epoch"], k) not in supplied_points})
+        for r in anchors if r["epoch"] in event_epochs]
+    brief["anchor_semantics"] = "Event-adjacent additional metrics complement exact summary endpoints/extrema; absent fields are not zero. Full plot/history retain every row."
+    brief["diagnostics"] = data.get("diagnostics", {})
+    brief["knowledge_delivery"] = data.get("knowledge_delivery", {
+        "status": "supplied sections only",
+        "additional_material": "Use available read tools or request a host supplement; paths alone are not delivered knowledge."})
     # Reserve for the real image digest and prompt delivery metadata.
     if len(serialize(brief)) + 250 > maximum_characters:
-        raise ValueError("Review exceeds budget; explicitly narrow the live question, never silently truncate history")
+        raise ValueError("Review exceeds budget (%d > %d); explicitly narrow the live question, never silently truncate history" %
+                         (len(serialize(brief)) + 250, maximum_characters))
     root.mkdir(parents=True)
     (root/"history.json").write_text(history_text)
     with (root/"history.csv").open("w", newline="") as stream:
