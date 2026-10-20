@@ -39,6 +39,6 @@ for name, expected in manifest['files_sha256'].items():
 print('Verified', manifest['file_count'], 'Skill files')
 ```
 
-## Modular professional knowledge candidate
+## New modular suite
 
-The [English modular candidate](candidates/modular-suite-v001/README.md) contains the expanded professional references and nine cooperating Skill entries. Its [Chinese review index](reviews/modular/README.md) links the content review, per-file guide and coverage checklist. The [full review](reviews/modular-suite-v001/README.zh-CN.md) explains the actual mechanisms, concrete cases and use of knowledge. This nested review package does not replace the v028 files installed by the command above.
+The [new modular suite](candidates/modular-suite-v001/README.md) contains nine cooperating Skills, callable real-data trial interfaces, bounded validation feedback and project-owned experience. Its default scientific model is `gpt-6.1-sol` with `medium` reasoning; new reviews decide every ten epochs while retaining five-epoch evaluation/checkpoints. Use its explicit nine-Skill installer; the command above still installs legacy v028. See [actual test scope](candidates/modular-suite-v001/tests/REAL_DATA_VALIDATION.md) and [module design/status](DESIGN.md). The earlier [Chinese review](reviews/modular-suite-v001/README.zh-CN.md) is historical and retains its original construction-stage scope.

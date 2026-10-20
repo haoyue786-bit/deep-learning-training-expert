@@ -5,6 +5,8 @@ description: Recover training facts, metric semantics and observation/action tim
 
 # Training Fact Reconstruction
 
+For authorized point feedback, reconstruct actual prediction/label pairs, confusion, Precision/Recall/F1, support and both confusing-class error directions under the declared decoder. Preserve aggregate label semantics and distinguish development exposure from independent evaluation. Report whether threshold selection actually occurred; prior Agent feedback alone is not a threshold study. Read/reconcile the corresponding project's evidence; save corrections only through its explicit authorized [project store](../training-experience-update/references/project-store.md), never an assumed default project.
+
 Recover the facts that can change the present question. Read [factual reconstruction](references/factual-reconstruction.md). Honor the caller's output format and permitted evidence. A healthy run does not need a complete historical audit at every review.
 
 For unfamiliar measurements use [metrics, populations and error slices](references/metrics-populations-and-error-slices.md). For a start, resume, adopted branch or potentially mismatched checkpoint use [training state and trajectory identity](references/training-state-and-trajectory-identity.md). These references supply the concrete definitions and implementation distinctions; choose according to the unresolved fact rather than reading the full archive.

@@ -5,6 +5,8 @@ description: Choose or reverse task-specific optimization and training-control c
 
 # Training Adjustment
 
+Use authorized real validation predictions and labels actively: compare confusion, Precision/Recall/F1, support and both confusing-pair directions before and after the actual intervention. Revise the diagnosis when response contradicts the expected mechanism; a lower gradient ratio or map fraction alone does not establish improvement. Keep validation labels out of loss and respect finite development-use history. Use the coordinator's [callable trial interface](../deep-learning-training-expert/references/algorithm-trial-bench.md) within advertised scope. Retrieve relevant same-project experience and record executed changes and null/adverse/failure outcomes in the explicit authorized [project store](../training-experience-update/references/project-store.md).
+
 Choose a useful executable change or KEEP from current evidence. Use the mechanism-specific knowledge below for the actual control: optimizer state, schedules/numerics, sampling/loss, pseudo-label correction or adversarial dynamics. Read the relevant detailed body when it is not already present in the continuing context. The shorter [optimization practice](references/optimization-practice.md), [adversarial practice](references/adversarial-practice.md) and [diagnosis/response](references/diagnosis-and-experiments.md) references provide cross-cutting context, not replacements for those mechanisms.
 
 ## Relate the control to the suspected mechanism
@@ -14,6 +16,8 @@ An excessive update can support a lower rate, warmup treatment or clipping, with
 Check actual effective rates, optimizer groups and schedule phases. Batch and accumulation change exposure, noise and update frequency; reconsider coupled settings when relevant rather than assuming universal linear scaling. Adaptive optimizer history and decay can make a raw gradient ratio a poor predictor of actual motion. Inherited components and new signal-producing components may need different treatment, but the direction requires current evidence.
 
 For adversarial training, decide whether the issue concerns D learning speed, overfitting, class conditioning, model-side pressure or semantic mismatch. LR and update cadence differ in exposure and cost. A smaller adversarial coefficient can reduce motion while leaving errors unchanged; a stronger D can sharpen a wrong signal. Domain confusion alone does not establish good adaptation.
+
+Use permitted validation feedback as direct development evidence when available. Compare the same label version, population and decoding over time, including class F1 and FP/FN; combine it with exposure and optimization evidence rather than replacing measured quality with map density or source preservation. Validation-feedback access does not make validation labels training labels. Use the task profile's sample roles; for Cashew, do not create a validation/test subset from supplementary human training annotations.
 
 ## Make an interpretable, responsive choice
 

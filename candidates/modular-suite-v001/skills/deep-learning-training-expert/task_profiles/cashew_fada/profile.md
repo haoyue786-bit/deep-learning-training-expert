@@ -63,12 +63,25 @@ domain prediction and target class quality remain different evidence.
 
 ## Supervision and regional context
 
-Follow the packet's authorized label route. Keep source validation, supplementary
-training labels, held-out human error panels, TEST labels and Planet summaries
-distinct. Labels excluded from the decision must remain excluded. Current
-corrected cross-year validation IDs are anchored to2025; both years of one global
-tile stay in one research partition. Do not read a TEST reference panel to
-construct a new initializer.
+For newly prepared or explicitly migrated cohorts, apply the user's current
+sample-role policy: supplementary human positives and negatives are training
+evidence; do not split them by patch, polygon, pixel or location to manufacture
+an evaluation/test panel. Use all eligible annotations within the cohort's
+training scope, preserving explicit exclusions and ignoring unmarked pixels.
+The separately designated current country/year validation set may provide
+feedback to the Agent for tuning, STOP and SELECT. Report its class F1,
+precision/recall, FP/FN, support, decoder and checkpoint identity. Receiving
+validation feedback does not add those validation labels to a training loss.
+Keep final TEST outcomes outside tuning and identify repeated validation use
+and threshold fitting as development selection. See the
+[data-role policy](data-labels-and-evidence-roles.md) for execution details.
+
+Older frozen runs can contain held-out human panels or prohibit online point
+feedback. Preserve that historical identity; the current policy takes effect
+through a versioned cohort migration, not by relabeling past metrics or changing
+a running packet silently. Current corrected cross-year validation IDs are
+anchored to2025; both years of one global tile stay in one research partition.
+Do not read a final TEST reference panel to construct a new initializer.
 
 When supplied, use the packet's `observation_population` to interpret current
 predictions. A conditional512-patch DEV monitor is neither the production CIV3000
@@ -143,14 +156,22 @@ source-degradation guidance conflicts with a catastrophic-only packet, describe
 the conflict and follow the actual permitted action set; do not invent authority.
 Protecting source semantics is not ranking healthy target checkpoints by source F1.
 
-Use the current stage contract for execution and budgets. Current user-authorized
-local research permits physical GPUs0–3 and6, preferring6, at most4 tasks/GPU
-and24 machine-wide; the worker checks shared leases and actual processes.
-The first behavior-only stage did not authorize GPU training.124 retains its
-separate user maximum6/card; existing tasks are not part of this research. No hardware reset, server switch or
-unrelated-process termination. Numeric/CPU workers clear all six upper/lowercase
-HTTP/HTTPS/ALL proxy variables. Scientific calls use the user's codex_jhy account
-and its proxy, never jhyapi. The current knowledge-construction Goal authorizes no new training or scientific model calls. Earlier efficacy-stage plans are historical rather than this phase's completion gate. This candidate is not installed; knowledge construction does not itself replace a frozen production Skill or resume purpose-held work.
+Use the current stage contract for execution, accounts, hardware and budgets.
+Historical account/proxy/GPU rules stay with their original cohort, not as
+global defaults. The new suite supports explicitly authorized small CPU trials;
+it does not resume held work, change a running job or launch large GPU training.
+The caller supplies credentials/transport and queue admission. The centralized
+scientific model/reasoning settings apply to new suite requests unless the user
+explicitly overrides them. No hardware reset or unrelated-process termination.
+
+For this upgrade, the known prior baseline is Agent feedback on validation
+points, not a completed threshold study or systematic algorithm comparison.
+Use the [bounded real-data adapter](trial_adapter.py) and coordinator's
+[Trial Bench protocol](../../references/algorithm-trial-bench.md) for actual
+development confusion, Precision/Recall/F1 and class2/class1 error feedback.
+Do not read class1 aggregate errors as pure forest labels. Store actual trials
+and feedback in the explicitly authorized project experience directory; the
+installed Skill has no default empirical database.
 
 
 ## Current research objective and executable selection

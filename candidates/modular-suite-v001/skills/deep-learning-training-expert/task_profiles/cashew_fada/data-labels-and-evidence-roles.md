@@ -7,14 +7,24 @@ Use when preparing a new Cashew packet, interpreting a historical score, or reso
 |Asset|Role|What it does not automatically permit|
 |Canonical Benin2019 E173|Inherited source predictor for the specified fresh-start contract.|Inventing absent optimizer history, resetting an inherited trained head, or treating it as a full target-run continuation.|
 |Source training labels and objective|Four-class weighted CE [3,3,10,3], ignore10, under the supplied source data contract.|Replacing fixed source weights with a class-prior estimate or binary weak-label loss.|
-|Human supplementary polygons/bank|Trusted supplementary training evidence when that cohort permits it, with its own spatial holdout and loss route.|Opening held-out validation points or silently activating human labels in a cohort that excludes them.|
+|Human supplementary polygons/bank|Supplementary training evidence in the permitted cohort; no human-derived evaluation/test split under the current user policy.|Calling scores on trained annotations validation/test accuracy, ignoring cohort exclusions or converting unmarked pixels into negatives.|
 |Agent-selected automatic negatives|Separate low-weight, reversible weak hypotheses under the advertised route.|Calling them human truth, inheriting the old disputed weak-negative pool, or overwriting source labels.|
-|Current country/year point validation|Permitted evaluation/selection only as declared by the research packet.|Training on points excluded from the decision, or calling error-inspected corrected points an untouched test.|
+|Current country/year point validation|Separate development validation; its measured feedback is available to the Agent for tuning, STOP and SELECT under the current user policy.|Putting validation labels in the loss, calling validation-tuned scores independent final tests or silently rewriting a frozen cohort.|
 |Fixed unlabeled monitor|Prediction behavior on its exact pinned patches/population.|Positive recall, target F1 or full-tile area without additional support.|
 |Approved regional prior|Spatial/agronomic support, confidence and unknown/conflict information.|Calibrated cashew probability, a prevalence quota or pixel truth.|
 |Standalone PlanetMap|A separate dated reference product under its own class mapping.|Substitution for the approved regional prior or automatic labeling of every disagreement.|
 
 Ordinary class order is 0 crop_others, 1 mixed_trees_grassland, 2 cashew, 3 built_up; ignore is 10. “Other than cashew” in a binary error analysis can combine 0/1/3, but that does not rename the model's class0. There is no model wetland class.
+
+## Current user policy: human training samples and separate validation feedback
+
+This user amendment supersedes the earlier human-location holdout default for newly prepared or explicitly migrated Cashew cohorts. Keep permitted supplementary human positives and negatives in the training pool. Do not reserve part of that pool as validation/test by splitting points, polygons, patches, pixels or locations. Existing cohort bans on human supervision still apply. Unmarked pixels remain ignored. Do not reclaim material explicitly designated as final test or silently resolve a training/validation overlap by training on it; identify and exclude the overlapping training support under the cohort's declared identity rule.
+
+Use the separately designated, corrected country/year validation points to supply Agent feedback. A worker can evaluate the current checkpoint at scheduled reviews and pass compact per-class F1, precision/recall, FP/FN, support, label version, decoder/threshold and checkpoint identity. The Agent may use these observations for adjustment, STOP and SELECT; an evaluated starting model may also inform initialization. The current user's permission covers feedback; validation labels do not become auxiliary-loss targets or automatic pseudo-negative labels. Report training-sample scores only as training diagnostics. Keep separate final TEST evidence out of decisions; if no independent test exists, report validation performance without claiming an independent test.
+
+When a validation threshold is optimized, distinguish its fitted F1 from fixed-decoder F1 and name the threshold-fitting population. Repeated validation use can overfit the selection process; do not describe the resulting maximum as untouched accuracy. Compact feedback is sufficient unless an authorized diagnosis requires finer error slices; there is no need to dump all point attributes into every request.
+
+Historical packets that used `heldout_locations` from human polygons or set `point_labels_enter_training_or_online_selection=false` retain those facts. For the new protocol, the preparer must remove the artificial human holdout, include the eligible human annotations in training, identify the separate validation dataset, and connect its feedback to review/selection packets. Register the changed data roles and the first affected review in a new version. Editing Skill text alone does not migrate a frozen runtime, retroactively change an F1 interpretation or establish that feedback was delivered.
 
 ## Human positives: resolve the cohort, not the latest familiar filename
 
@@ -84,7 +94,9 @@ The user subsequently excluded CIV groups8/9/10 of the current formal all-CIV10 
 
 Completed artifacts are retained. Group numbers are not transferable identities for a different clustering. The earlier ten-group fresh-run description remains historical context and does not override this explicit later scope policy.
 
-Other historical cohort rules, including minimum training, accounts, human routes and schedule phases, stay with their pinned packets. Do not turn a production cohort's epoch floor or proxy route into a general training-expert rule. Current Skill construction launches no new training or scientific model calls; existing production processes are outside its scope.
+Other historical cohort rules, including minimum training, accounts, human routes and schedule phases, stay with their pinned packets. Do not turn a production cohort's epoch floor or proxy route into a general training-expert rule. The new suite permits explicitly authorized small real-data CPU trials through its isolated adapter; existing production processes remain outside this upgrade's scope.
+
+The prior baseline for this upgrade is validation-point feedback during AgentGuide. A formal threshold study or systematic method comparison had not been performed for this new protocol; do not rewrite historical studies with different roles into that claim. New feedback uses fixed multiclass argmax and a finite development-use ledger. Validation guides diagnosis, candidate methods and bounded experiments, while labels remain outside backpropagation. New independent evaluation, threshold optimization and formal comparisons need their own prospective task contract.
 
 ## Source and maintenance
 

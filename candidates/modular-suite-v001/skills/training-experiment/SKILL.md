@@ -5,6 +5,8 @@ description: Design and interpret a discriminating training experiment when its 
 
 # Training Experiment
 
+Ground the proposed mechanism in actual authorized development errors: confusion, Precision/Recall/F1, support and both class-pair directions. Read the coordinator's [Trial Bench](../deep-learning-training-expert/references/algorithm-trial-bench.md) for executable kernels. Reserve finite validation use, fixed decoder and a declared endpoint before comparing the matched reference with one treatment. Keep those labels out of backpropagation and do not add threshold/parameter sweeps. Retrieve relevant same-project experience before testing; append actual positive/null/adverse/failed outcomes and discarded costs through the explicit authorized [project store](../training-experience-update/references/project-store.md). No project identity/path means no write.
+
 Ask what result could change the next decision before requesting training. For a concrete mechanism test, read [mechanism-directed training procedures](references/mechanism-directed-training-procedures.md). It retains nine adversarial/optimization designs with prerequisites, measurements and response interpretation, plus component, sampling and duration contrasts. Select a useful design rather than launching a mandatory sweep; its old packet budgets are not universal permissions. Use the execution contract's actual state preparation, controls, data and budget.
 
 Read the shorter [diagnosis and experiment mechanics](references/diagnosis-and-experiments.md) when comparison identity, prior response or recovery interpretation is the unresolved issue. It is not a mandatory extra document for every well-defined contrast.

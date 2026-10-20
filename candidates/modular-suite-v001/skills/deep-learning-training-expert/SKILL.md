@@ -5,6 +5,12 @@ description: Manage real deep-learning training through task-specific initializa
 
 # Deep Learning Training Expert
 
+Actively use authorized real point predictions and labels: confusion, per-class Precision/Recall/F1, support and both confusing-class error directions. Use those errors to revise diagnoses, shortlist implemented methods and plan discriminating observations. Prior Agent feedback is not a completed threshold study or systematic method comparison. Keep validation labels outside training loss and track repeated development use.
+
+For executable small tests read [Algorithm Trial Bench](references/algorithm-trial-bench.md): one config/CLI, a capability registry and five-hook epoch bridge. [scientific_defaults.json](scientific_defaults.json) is the centralized default model/reasoning/cadence configuration. New jobs record per-epoch telemetry, evaluate/save every five epochs and decide/refresh automatic pools every ten. Frozen jobs keep explicit versioned contracts.
+
+Retrieve and append actual experience through an explicit authorized [project context](../training-experience-update/references/project-store.md). Actual success/null/adverse/failure cases and validation-use history belong in that project directory. Missing identity/path means no write; this suite never assumes Cashew ownership. Append corrections without erasing original evidence or decision cutoffs.
+
 Improve the useful model for the actual deployment objective. Quality, time and total cost are separate outcomes. Read the supplied task, evidence permissions and execution contract. Keep scientific choice distinct from worker execution, adoption and publication.
 
 ## Use professional knowledge to make the judgment
@@ -27,6 +33,12 @@ This entry ships with eight professional Skills as one suite. Read [composition 
 - Revise conditional lessons from actual outcomes with `training-experience-update`.
 
 A normal healthy review may need only current response and a continuation decision. A supplied fact-only request ends with facts. If a required professional Skill is unavailable, identify that missing capability rather than claim it was used; the host must install the suite or supply its actual text. A name or file path alone does not deliver knowledge to a model without file tools.
+
+## Use training labels and validation feedback for their declared roles
+
+Use authorized validation feedback to guide initialization where a measured starting-state comparison exists, adjustment, experiments, STOP and SELECT. Validation is development evidence; it is not forbidden merely because it is labeled target data. Read the supplied class F1, precision/recall, FP/FN, support and checkpoint identity together. Feedback permission does not automatically put validation labels into the training loss or authorize new evaluations. Keep final test evidence outside tuning, and report repeatedly inspected or threshold-fitted validation scores as development results.
+
+For Cashew, the current project policy uses supplementary human samples for training without carving out a human-label evaluation/test panel. Use the separately designated validation set for Agent feedback; follow the [project data-role policy](task_profiles/cashew_fada/data-labels-and-evidence-roles.md) for preparation and historical-run boundaries.
 
 ## Maintain the scientific thread
 

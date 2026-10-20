@@ -5,6 +5,8 @@ description: Judge whether another interval of an existing deep-learning run is 
 
 # Training Continuation and Stopping
 
+Use authorized development predictions and labels to assess recent response: confusion, Precision/Recall/F1, support and both confusing-class error directions across comparable checkpoints. Combine these with source safety, schedule and executed exposure; a flat proxy or moving threshold alone does not prove useful learning has finished. Respect versioned permissions and finite label-use history. Retrieve relevant conditional experience and append the actual stop/continue response, including null or failed continuations, to the explicit authorized [project store](../training-experience-update/references/project-store.md). Missing project identity/path means no write.
+
 Judge the value of another training interval against the actual task objective. Read current observations, previous interventions, completed optimizer exposure, effective schedule and remaining budget. Use the caller's allowed actions and response schema.
 
 For an actual plateau, delayed response, exhausted schedule or damaged state, read [training sufficiency and recovery](references/training-sufficiency-and-recovery.md). Use its phase/exposure distinctions, concrete continuation opportunities, recovery choices and curve-extrapolation assumptions to judge this run. An epoch count alone is not that judgment. The shorter [continuation/selection principles](references/stopping-and-selection.md) and [optimization context](references/optimization-practice.md) are available for cross-cutting interpretation; do not load all three automatically.
@@ -16,6 +18,8 @@ First compare the same metric and population over time. A rising validation cros
 Interpret epochs through actual updates and schedule phases. Warmup, a recent LR reduction, new-component adaptation or an objective transition can make a short flat interval inconclusive. Reducing update size also changes the exposure needed to observe a response. Explain a plausible benefit and an informative observation horizon when choosing to continue; merely naming delayed improvement does not justify indefinite training.
 
 When evidence indicates overfitting or semantic damage, identify the measurement and population supporting that conclusion. Data or evaluation defects require their own diagnosis; more epochs cannot repair a wrong label mapping. Unlabeled entropy, map density or domain confusion alone cannot establish target accuracy harm or recovery impossibility.
+
+When authorized validation feedback is available, use its quality trajectory and class errors to judge further learning, alongside schedule and exposure. Do not ignore that feedback in favor of an unlabeled proxy. Repeatedly consulted validation is development evidence; training-label fit and a final test score have different roles. For Cashew, do not require a held-out panel carved from supplementary human training samples; use the separately designated validation set.
 
 ## Compare the next real opportunities
 

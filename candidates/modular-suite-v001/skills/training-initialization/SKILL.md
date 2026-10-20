@@ -5,6 +5,8 @@ description: Choose task-specific starting states and initial optimization setti
 
 # Training Initialization
 
+When a permitted starting-state comparison has real validation predictions and labels, use confusion, Precision/Recall/F1, support and class-pair errors to locate the existing weakness. Map density or a fitted threshold alone does not establish initialization failure. Respect finite development-use history, keep validation labels out of training loss and retrieve relevant explicit same-project experience. Record actual initialization tests and outcomes in the authorized [project store](../training-experience-update/references/project-store.md); unclear project identity/path permits no write.
+
 Choose a useful complete starting state, rather than inventing different scalar values for every dataset. Read the supplied task, data permissions and executable controls. For exact continuation, identify and restore the declared full state; changing initializers is a different treatment.
 
 ## Establish what actually needs learning

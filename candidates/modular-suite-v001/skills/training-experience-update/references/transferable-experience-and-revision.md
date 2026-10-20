@@ -48,7 +48,7 @@ Use the existing caller's record format. A compact lesson should preserve enough
 - In which new conditions would the lesson be relevant or misleading?
 - Which original artifacts support it, and what did acquiring it cost?
 
-The lesson's strength should follow evidence, not a vote count. A completed local contrast can support that local observation; it does not establish a reusable empirical response. For this project, require repetition of the same action across several distinct spatial tiles under comparable conditions before promoting such a relationship. There is no tile-count threshold that alone proves generality. Report the full compatible set, agreements, opposite responses and small effects; first collapse repeated years, seeds and branches within a tile. Distinct IDs also do not establish statistical independence when geography or source models overlap. Missing or failed arms leave the intended contrast unknown.
+The lesson's strength should follow evidence, not a vote count. A completed local contrast supports that observation, not a reusable empirical response. Require comparable repeated actions across meaningful task units before promoting a relationship. For spatial projects, count distinct tiles and collapse correlated years/seeds/branches within a tile. No count alone proves generality; geography and shared source models can create dependence. Report the compatible set, agreements, opposite responses and small effects. Missing or failed arms leave the intended contrast unknown.
 
 Keep two comparisons separate: matching all recorded background controls and data procedures, and matching a procedure whose tile-specific sample pools intentionally differ. Preserve those pool differences as conditions. Do not merge different starting values, active/paused objectives or response horizons into one directional rule. Searching many strata and selecting an all-positive one is exploratory; compare its neighboring strata and retain the mixed result. A uniform mechanical response can be reusable even when a task-quality prescription remains unsupported.
 
@@ -64,7 +64,7 @@ Keep two comparisons separate: matching all recorded background controls and dat
 
 **Confounded or corrected case.** If a job path now points to a different supplementary list, or updated labels invalidate a comparison, restrict the claim. A different label version cannot silently become evidence for the old intervention. This can invalidate a quality ranking while leaving a mathematical update identity intact.
 
-These are lesson forms, not claims that the illustrated treatments have already improved this project. Actual Cashew cases belong in its project profile with their original evidence.
+These are lesson forms, not claims of improvement on a particular project. Actual cases and original evidence belong in the explicitly authorized corresponding project store; the installed Skill holds general rules only. See [project ownership and validation-use history](project-store.md).
 
 ## Retrieve enough to decide
 

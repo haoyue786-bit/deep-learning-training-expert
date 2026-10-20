@@ -48,9 +48,12 @@ def build(suite_skills, skills, references=()):
             bodies.append({'sha256': digest, 'text': data.decode('utf-8')})
         sources.append({'path': name, 'sha256': digest, 'body_index': by_digest[digest]})
     unique_bytes = sum(len(item['text'].encode('utf-8')) for item in bodies)
+    settings=json.loads((root/'deep-learning-training-expert/scientific_defaults.json').read_text())
     return {
         'format': 'training_suite_single_request_v001',
         'skills': list(skills), 'sources': sources, 'bodies': bodies,
+        'model':settings['model'],'reasoning_effort':settings['reasoning_effort'],
+        'scientific_owner':'one continuing owner; no extra call per Skill or module',
         'size': {'raw_body_bytes': raw_bytes, 'unique_body_bytes': unique_bytes,
                  'duplicate_body_bytes_omitted': raw_bytes - unique_bytes,
                  'actual_token_count': None},

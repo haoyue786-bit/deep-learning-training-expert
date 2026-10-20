@@ -1,6 +1,6 @@
-# Modular Training Expert: professional knowledge candidate
+# Modular Training Expert: callable trial suite
 
-This candidate contains substantive English training knowledge and nine cooperating professional Skill entries. It is a reviewable knowledge-construction package. The repository-root v028 package and its installed copy remain separately identified; this nested suite does not automatically replace either.
+This suite contains English professional knowledge, nine cooperating Skills and small executable trial interfaces. Repository-root v028 remains separately versioned. Install the nine siblings explicitly; a Git clone alone does not activate this nested suite.
 
 ## Professional capabilities
 
@@ -24,7 +24,7 @@ The references cover component readiness and initialization; SGD/Adam/AdamW stat
 
 The Cashew profile separately preserves the source checkpoint/class objective, audited paths, AEF semantics, sample/prior roles, corrected-year identity, weak negatives, regional reasoning and actual historical counterexamples. Its local paths and execution settings belong to that project and the specified cohorts. Another task supplies its own profile and permissions.
 
-Its historical experience now separates multi-tile repetition from single-tile illustrations: an archive audit retained 1,479 recorded single-control comparisons over 239 global tile IDs, with exact-context and variable-pool strata, contrary responses and an existing eight-tile quality panel. Counts describe searched historical evidence, not prospective efficacy. Read the compact historical reference for a decision; open its numerical index only to verify a claim.
+Actual historical cases and numerical evidence are kept in the explicitly authorized owning project experience directory. The profile explains how to retrieve and interpret them; another installation does not inherit a private case database. Earlier bundled historical files were preserved as hashed project-owned imports.
 
 Sources are cited in the relevant references. `PROFESSIONAL_KNOWLEDGE_SOURCE_MAP.json` retains hashes and interpretation scope for the archived originals and project evidence; local research paths in it identify provenance, not files supplied in this public repository. Original papers, private data, weights and account credentials are not bundled.
 
@@ -36,6 +36,51 @@ Deterministic helpers calculate or bind facts. They do not establish a method's 
 
 ## Status and evidence
 
-This phase constructs and checks professional knowledge and its accessibility. Local entry/link/source checks and a selected-body packaging exercise support usability and identity, not new training superiority, zero factual mistakes or a measured token-saving percentage. Historical v028 experiments and their adverse results are retained under their original scope. No new training or scientific model evaluation was launched for this construction phase.
+The 2026-10-20 upgrade includes actual real-data CPU kernel, gradient, matched two-update trial and inherited automatic-controller checks. See [validation scope and results](tests/REAL_DATA_VALIDATION.md). The trials supply narrow development feedback, not independent evaluation or established method superiority. Historical v028 studies retain their original scope. No large GPU run or production checkpoint migration is part of this installation.
+
+## Install, configure and call
+
+```sh
+python scripts/install_suite.py --skills-root /absolute/codex-home/skills \
+  --backup-dir /absolute/installation-backups/modular-suite
+```
+
+The installer verifies the build manifest and copies the nine Skill directories,
+preserving existing versions in the specified backup directory. Restart the
+Codex session to refresh discovered Skill text. The actual scientific request
+defaults are centralized in
+[scientific_defaults.json](skills/deep-learning-training-expert/scientific_defaults.json):
+`gpt-6.1-sol`, reasoning `medium`. Credentials and transport remain caller-owned.
+
+Copy [the example config](examples/cashew_trial_config.json) into your project
+and replace its paths/identity/actual authorization. One config selects the
+adapter, data, output, project experience and finite trial/validation budget.
+Call `skills/deep-learning-training-expert/scripts/algorithm_trial_bench.py`
+with `--config /absolute/project/trial.json`. Omit `--trial` for fixed-decoder
+feedback only; use `--interface-smoke` to check all implemented kernels.
+Read the [complete calling contract](skills/deep-learning-training-expert/references/algorithm-trial-bench.md)
+for a bounded matched trial and the five-hook training bridge.
+
+New bridge defaults: epoch telemetry every 1, evaluation/checkpoint every 5,
+Agent decisions and automatic-negative refresh every 10. The same owner returns
+the pool plan; no extra model call per algorithm or pool. Each selected automatic
+patch occurs once over its finite generation horizon; persisted exposure is not
+renewed on resume. Frozen legacy jobs require explicit migration.
+
+Actual cases, predictions and validation-use history belong in the configured
+project experience directory. Missing or mixed project identity/path fails
+closed. Validation labels guide development decisions and never enter these
+training losses. Threshold selection remains a separate task.
+
+Run deterministic tests with a PyTorch/NumPy environment:
+
+```sh
+python -m unittest discover -s tests -v
+```
+
+The opt-in `tests/real_cashew_smoke.py` and `tests/real_controller_smoke.py`
+require authorized real data and a pinned external runtime. Data, weights and
+that production runtime are not bundled. Generic kernels, cadence, validation,
+registry, project store and unit fixtures are supplied here.
 
 The organization draws on [Scientific Agent Skills](https://github.com/K-Dense-AI/scientific-agent-skills) and [Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents](https://arxiv.org/abs/2609.00065): professional scope, progressive disclosure, useful procedures, supporting references and tools. Our entry's scientific-continuity role is a project design choice. The paper is not evidence that this training suite improves accuracy.

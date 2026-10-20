@@ -1,6 +1,6 @@
 {
   "profile": "cashew_fada",
-  "version": "candidate_20261017_v013_contract_clarity",
+  "version": "modular_trial_interfaces_20261020_v001",
   "role": "Scientific decision provider; supplied packet and owning executor determine executable authority",
   "decision_modes": [
     "initialization",
@@ -35,12 +35,11 @@
   },
   "fresh_source": "canonical Benin2019 E173; task supplies exact artifact hash",
   "model_route": {
-    "account": "/home/ubuntu/.codex_jhy",
-    "proxy": "http://127.0.0.1:7890",
-    "jhyapi": false
+    "scientific_defaults": "../../scientific_defaults.json",
+    "credentials_and_transport": "explicit caller/project configuration; no global rewrite"
   },
   "scope_limits": [
-    "No new target-accuracy evidence from behavior testing",
+    "Behavior-only tests remain distinct from actual new bounded development feedback",
     "No universal scalar/prior/gradient thresholds",
     "No automatic production migration",
     "No inherited permission to open TEST outcomes"
@@ -61,16 +60,9 @@
     "endpoint": "Supplied prospective stage contract; never retroactively change a completed experiment"
   },
   "local_research_limits": {
-    "physical_GPUs": [
-      0,
-      1,
-      2,
-      3,
-      6
-    ],
-    "prefer": 6,
-    "max_tasks_per_GPU": 4,
-    "max_machine_tasks": 24,
+    "default_trial_device": "cpu",
+    "large_gpu_training_authorized_by_installation": false,
+    "hardware_limits": "current explicit task contract; no inherited historical GPU lease",
     "worker_owns_leases_and_actual_occupancy_checks": true
   },
   "selection": "When SELECT_CHECKPOINT is required, return an actual eligible integer epoch; unknown quality permits a provisional choice, not a null artifact. Owning caller specializes schema before dispatch."

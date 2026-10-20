@@ -5,6 +5,8 @@ description: Select an existing eligible deep-learning checkpoint for the stated
 
 # Training Checkpoint Selection
 
+For eligible checkpoints with authorized real development predictions/labels, compare the declared decoder's confusion, Precision/Recall/F1, support and both confusing-class error directions. Reconcile dataset/label versions and point identity before ranking. Record feedback-use history; it remains development evidence. Threshold fitting is separate and must not be silently added. Retrieve relevant same-project evidence and append the selection and later outcome only to the explicit authorized [project store](../training-experience-update/references/project-store.md); sealed-test outcomes do not select the artifact.
+
 Choose among actual eligible artifacts using permitted evidence and the stated deployment objective. Training termination does not automatically select its last checkpoint. Use the caller's candidate identities and output contract verbatim.
 
 For a real comparison, high thresholds, probability correction or missing target labels, read [checkpoint ranking, calibration and deployment](references/checkpoint-ranking-calibration-and-deployment.md). It explains attainable operating points, multiclass temperature effects, label-shift correction, abstention coverage and the complete predictor identity. Apply the method whose assumptions fit the evidence rather than treating all score changes as learning progress.
@@ -18,6 +20,8 @@ Identify what every candidate actually contains and which state produced each ob
 Where direct permitted validation exists, use the specified metric and relevant class errors, uncertainty and dependence. Accuracy, F1, cross-entropy and calibration ask different questions. A checkpoint with higher cross-entropy may still have higher decision accuracy. Do not invent a composite score to erase this tradeoff.
 
 Where direct target quality is unmeasured, source preservation, distribution stability, entropy and domain confusion are limited evidence. Explain which candidate behavior they support and what remains unidentifiable. A map matching a weak prior is not a measured accuracy gain. Follow an explicit fallback criterion where supplied; otherwise state and justify a provisional criterion against the strongest alternative.
+
+Use authorized validation feedback to rank eligible checkpoints. Record its label version, sample support, decoding and evaluation time, and distinguish per-class errors from an aggregate score. Validation may also fit a threshold when that comparison is authorized; record the fitted checkpoint/threshold pair and its development-score status. For Cashew, supplementary human annotations remain training samples rather than being split into an evaluation/test panel; the separately designated validation set supplies selection feedback.
 
 ## Separate weights from decision thresholds
 

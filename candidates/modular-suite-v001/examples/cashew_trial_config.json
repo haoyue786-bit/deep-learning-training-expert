@@ -1,0 +1,26 @@
+{
+  "adapter": "cashew_fada",
+  "project": {
+    "project_id": "your-project-id",
+    "project_root": "/absolute/authorized/project",
+    "experience_dir": "/absolute/authorized/project/training_experience",
+    "authorization": {
+      "write_experience": false,
+      "source": "replace only with actual user/task authorization"
+    }
+  },
+  "job_file": "/absolute/authorized/project/pinned-job.json",
+  "validation_file": "/absolute/authorized/project/canonical-country-points.shp",
+  "dataset_id": "stable-development-panel-id",
+  "label_version": "actual-label-release",
+  "run_dir": "/absolute/authorized/project/isolated-trial-output",
+  "device": "cpu",
+  "cpu_threads": 2,
+  "seed": 16,
+  "trial_steps": 2,
+  "maximum_trials": 2,
+  "maximum_validation_uses": 6,
+  "maximum_seconds_per_arm": 300,
+  "validation_patch_limit": 6,
+  "validation_point_limit": 24
+}

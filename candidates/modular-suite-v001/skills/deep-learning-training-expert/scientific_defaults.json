@@ -1,0 +1,17 @@
+{
+  "version": "scientific_decision_defaults_v1",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "medium",
+  "one_scientific_owner": true,
+  "extra_model_call_per_module": false,
+  "credential_and_transport_source": "explicit caller/project configuration",
+  "review_cadence": {
+    "version": "separate_observation_decision_v1",
+    "telemetry_every": 1,
+    "evaluate_every": 5,
+    "checkpoint_every": 5,
+    "agent_every": 10,
+    "automatic_refresh_every": 10
+  },
+  "threshold_selection": "separate task; not enabled by algorithm trials"
+}
